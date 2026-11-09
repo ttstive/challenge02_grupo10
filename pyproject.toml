@@ -1,10 +1,13 @@
 [project]
 name = "challenge02-grupo10"
 version = "0.1.0"
-description = "Add your description here"
+description = "LangChain retrieval-augmented generation scaffold focused on neurocognitive speech knowledge."
 readme = "README.md"
-requires-python = ">=3.14"
-dependencies = []
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=0.3.0,<1.0.0",
+    "langchain-core>=0.3.0,<1.0.0",
+]
 
 [project.scripts]
 challenge02-grupo10 = "challenge02_grupo10:main"
