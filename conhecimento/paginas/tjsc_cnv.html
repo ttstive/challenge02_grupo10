@@ -1,0 +1,5276 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!DOCTYPE html>
+
+	<html class="tjsc  ltr" dir="ltr" lang="pt-BR">
+
+	<head>
+<script>
+	/* TJSC object (initial settings) */
+	tjsc = {
+		cookiePolicy: {
+			agree: function(){
+				this.setAgree(true);
+				this.hide();
+			},
+			getAgree: function(){
+				return (tjsc.localStorage.get("tjsc-cookie-policy-agree") === "true");
+			},
+			hide: function(){
+				document.getElementById("tjsc-cookie-policy").classList.add("d-none");
+			},
+			init: function(){
+				(!this.getAgree()) ? this.show() : ""; 
+			},
+			setAgree: function(status){
+				tjsc.localStorage.add("tjsc-cookie-policy-agree", status);
+			},
+			show: function(){
+				document.getElementById("tjsc-cookie-policy").classList.remove("d-none");
+			}
+		},
+		/* Stores data with no expiration date */
+		localStorage: {
+			add: function(key, value){
+				(tjsc.localStorage.isSupported()) ? localStorage.setItem(key, value) : "";
+			},
+			addObj: function(key, value){
+				(tjsc.localStorage.isSupported()) ? localStorage.setItem(key, JSON.stringify(value)) : "";
+			},
+			get: function(key){
+				return (tjsc.localStorage.isSupported()) ? localStorage.getItem(key) : null;
+			},
+			getObj: function(key){
+				try { return (tjsc.localStorage.isSupported()) ? JSON.parse(tjsc.localStorage.get(key)) : null } catch(err){ return null };
+			},
+			isSupported: function(){
+				return (typeof(localStorage) !== "undefined") ? true : false;
+			},
+			remove: function(key){
+				(tjsc.localStorage.isSupported()) ? localStorage.removeItem(key) : "";
+			},
+			set: function(key, value){
+				(tjsc.localStorage.isSupported()) ? ((tjsc.localStorage.get(key) !== null) ? localStorage.setItem(key, value) : "") : "";
+			},
+			setObj: function(key, objKey, objValue){
+				(tjsc.localStorage.isSupported()) ? tjsc.localStorage.set(key, JSON.stringify(tjsc.localStorage.getObj(key), (k, v) => { return (k == objKey) ? objValue : v; })) : "";
+			}
+		}
+	};
+
+	/* Server cluster node */
+	document.addEventListener("keydown", function(event){
+		if (event.ctrlKey && event.altKey && ((event.key == "n") || (event.code == "KeyN"))) {
+			alert(tjsc.n);
+		}
+	});
+	document.addEventListener("touchstart", function(event){
+		if (event.touches.length == 5) {
+			alert(tjsc.n);
+		}
+	});
+</script>
+
+<script data-senna-track="temporary">
+	/* Forces the page reload to ensure it works properly (e.g.: after returning from the Control Panel) */
+	if (typeof tjsc === "undefined") {
+		document.getElementsByTagName("html")[0].classList.add("hide");
+		window.location.reload();
+	}
+
+	tjsc.n = "7";
+
+	/* Rybená (init) */
+	if (typeof(RybenaApi) !== "undefined") {
+		RybenaApi.getInstance().closePlayer();
+	} else {
+		tjsc.localStorage.setObj("rybena-state-control", "openedPlayer", !1);
+	}
+</script>
+<title>Comunicação Não-violenta - Servidor - Poder Judiciário de Santa Catarina</title>
+
+<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="importmap">{"imports": {"@ckeditor/ckeditor5-adapter-ckfinder/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-adapter-ckfinder$dist$index.js.js", "@ckeditor/ckeditor5-alignment/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-alignment$dist$index.js.js", "@ckeditor/ckeditor5-autoformat/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-autoformat$dist$index.js.js", "@ckeditor/ckeditor5-autosave/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-autosave$dist$index.js.js", "@ckeditor/ckeditor5-basic-styles/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-basic-styles$dist$index.js.js", "@ckeditor/ckeditor5-block-quote/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-block-quote$dist$index.js.js", "@ckeditor/ckeditor5-bookmark/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-bookmark$dist$index.js.js", "@ckeditor/ckeditor5-ckbox/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-ckbox$dist$index.js.js", "@ckeditor/ckeditor5-ckfinder/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-ckfinder$dist$index.js.js", "@ckeditor/ckeditor5-clipboard/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-clipboard$dist$index.js.js", "@ckeditor/ckeditor5-cloud-services/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-cloud-services$dist$index.js.js", "@ckeditor/ckeditor5-code-block/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-code-block$dist$index.js.js", "@ckeditor/ckeditor5-core/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-core$dist$index.js.js", "@ckeditor/ckeditor5-easy-image/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-easy-image$dist$index.js.js", "@ckeditor/ckeditor5-editor-balloon/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-editor-balloon$dist$index.js.js", "@ckeditor/ckeditor5-editor-classic/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-editor-classic$dist$index.js.js", "@ckeditor/ckeditor5-editor-decoupled/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-editor-decoupled$dist$index.js.js", "@ckeditor/ckeditor5-editor-inline/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-editor-inline$dist$index.js.js", "@ckeditor/ckeditor5-editor-multi-root/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-editor-multi-root$dist$index.js.js", "@ckeditor/ckeditor5-emoji/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-emoji$dist$index.js.js", "@ckeditor/ckeditor5-engine/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-engine$dist$index.js.js", "@ckeditor/ckeditor5-enter/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-enter$dist$index.js.js", "@ckeditor/ckeditor5-essentials/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-essentials$dist$index.js.js", "@ckeditor/ckeditor5-find-and-replace/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-find-and-replace$dist$index.js.js", "@ckeditor/ckeditor5-font/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-font$dist$index.js.js", "@ckeditor/ckeditor5-fullscreen/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-fullscreen$dist$index.js.js", "@ckeditor/ckeditor5-heading/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-heading$dist$index.js.js", "@ckeditor/ckeditor5-highlight/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-highlight$dist$index.js.js", "@ckeditor/ckeditor5-horizontal-line/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-horizontal-line$dist$index.js.js", "@ckeditor/ckeditor5-html-embed/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-html-embed$dist$index.js.js", "@ckeditor/ckeditor5-html-support/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-html-support$dist$index.js.js", "@ckeditor/ckeditor5-icons/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-icons$dist$index.js.js", "@ckeditor/ckeditor5-image/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-image$dist$index.js.js", "@ckeditor/ckeditor5-indent/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-indent$dist$index.js.js", "@ckeditor/ckeditor5-language/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-language$dist$index.js.js", "@ckeditor/ckeditor5-link/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-link$dist$index.js.js", "@ckeditor/ckeditor5-list/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-list$dist$index.js.js", "@ckeditor/ckeditor5-markdown-gfm/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-markdown-gfm$dist$index.js.js", "@ckeditor/ckeditor5-media-embed/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-media-embed$dist$index.js.js", "@ckeditor/ckeditor5-mention/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-mention$dist$index.js.js", "@ckeditor/ckeditor5-minimap/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-minimap$dist$index.js.js", "@ckeditor/ckeditor5-page-break/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-page-break$dist$index.js.js", "@ckeditor/ckeditor5-paragraph/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-paragraph$dist$index.js.js", "@ckeditor/ckeditor5-paste-from-office/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-paste-from-office$dist$index.js.js", "@ckeditor/ckeditor5-react": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-react.js", "@ckeditor/ckeditor5-remove-format/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-remove-format$dist$index.js.js", "@ckeditor/ckeditor5-restricted-editing/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-restricted-editing$dist$index.js.js", "@ckeditor/ckeditor5-select-all/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-select-all$dist$index.js.js", "@ckeditor/ckeditor5-show-blocks/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-show-blocks$dist$index.js.js", "@ckeditor/ckeditor5-source-editing/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-source-editing$dist$index.js.js", "@ckeditor/ckeditor5-special-characters/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-special-characters$dist$index.js.js", "@ckeditor/ckeditor5-style/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-style$dist$index.js.js", "@ckeditor/ckeditor5-table/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-table$dist$index.js.js", "@ckeditor/ckeditor5-typing/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-typing$dist$index.js.js", "@ckeditor/ckeditor5-ui/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-ui$dist$index.js.js", "@ckeditor/ckeditor5-undo/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-undo$dist$index.js.js", "@ckeditor/ckeditor5-upload/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-upload$dist$index.js.js", "@ckeditor/ckeditor5-utils/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-utils$dist$index.js.js", "@ckeditor/ckeditor5-watchdog/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-watchdog$dist$index.js.js", "@ckeditor/ckeditor5-widget/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-widget$dist$index.js.js", "@ckeditor/ckeditor5-word-count/dist/index.js": "/o/frontend-editor-ckeditor-web/__liferay__/exports/@ckeditor$ckeditor5-word-count$dist$index.js.js","react": "/o/frontend-js-react-web/__liferay__/exports/react.js", "react-16": "/o/frontend-js-react-web/__liferay__/exports/react-16.js", "react-18": "/o/frontend-js-react-web/__liferay__/exports/react-18.js", "react-dom": "/o/frontend-js-react-web/__liferay__/exports/react-dom.js", "react-dom/client": "/o/frontend-js-react-web/__liferay__/exports/react-dom$client.js", "react-dom-16": "/o/frontend-js-react-web/__liferay__/exports/react-dom-16.js", "react-dom-18": "/o/frontend-js-react-web/__liferay__/exports/react-dom-18.js", "react-dom-18/client": "/o/frontend-js-react-web/__liferay__/exports/react-dom-18$client.js","@liferay/oauth2-provider-web/client": "/o/oauth2-provider-web/__liferay__/client.js","@liferay/frontend-js-api": "/o/frontend-js-dependencies-web/__liferay__/exports/@liferay$js-api.js", "@liferay/frontend-js-api/data-set": "/o/frontend-js-dependencies-web/__liferay__/exports/@liferay$js-api$data-set.js","@clayui/alert": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$alert.js", "@clayui/autocomplete": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$autocomplete.js", "@clayui/badge": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$badge.js", "@clayui/breadcrumb": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$breadcrumb.js", "@clayui/button": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$button.js", "@clayui/card": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$card.js", "@clayui/color-picker": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$color-picker.js", "@clayui/core": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$core.js", "@clayui/data-provider": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$data-provider.js", "@clayui/date-picker": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$date-picker.js", "@clayui/drop-down": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$drop-down.js", "@clayui/empty-state": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$empty-state.js", "@clayui/form": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$form.js", "@clayui/icon": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$icon.js", "@clayui/label": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$label.js", "@clayui/layout": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$layout.js", "@clayui/link": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$link.js", "@clayui/list": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$list.js", "@clayui/loading-indicator": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$loading-indicator.js", "@clayui/localized-input": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$localized-input.js", "@clayui/management-toolbar": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$management-toolbar.js", "@clayui/modal": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$modal.js", "@clayui/multi-select": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$multi-select.js", "@clayui/multi-step-nav": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$multi-step-nav.js", "@clayui/nav": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$nav.js", "@clayui/navigation-bar": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$navigation-bar.js", "@clayui/pagination": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$pagination.js", "@clayui/pagination-bar": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$pagination-bar.js", "@clayui/panel": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$panel.js", "@clayui/popover": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$popover.js", "@clayui/progress-bar": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$progress-bar.js", "@clayui/provider": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$provider.js", "@clayui/shared": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$shared.js", "@clayui/slider": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$slider.js", "@clayui/sticker": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$sticker.js", "@clayui/table": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$table.js", "@clayui/tabs": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$tabs.js", "@clayui/time-picker": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$time-picker.js", "@clayui/toolbar": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$toolbar.js", "@clayui/tooltip": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$tooltip.js", "@clayui/upper-toolbar": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$upper-toolbar.js","@liferay/dynamic-data-mapping-form-field-type/api": "/o/dynamic-data-mapping-form-field-type/__liferay__/api.js","@liferay/fragment-impl/api": "/o/fragment-impl/__liferay__/api.js","@liferay/language/": "/o/js/language/pt_BR/"}, "scopes": {}}</script><link data-senna-track="temporary" href="https://www.tjsc.jus.br/web/servidor/dicas-de-gestao/-/asset_publisher/Vzr9I2D1M5Lh/content/comunicacao-nao-violenta" rel="canonical" />
+<link data-senna-track="temporary" href="https://www.tjsc.jus.br/web/servidor/dicas-de-gestao/-/asset_publisher/Vzr9I2D1M5Lh/content/comunicacao-nao-violenta" hreflang="pt-BR" rel="alternate" />
+<link data-senna-track="temporary" href="https://www.tjsc.jus.br/web/servidor/dicas-de-gestao/-/asset_publisher/Vzr9I2D1M5Lh/content/comunicacao-nao-violenta" hreflang="x-default" rel="alternate" />
+
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:site_name" content="Servidor">
+<meta property="og:title" content="Comunicação Não-violenta - Servidor - Poder Judiciário de Santa Catarina">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tjsc.jus.br/web/servidor/dicas-de-gestao/-/asset_publisher/Vzr9I2D1M5Lh/content/comunicacao-nao-violenta">
+
+
+<link href="/o/tjsc-theme/images/tjsc/favicons/favicon.ico?t=1612236470036" rel="apple-touch-icon" />
+<link href="/o/tjsc-theme/images/tjsc/favicons/favicon.ico?t=1612236470036" rel="icon" />
+
+
+
+<link class="lfr-css-file" data-senna-track="temporary" href="https://www.tjsc.jus.br/o/tjsc-theme/css/clay.css?browserId=other&amp;themeId=tjsctheme_WAR_tjsctheme&amp;minifierType=css&amp;languageId=pt_BR&amp;t=1794082754000" id="liferayAUICSS" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+	<link href="https://www.tjsc.jus.br/o/asset-publisher-web/css/main.(EsKg1TyevJA).css" rel="stylesheet" type="text/css"
+ data-senna-track="temporary" id="b1e04cc9" />
+<link href="https://www.tjsc.jus.br/o/journal-content-web/css/main.(73o5RwC7soM).css" rel="stylesheet" type="text/css"
+ data-senna-track="temporary" id="946126a3" />
+<link href="https://www.tjsc.jus.br/o/product-navigation-product-menu-web/css/main.(i$0IgPwR2kk).css" rel="stylesheet" type="text/css"
+ data-senna-track="temporary" id="ebb5c3aa" />
+<link href="https://www.tjsc.jus.br/o/product-navigation-user-personal-bar-web/css/main.(Mc2kn1EU56k).css" rel="stylesheet" type="text/css"
+ data-senna-track="temporary" id="aaca0d99" />
+<link href="https://www.tjsc.jus.br/o/site-navigation-menu-web/css/main.(wnU1o3f4AJ0).css" rel="stylesheet" type="text/css"
+ data-senna-track="temporary" id="f1a788fa" />
+
+
+
+
+
+
+
+
+<script data-senna-track="temporary" type="text/javascript">
+(function() {
+	function buildESMStub(contextPath, symbol) {
+		return (
+			(...args) => {
+				import(
+					Liferay.ThemeDisplay.getCDNHost() +
+					Liferay.ThemeDisplay.getPathContext() +
+						'/o/' +
+						contextPath +
+						'/__liferay__/index.js'
+				).then(
+					(exports) => exports[symbol](...args)
+				);
+			}
+		);
+	}
+
+	function defineReadOnlyGlobal(name, getValue) {
+		Object.defineProperty(
+			window,
+			name,
+			{
+				get: getValue,
+				set: (x) => {
+					if (x !== getValue()) {
+						console.error(`Global variable '${name}' is read-only`);
+					}
+				}
+			}
+		);
+	}
+
+	function isObject(item) {
+		return (item && typeof item === 'object' && !Array.isArray(item));
+	}
+
+	function merge(target, source) {
+		for (const key in source) {
+			if (isObject(source[key])) {
+				if (!target[key]) {
+					Object.assign(target, { [key]: {} });
+				}
+
+				merge(target[key], source[key]);
+			}
+			else {
+				Object.assign(target, { [key]: source[key] });
+			}
+		}
+	}
+
+	let __liferay = {
+AUI: {
+getCombine: () => true,
+getComboPath: () => '/combo/?browserId=other&minifierType=&languageId=pt_BR&t=1794082720241&',
+getDateFormat: () => '%d/%m/%Y',
+getEditorCKEditorPath: () => '/o/frontend-editor-ckeditor-web',
+getFilter: () => 'min',
+getFilterConfig: () => null,
+getJavaScriptRootPath: () => '/o/frontend-js-web',
+getPortletRootPath: () => '/html/portlet',
+getStaticResourceURLParams: () => '?browserId=other&minifierType=&languageId=pt_BR&t=1794082720241',
+},
+Browser: {
+acceptsGzip: () => false,
+getMajorVersion: () => '0',
+getRevision: () => '',
+getVersion: () => '',
+isAir: () => false,
+isChrome: () => false,
+isEdge: () => false,
+isFirefox: () => false,
+isGecko: () => false,
+isIe: () => false,
+isIphone: () => false,
+isLinux: () => false,
+isMac: () => false,
+isMobile: () => false,
+isMozilla: () => true,
+isOpera: () => false,
+isRtf: () => false,
+isSafari: () => false,
+isSun: () => false,
+isWebKit: () => false,
+isWindows: () => false,
+},
+Data: {
+ICONS_INLINE_SVG: true,
+NAV_SELECTOR: '#navigation',
+NAV_SELECTOR_MOBILE: '#navigationCollapse',
+isCustomizationView: () => false,
+notices: [
+],
+},
+FeatureFlags: {
+'LPD-11342': false,
+'LPD-23840': false,
+'LPD-36010': false,
+'LPD-36719': false,
+'LPD-39203': false,
+'LPD-40529': false,
+'LPD-48372': false,
+'LPD-48975': false,
+'LPD-78863': false,
+'LPS-157670': false,
+'LPS-172416': false,
+'LPS-183672': false,
+'LPS-186360': false,
+'LRAC-14771': false,
+'COMMERCE-13024': false,
+'COMMERCE-8087': false,
+'COMMERCE-8949': false,
+'LPD-10562': false,
+'LPD-10964': false,
+'LPD-11003': false,
+'LPD-11131': false,
+'LPD-11228': false,
+'LPD-11235': false,
+'LPD-11313': false,
+'LPD-11848': false,
+'LPD-13311': false,
+'LPD-13778': false,
+'LPD-17564': false,
+'LPD-19870': false,
+'LPD-19955': false,
+'LPD-20183': false,
+'LPD-20379': false,
+'LPD-20640': false,
+'LPD-21414': false,
+'LPD-29516': false,
+'LPD-31212': false,
+'LPD-31228': false,
+'LPD-31789': false,
+'LPD-32867': false,
+'LPD-34594': false,
+'LPD-35013': false,
+'LPD-35128': false,
+'LPD-35443': false,
+'LPD-36105': false,
+'LPD-38564': false,
+'LPD-38869': false,
+'LPD-39304': true,
+'LPD-39437': false,
+'LPD-40530': false,
+'LPD-40533': false,
+'LPD-40534': false,
+'LPD-40535': false,
+'LPD-42553': false,
+'LPD-43996': false,
+'LPD-44091': false,
+'LPD-44307': false,
+'LPD-44771': false,
+'LPD-45276': false,
+'LPD-47713': false,
+'LPD-48862': false,
+'LPD-51356': false,
+'LPD-56718': false,
+'LPD-57655': false,
+'LPD-58677': false,
+'LPD-60546': false,
+'LPD-62272': false,
+'LPD-63311': false,
+'LPD-63415': false,
+'LPD-63416': false,
+'LPD-6368': false,
+'LPD-65299': false,
+'LPD-65399': false,
+'LPD-66359': false,
+'LPD-66611': false,
+'LPD-74328': false,
+'LPD-74739': false,
+'LPD-75032': false,
+'LPD-75525': false,
+'LPD-75671': false,
+'LPD-7822': false,
+'LPD-82107': false,
+'LPD-84028': false,
+'LPS-122920': false,
+'LPS-135430': false,
+'LPS-153332': false,
+'LPS-153714': false,
+'LPS-153813': false,
+'LPS-155284': false,
+'LPS-159643': false,
+'LPS-164563': false,
+'LPS-165482': false,
+'LPS-169837': false,
+'LPS-170670': false,
+'LPS-174417': false,
+'LPS-174816': false,
+'LPS-176691': false,
+'LPS-177027': false,
+'LPS-178052': false,
+'LPS-178642': false,
+'LPS-180090': false,
+'LPS-185892': false,
+'LPS-186620': false,
+'LPS-193884': false,
+'LPS-196935': false,
+'LPS-197477': false,
+'LPS-197909': false,
+'LPS-198183': false,
+'LPS-200108': false,
+'LPS-202104': false,
+'LRAC-10757': false,
+'LRAC-15017': false,
+},
+Language: {
+	_cache:
+		window?.Liferay?.Language?._cache
+			? Liferay.Language._cache
+			: {},
+	available: {
+'pt_BR': 'português\x20\x28Brasil\x29',
+
+	},
+	direction: {
+'pt_BR': 'ltr',
+
+	},
+	get:
+		(key) => {
+			let value = Liferay.Language._cache[key];
+
+			if (value === undefined) {
+				value = key;
+			}
+
+			return value;
+		},
+},
+Portlet: {
+openModal: buildESMStub('frontend-js-components-web', 'openPortletModal'),
+openWindow: buildESMStub('frontend-js-components-web', 'openPortletWindow'),
+},
+PortletKeys: {
+DOCUMENT_LIBRARY: 'com_liferay_document_library_web_portlet_DLPortlet',
+DYNAMIC_DATA_MAPPING: 'com_liferay_dynamic_data_mapping_web_portlet_DDMPortlet',
+INSTANCE_SETTINGS: 'com_liferay_configuration_admin_web_portlet_InstanceSettingsPortlet',
+ITEM_SELECTOR: 'com_liferay_item_selector_web_portlet_ItemSelectorPortlet',
+},
+PropsValues: {
+JAVASCRIPT_SINGLE_PAGE_APPLICATION_TIMEOUT: 0,
+UPLOAD_SERVLET_REQUEST_IMPL_MAX_SIZE: 104857600,
+},
+ThemeDisplay: {
+getLayoutId: () => '450',
+getLayoutRelativeControlPanelURL: () => '/group/servidor/~/control_panel/manage?p_p_id=com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh',
+getLayoutRelativeURL: () => '/web/servidor/dicas-de-gestao',
+getLayoutURL: () => 'https://www.tjsc.jus.br/web/servidor/dicas-de-gestao',
+getParentLayoutId: () => '274',
+getPathFriendlyURLPublic: () => '/web',
+isControlPanel: () => false,
+isPrivateLayout: () => false,
+isVirtualLayout: () => false,
+getBCP47LanguageId: () => 'pt-BR',
+getCanonicalURL: () => 'https\x3a\x2f\x2fwww\x2etjsc\x2ejus\x2ebr\x2fweb\x2fservidor\x2fdicas-de-gestao\x2f-\x2fasset_publisher\x2fVzr9I2D1M5Lh\x2fcontent\x2fcomunicacao-nao-violenta',
+getCDNBaseURL: () => 'https://www.tjsc.jus.br',
+getCDNDynamicResourcesHost: () => '',
+getCDNHost: () => '',
+getCompanyGroupId: () => '10193',
+getCompanyId: () => '10155',
+getDefaultLanguageId: () => 'pt_BR',
+getDoAsUserIdEncoded: () => '',
+getLanguageId: () => 'pt_BR',
+getParentGroupId: () => '37870',
+getParentSiteGroupId: () => '0',
+getPathContext: () => '',
+getPathImage: () => '/image',
+getPathJavaScript: () => '/o/frontend-js-web',
+getPathMain: () => '/c',
+getPathThemeImages: () => 'https://www.tjsc.jus.br/o/tjsc-theme/images',
+getPathThemeRoot: () => '/o/tjsc-theme',
+getPlid: () => '4125301',
+getPortalURL: () => 'https://www.tjsc.jus.br',
+getRealUserId: () => '10159',
+getRemoteAddr: () => '10.18.14.44',
+getRemoteHost: () => '10.18.14.44',
+getScopeGroupId: () => '37870',
+getScopeGroupIdOrLiveGroupId: () => '37870',
+getSessionId: () => '',
+getSiteAdminURL: () => 'https://www.tjsc.jus.br/group/servidor/~/control_panel/manage?p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view',
+getSiteGroupId: () => '37870',
+getTimeZone: () => 'America/Sao_Paulo',
+getURLControlPanel: () => '/group/control_panel?refererPlid=4125301',
+getURLHome: () => 'https\x3a\x2f\x2fwww\x2etjsc\x2ejus\x2ebr\x2fweb\x2ftjsc\x2finicio',
+getUserEmailAddress: () => '',
+getUserId: () => '10159',
+getUserName: () => '',
+isAddSessionIdToURL: () => false,
+isImpersonated: () => false,
+isSignedIn: () => false,
+isStagedPortlet: () => true,
+isStateExclusive: () => false,
+isStateMaximized: () => false,
+isStatePopUp: () => false,
+},
+Util: {
+Window: {
+	_map: {},
+	getById: (id) => Liferay.Util.Window._map[id],
+},
+openAlertModal: buildESMStub('frontend-js-components-web', 'openAlertModal'),
+openConfirmModal: buildESMStub('frontend-js-components-web', 'openConfirmModal'),
+openModal: buildESMStub('frontend-js-components-web', 'openModal'),
+openSelectionModal: buildESMStub('frontend-js-components-web', 'openSelectionModal'),
+openSimpleInputModal: buildESMStub('frontend-js-components-web', 'openSimpleInputModal'),
+openToast: buildESMStub('frontend-js-components-web', 'openToast'),
+},
+authToken: 'bpnMMN5b',
+currentURL: '\x2fweb\x2fservidor\x2fdicas-de-gestao\x2f-\x2fasset_publisher\x2fVzr9I2D1M5Lh\x2fcontent\x2fcomunicacao-nao-violenta',
+currentURLEncoded: '\x252Fweb\x252Fservidor\x252Fdicas-de-gestao\x252F-\x252Fasset_publisher\x252FVzr9I2D1M5Lh\x252Fcontent\x252Fcomunicacao-nao-violenta',
+
+	};
+
+	if (window.Liferay) {
+		merge(window.Liferay, __liferay);
+	}
+	else {
+		defineReadOnlyGlobal('Liferay', () => __liferay);
+		defineReadOnlyGlobal('themeDisplay', () => window.Liferay.ThemeDisplay);
+	}
+})();
+</script>
+<script data-senna-track="permanent" src="/o/portal-url-builder-impl/Liferay.js" type="text/javascript"></script><script data-senna-track="permanent" src="/combo?browserId=other&minifierType=js&languageId=pt_BR&t=1794082720241&/o/frontend-js-aui-web/aui/aui/aui-min.js&/o/frontend-js-aui-web/liferay/modules.js&/o/frontend-js-aui-web/liferay/aui_sandbox.js&/o/frontend-js-aui-web/aui/attribute-base/attribute-base-min.js&/o/frontend-js-aui-web/aui/attribute-complex/attribute-complex-min.js&/o/frontend-js-aui-web/aui/attribute-core/attribute-core-min.js&/o/frontend-js-aui-web/aui/attribute-observable/attribute-observable-min.js&/o/frontend-js-aui-web/aui/attribute-extras/attribute-extras-min.js&/o/frontend-js-aui-web/aui/event-custom-base/event-custom-base-min.js&/o/frontend-js-aui-web/aui/event-custom-complex/event-custom-complex-min.js&/o/frontend-js-aui-web/aui/oop/oop-min.js&/o/frontend-js-aui-web/aui/aui-base-lang/aui-base-lang-min.js&/o/frontend-js-aui-web/liferay/dependency.js" type="text/javascript"></script>
+<script data-senna-track="permanent" src="/o/frontend-js-web/Liferay.js" type="text/javascript"></script>
+<script data-senna-track="permanent" type="module">import '@liferay/language/frontend-js-web/all.js';</script>
+<script data-senna-track="temporary">Liferay.Icons = Liferay.Icons || {};Liferay.Icons.controlPanelSpritemap = 'https://www.tjsc.jus.br/o/admin-theme/images/clay/icons.svg'; Liferay.Icons.spritemap = 'https://www.tjsc.jus.br/o/tjsc-theme/images/clay/icons.svg';</script>
+<script data-senna-track="permanent" type="text/javascript">window.Liferay.CSP = {nonce: ''};</script>
+<script data-senna-track="temporary" type="text/javascript">try {var MODULE_MAIN='staging-processes-web@5.0.72/index';var MODULE_PATH='/o/staging-processes-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			stagingprocessesweb: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'liferay-staging-processes-export-import': {
+						path: 'main.js',
+						requires: [
+							'aui-datatype',
+							'aui-dialog-iframe-deprecated',
+							'aui-modal',
+							'aui-parse-content',
+							'aui-toggler',
+							'liferay-portlet-base',
+							'liferay-util-window',
+						],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='exportimport-web@5.0.118/index';var MODULE_PATH='/o/exportimport-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			exportimportweb: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'liferay-export-import-export-import': {
+						path: 'main.js',
+						requires: [
+							'aui-datatype',
+							'aui-dialog-iframe-deprecated',
+							'aui-modal',
+							'aui-parse-content',
+							'aui-toggler',
+							'liferay-portlet-base',
+							'liferay-util-window',
+						],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='frontend-editor-ckeditor-web@5.0.129/index';var MODULE_PATH='/o/frontend-editor-ckeditor-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			editor: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'inline-editor-ckeditor': {
+						path: 'main.js',
+						requires: [
+							'array-invoke',
+							'liferay-inline-editor-base',
+							'node-event-simulate',
+							'overlay',
+							'yui-later',
+						],
+					},
+					'liferay-inline-editor-base': {
+						path: 'inline_editor_base.js',
+						requires: ['aui-base', 'aui-overlay-base-deprecated'],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='dynamic-data-mapping-web@5.0.126/index';var MODULE_PATH='/o/dynamic-data-mapping-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	const LiferayAUI = Liferay.AUI;
+
+	AUI().applyConfig({
+		groups: {
+			ddm: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: LiferayAUI.getFilterConfig(),
+				modules: {
+					'liferay-ddm-form': {
+						path: 'ddm_form.js',
+						requires: [
+							'aui-base',
+							'aui-datatable',
+							'aui-datatype',
+							'aui-image-viewer',
+							'aui-parse-content',
+							'aui-set',
+							'aui-sortable-list',
+							'json',
+							'liferay-form',
+							'liferay-map-base',
+							'liferay-translation-manager',
+							'liferay-util-window',
+						],
+					},
+					'liferay-portlet-dynamic-data-mapping': {
+						condition: {
+							trigger: 'liferay-document-library',
+						},
+						path: 'main.js',
+						requires: [
+							'arraysort',
+							'aui-form-builder-deprecated',
+							'aui-form-validator',
+							'aui-map',
+							'aui-text-unicode',
+							'json',
+							'liferay-menu',
+							'liferay-translation-manager',
+							'liferay-util-window',
+							'text',
+						],
+					},
+					'liferay-portlet-dynamic-data-mapping-custom-fields': {
+						condition: {
+							trigger: 'liferay-document-library',
+						},
+						path: 'custom_fields.js',
+						requires: ['liferay-portlet-dynamic-data-mapping'],
+					},
+					'liferay-translation-manager': {
+						path: 'translation_manager.js',
+						requires: ['aui-base'],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='site-navigation-menu-web@6.0.82/index';var MODULE_PATH='/o/site-navigation-menu-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			navigationmenuweb: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'liferay-navigation-interaction': {
+						path: 'navigation_interaction.js',
+						plugins: {
+							'liferay-navigation-interaction-touch': {
+								condition: {
+									name: 'liferay-navigation-interaction-touch',
+									test(A) {
+										return A.UA.touchEnabled;
+									},
+									trigger: 'liferay-navigation-interaction',
+								},
+							},
+						},
+						requires: [
+							'aui-base',
+							'aui-component',
+							'event-mouseenter',
+							'node-focusmanager',
+							'plugin',
+						],
+					},
+					'liferay-navigation-interaction-touch': {
+						path: 'navigation_interaction_touch.js',
+						requires: [
+							'event-tap',
+							'event-touch',
+							'liferay-navigation-interaction',
+						],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='@liferay/image-uploader-web@5.0.60/index';var MODULE_PATH='/o/image-uploader-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			imageuploaderweb: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'liferay-logo-editor': {
+						path: 'logo_editor.js',
+						requires: ['aui-image-cropper', 'liferay-portlet-base'],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='portal-workflow-kaleo-designer-web@5.0.165/index';var MODULE_PATH='/o/portal-workflow-kaleo-designer-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			'kaleo-designer': {
+				base: MODULE_PATH + '/designer/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'liferay-kaleo-designer-autocomplete-util': {
+						path: 'autocomplete_util.js',
+						requires: ['autocomplete', 'autocomplete-highlighters'],
+					},
+					'liferay-kaleo-designer-definition-diagram-controller': {
+						path: 'definition_diagram_controller.js',
+						requires: [
+							'liferay-kaleo-designer-field-normalizer',
+							'liferay-kaleo-designer-utils',
+						],
+					},
+					'liferay-kaleo-designer-dialogs': {
+						path: 'dialogs.js',
+						requires: ['liferay-util-window'],
+					},
+					'liferay-kaleo-designer-editors': {
+						path: 'editors.js',
+						requires: [
+							'aui-ace-editor',
+							'aui-ace-editor-mode-xml',
+							'aui-base',
+							'aui-datatype',
+							'aui-node',
+							'liferay-kaleo-designer-autocomplete-util',
+							'liferay-kaleo-designer-utils',
+						],
+					},
+					'liferay-kaleo-designer-field-normalizer': {
+						path: 'field_normalizer.js',
+						requires: ['liferay-kaleo-designer-remote-services'],
+					},
+					'liferay-kaleo-designer-nodes': {
+						path: 'nodes.js',
+						requires: [
+							'aui-datatable',
+							'aui-datatype',
+							'aui-diagram-builder',
+							'liferay-kaleo-designer-editors',
+							'liferay-kaleo-designer-utils',
+						],
+					},
+					'liferay-kaleo-designer-remote-services': {
+						path: 'remote_services.js',
+						requires: ['aui-io'],
+					},
+					'liferay-kaleo-designer-templates': {
+						path: 'templates.js',
+						requires: ['aui-tpl-snippets-deprecated'],
+					},
+					'liferay-kaleo-designer-utils': {
+						path: 'utils.js',
+						requires: [],
+					},
+					'liferay-kaleo-designer-xml-definition': {
+						path: 'xml_definition.js',
+						requires: [
+							'aui-base',
+							'aui-component',
+							'dataschema-xml',
+							'datatype-xml',
+						],
+					},
+					'liferay-kaleo-designer-xml-definition-serializer': {
+						path: 'xml_definition_serializer.js',
+						requires: ['escape', 'liferay-kaleo-designer-xml-util'],
+					},
+					'liferay-kaleo-designer-xml-util': {
+						path: 'xml_util.js',
+						requires: ['aui-base'],
+					},
+					'liferay-portlet-kaleo-designer': {
+						path: 'main.js',
+						requires: [
+							'aui-ace-editor',
+							'aui-ace-editor-mode-xml',
+							'aui-tpl-snippets-deprecated',
+							'dataschema-xml',
+							'datasource',
+							'datatype-xml',
+							'event-valuechange',
+							'io-form',
+							'liferay-kaleo-designer-autocomplete-util',
+							'liferay-kaleo-designer-editors',
+							'liferay-kaleo-designer-nodes',
+							'liferay-kaleo-designer-remote-services',
+							'liferay-kaleo-designer-utils',
+							'liferay-kaleo-designer-xml-util',
+							'liferay-util-window',
+						],
+					},
+				},
+				root: MODULE_PATH + '/designer/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='@liferay/frontend-js-react-web@5.0.73/index';var MODULE_PATH='/o/frontend-js-react-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			react: {
+
+				// eslint-disable-next-line
+				mainModule: MODULE_MAIN,
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='portal-search-web@6.0.169/index';var MODULE_PATH='/o/portal-search-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			search: {
+				base: MODULE_PATH + '/js/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'liferay-search-custom-range-facet': {
+						path: 'custom_range_facet.js',
+						requires: ['aui-form-validator'],
+					},
+				},
+				root: MODULE_PATH + '/js/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='@liferay/frontend-js-state-web@1.0.35/index';var MODULE_PATH='/o/frontend-js-state-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			state: {
+
+				// eslint-disable-next-line
+				mainModule: MODULE_MAIN,
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='contacts-web@5.0.71/index';var MODULE_PATH='/o/contacts-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			contactscenter: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'liferay-contacts-center': {
+						path: 'main.js',
+						requires: [
+							'aui-io-plugin-deprecated',
+							'aui-toolbar',
+							'autocomplete-base',
+							'datasource-io',
+							'json-parse',
+							'liferay-portlet-base',
+							'liferay-util-window',
+						],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='calendar-web@5.0.120/index';var MODULE_PATH='/o/calendar-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			calendar: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'liferay-calendar-a11y': {
+						path: 'calendar_a11y.js',
+						requires: ['calendar'],
+					},
+					'liferay-calendar-container': {
+						path: 'calendar_container.js',
+						requires: [
+							'aui-alert',
+							'aui-base',
+							'aui-component',
+							'liferay-portlet-base',
+						],
+					},
+					'liferay-calendar-date-picker-sanitizer': {
+						path: 'date_picker_sanitizer.js',
+						requires: ['aui-base'],
+					},
+					'liferay-calendar-interval-selector': {
+						path: 'interval_selector.js',
+						requires: ['aui-base', 'liferay-portlet-base'],
+					},
+					'liferay-calendar-interval-selector-scheduler-event-link': {
+						path: 'interval_selector_scheduler_event_link.js',
+						requires: ['aui-base', 'liferay-portlet-base'],
+					},
+					'liferay-calendar-list': {
+						path: 'calendar_list.js',
+						requires: [
+							'aui-template-deprecated',
+							'liferay-scheduler',
+						],
+					},
+					'liferay-calendar-message-util': {
+						path: 'message_util.js',
+						requires: ['liferay-util-window'],
+					},
+					'liferay-calendar-recurrence-converter': {
+						path: 'recurrence_converter.js',
+						requires: [],
+					},
+					'liferay-calendar-recurrence-dialog': {
+						path: 'recurrence.js',
+						requires: [
+							'aui-base',
+							'liferay-calendar-recurrence-util',
+						],
+					},
+					'liferay-calendar-recurrence-util': {
+						path: 'recurrence_util.js',
+						requires: ['aui-base', 'liferay-util-window'],
+					},
+					'liferay-calendar-reminders': {
+						path: 'calendar_reminders.js',
+						requires: ['aui-base'],
+					},
+					'liferay-calendar-remote-services': {
+						path: 'remote_services.js',
+						requires: [
+							'aui-base',
+							'aui-component',
+							'liferay-calendar-util',
+							'liferay-portlet-base',
+						],
+					},
+					'liferay-calendar-session-listener': {
+						path: 'session_listener.js',
+						requires: ['aui-base', 'liferay-scheduler'],
+					},
+					'liferay-calendar-simple-color-picker': {
+						path: 'simple_color_picker.js',
+						requires: ['aui-base', 'aui-template-deprecated'],
+					},
+					'liferay-calendar-simple-menu': {
+						path: 'simple_menu.js',
+						requires: [
+							'aui-base',
+							'aui-template-deprecated',
+							'event-outside',
+							'event-touch',
+							'widget-modality',
+							'widget-position',
+							'widget-position-align',
+							'widget-position-constrain',
+							'widget-stack',
+							'widget-stdmod',
+						],
+					},
+					'liferay-calendar-util': {
+						path: 'calendar_util.js',
+						requires: [
+							'aui-datatype',
+							'aui-io',
+							'aui-scheduler',
+							'aui-toolbar',
+							'autocomplete',
+							'autocomplete-highlighters',
+						],
+					},
+					'liferay-scheduler': {
+						path: 'scheduler.js',
+						requires: [
+							'async-queue',
+							'aui-datatype',
+							'aui-scheduler',
+							'dd-plugin',
+							'liferay-calendar-a11y',
+							'liferay-calendar-message-util',
+							'liferay-calendar-recurrence-converter',
+							'liferay-calendar-recurrence-util',
+							'liferay-calendar-util',
+							'liferay-scheduler-event-recorder',
+							'liferay-scheduler-models',
+							'promise',
+							'resize-plugin',
+						],
+					},
+					'liferay-scheduler-event-recorder': {
+						path: 'scheduler_event_recorder.js',
+						requires: [
+							'dd-plugin',
+							'liferay-calendar-util',
+							'resize-plugin',
+						],
+					},
+					'liferay-scheduler-models': {
+						path: 'scheduler_models.js',
+						requires: [
+							'aui-datatype',
+							'dd-plugin',
+							'liferay-calendar-util',
+						],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='@liferay/layout-js-components-web@1.0.53/index';var MODULE_PATH='/o/layout-js-components-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			layout: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'liferay-layout': {
+						path: 'layout.js',
+					},
+					'liferay-layout-column': {
+						path: 'layout_column.js',
+						requires: ['aui-sortable-layout', 'dd'],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='frontend-editor-alloyeditor-web@5.0.66/index';var MODULE_PATH='/o/frontend-editor-alloyeditor-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			alloyeditor: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'liferay-alloy-editor': {
+						path: 'alloyeditor.js',
+						requires: [
+							'aui-component',
+							'liferay-portlet-base',
+							'timers',
+						],
+					},
+					'liferay-alloy-editor-source': {
+						path: 'alloyeditor_source.js',
+						requires: [
+							'aui-debounce',
+							'liferay-fullscreen-source-editor',
+							'liferay-source-editor',
+							'plugin',
+						],
+					},
+					'liferay-fullscreen-source-editor': {
+						path: 'fullscreen_source_editor.js',
+						requires: ['liferay-source-editor'],
+					},
+					'liferay-source-editor': {
+						path: 'source_editor.js',
+						requires: ['aui-ace-editor'],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='@liferay/document-library-web@6.0.220/index';var MODULE_PATH='/o/document-library-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			dl: {
+				base: MODULE_PATH + '/js/legacy/',
+				combine: Liferay.AUI.getCombine(),
+				filter: Liferay.AUI.getFilterConfig(),
+				modules: {
+					'document-library-upload-component': {
+						path: 'DocumentLibraryUpload.js',
+						requires: [
+							'aui-component',
+							'aui-data-set-deprecated',
+							'aui-overlay-manager-deprecated',
+							'aui-overlay-mask-deprecated',
+							'aui-parse-content',
+							'aui-progressbar',
+							'aui-template-deprecated',
+							'liferay-search-container',
+							'querystring-parse-simple',
+							'uploader',
+						],
+					},
+				},
+				root: MODULE_PATH + '/js/legacy/',
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}try {var MODULE_MAIN='frontend-js-components-web@2.0.100/index';var MODULE_PATH='/o/frontend-js-components-web';/**
+ * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+(function () {
+	AUI().applyConfig({
+		groups: {
+			components: {
+
+				// eslint-disable-next-line
+				mainModule: MODULE_MAIN,
+			},
+		},
+	});
+})();
+} catch(error) {console.error(error);}</script>
+
+
+
+
+<script type="text/javascript" data-senna-track="temporary">
+	// <![CDATA[
+		
+			
+				
+				
+			
+		
+
+		
+	// ]]>
+</script>
+
+
+
+
+
+	
+		
+
+			
+
+			
+		
+		
+		
+	
+
+
+
+	
+		
+		
+		
+
+			
+
+			
+		
+	
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link class="lfr-css-file" data-senna-track="temporary" href="https://www.tjsc.jus.br/o/tjsc-theme/css/main.css?browserId=other&amp;themeId=tjsctheme_WAR_tjsctheme&amp;minifierType=css&amp;languageId=pt_BR&amp;t=1794082754000" id="liferayThemeCSS" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+	<style data-senna-track="temporary" type="text/css">
+
+		
+
+			
+
+		
+
+			
+
+		
+
+			
+
+				
+
+					
+
+#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_iJ9S1sfOY84r_ > .portlet > .portlet-content {
+
+}
+
+
+
+
+				
+
+			
+
+		
+
+			
+
+		
+
+			
+
+		
+
+			
+
+		
+
+			
+
+				
+
+					
+
+#p_p_id_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_KCrlB0k0kE4T_ > .portlet > .portlet-content {
+
+}
+
+
+
+
+				
+
+			
+
+		
+
+	</style>
+
+
+<style data-senna-track="temporary" type="text/css">
+</style>
+<link data-senna-track="permanent" href="https://www.tjsc.jus.br/combo?browserId=other&minifierType=css&languageId=pt_BR&t=1794082726323&/o/tjsc-theme-contributor/css/tjsc-theme-contributor.css" rel="stylesheet" type = "text/css" />
+<script data-senna-track="permanent" src="https://www.tjsc.jus.br/combo?browserId=other&minifierType=js&languageId=pt_BR&t=1794082726323&/o/tjsc-theme-contributor/js/tjsc-theme-contributor.js" type = "text/javascript"></script>
+<link data-senna-track="permanent" href="/o/frontend-js-aui-web/alloy_ui.css" rel="stylesheet">
+<script type="module">
+import {init} from '/o/frontend-js-spa-web/__liferay__/index.js';
+{
+init({"navigationExceptionSelectors":":not([data-cke-saved-href]):not([data-cke-saved-href]):not([target=\"_blank\"]):not([data-senna-off]):not([data-resource-href])","cacheExpirationTime":-1,"clearScreensCache":true,"portletsBlacklist":["com_liferay_login_web_portlet_CreateAccountPortlet","com_liferay_nested_portlets_web_portlet_NestedPortletsPortlet","com_liferay_site_navigation_directory_web_portlet_SitesDirectoryPortlet","com_liferay_questions_web_internal_portlet_QuestionsPortlet","com_liferay_account_admin_web_internal_portlet_AccountUsersRegistrationPortlet","com_liferay_login_web_portlet_ForgotPasswordPortlet","com_liferay_site_cms_site_initializer_internal_portlet_CMSObjectEntryPortlet","com_liferay_portal_language_override_web_internal_portlet_PLOPortlet","com_liferay_digital_sales_room_web_internal_portlet_DigitalSalesRoomInviteMemberPortlet","com_liferay_login_web_portlet_LoginPortlet","com_liferay_login_web_portlet_UpdatePasswordPortlet","com_liferay_login_web_portlet_FastLoginPortlet"],"excludedTargetPortlets":["com_liferay_users_admin_web_portlet_UsersAdminPortlet","com_liferay_server_admin_web_portlet_ServerAdminPortlet"],"validStatusCodes":[221,490,494,499,491,496,492,493,495,220],"debugEnabled":false,"loginRedirect":"","excludedPaths":["/c/document_library","/documents","/image","/o/cms/download-folder","/o/cms/translations"],"preloadCSS":false,"userNotification":{"message":"Parece que isso está demorando mais do que o esperado.","title":"Opa","timeout":30000},"requestTimeout":0});
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" data-senna-track="temporary">
+	if (window.Analytics) {
+		window._com_liferay_document_library_analytics_isViewFileEntry = false;
+	}
+</script>
+
+<script type="text/javascript">
+Liferay.on(
+	'ddmFieldBlur', function(event) {
+		if (window.Analytics) {
+			Analytics.send(
+				'fieldBlurred',
+				'Form',
+				{
+					fieldName: event.fieldName,
+					focusDuration: event.focusDuration,
+					formId: event.formId,
+					formPageTitle: event.formPageTitle,
+					page: event.page,
+					title: event.title
+				}
+			);
+		}
+	}
+);
+
+Liferay.on(
+	'ddmFieldFocus', function(event) {
+		if (window.Analytics) {
+			Analytics.send(
+				'fieldFocused',
+				'Form',
+				{
+					fieldName: event.fieldName,
+					formId: event.formId,
+					formPageTitle: event.formPageTitle,
+					page: event.page,
+					title:event.title
+				}
+			);
+		}
+	}
+);
+
+Liferay.on(
+	'ddmFormPageShow', function(event) {
+		if (window.Analytics) {
+			Analytics.send(
+				'pageViewed',
+				'Form',
+				{
+					formId: event.formId,
+					formPageTitle: event.formPageTitle,
+					page: event.page,
+					title: event.title
+				}
+			);
+		}
+	}
+);
+
+Liferay.on(
+	'ddmFormSubmit', function(event) {
+		if (window.Analytics) {
+			Analytics.send(
+				'formSubmitted',
+				'Form',
+				{
+					formId: event.formId,
+					title: event.title
+				}
+			);
+		}
+	}
+);
+
+Liferay.on(
+	'ddmFormView', function(event) {
+		if (window.Analytics) {
+			Analytics.send(
+				'formViewed',
+				'Form',
+				{
+					formId: event.formId,
+					title: event.title
+				}
+			);
+		}
+	}
+);
+
+</script><script>
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/o/tjsc-theme/images/tjsc/favicons/apple-touch-icon.png?t=1612236470036">
+<link rel="icon" type="image/png" sizes="32x32" href="/o/tjsc-theme/images/tjsc/favicons/favicon-32x32.png?t=1612236470036">
+<link rel="icon" type="image/png" sizes="16x16" href="/o/tjsc-theme/images/tjsc/favicons/favicon-16x16.png?t=1612236470036">
+<link rel="manifest" href="/o/tjsc-theme/images/tjsc/favicons/site.webmanifest?t=1612236470036">
+<link rel="mask-icon" href="/o/tjsc-theme/images/tjsc/favicons/safari-pinned-tab.svg?t=1612236470036" color="#333333">
+<link rel="shortcut icon" href="/o/tjsc-theme/images/tjsc/favicons/favicon.ico?t=1612236470036">
+<meta name="apple-mobile-web-app-title" content="PJSC">
+<meta name="application-name" content="PJSC">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-config" content="/o/tjsc-theme/images/tjsc/favicons/browserconfig.xml?t=1612236470036">
+<meta name="theme-color" content="#ffffff">
+
+<script src="/o/tjsc-theme/js/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="/o/tjsc-theme/js/libs/bootstrap.bundle/4.4.1/bootstrap.bundle.min.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M10DPR56QV"></script>
+
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-M10DPR56QV');
+</script>
+
+<script src="https://cdn.rybena.com.br/dom/master/latest/rybena.js?renderTimeout=300&positionBar=right&positionPlayer=right&positionPlayerMobile=right"></script>
+
+<script>
+	AUI().ready(function(){
+		RybenaDOM.prototype.tjscPersistVisualPerspective = (function(){
+			return function(){
+				RybenaContrastLight.getInstance().factory.dom.addEventListener("click", () => {
+					if (!RybenaContrastLight.getInstance().factory.tutorial.isActive) {
+						tjsc.localStorage.addObj("tjsc-rybena-visual-perspective", {
+							"contrast": (RybenaContrastLight.getInstance().factory.isActive ? "light" : ""),
+							"saturation": ""
+						});
+					}
+				});
+
+				RybenaContrastDark.getInstance().factory.dom.addEventListener("click", () => {
+					if (!RybenaContrastDark.getInstance().factory.tutorial.isActive) {
+						tjsc.localStorage.addObj("tjsc-rybena-visual-perspective", {
+							"contrast": (RybenaContrastDark.getInstance().factory.isActive ? "dark" : ""),
+							"saturation": ""
+						});
+					}
+				});
+
+				RybenaContrastInverted.getInstance().factory.dom.addEventListener("click", () => {
+					if (!RybenaContrastInverted.getInstance().factory.tutorial.isActive) {
+						tjsc.localStorage.addObj("tjsc-rybena-visual-perspective", {
+							"contrast": (RybenaContrastInverted.getInstance().factory.isActive ? "inverted" : ""),
+							"saturation": ""
+						});
+					}
+				});
+
+				RybenaHighSaturation.getInstance().factory.dom.addEventListener("click", () => {
+					if (!RybenaHighSaturation.getInstance().factory.tutorial.isActive) {
+						tjsc.localStorage.addObj("tjsc-rybena-visual-perspective", {
+							"contrast": "",
+							"saturation": (RybenaHighSaturation.getInstance().factory.isActive ? "high" : "")
+						});
+					}
+				});
+
+				RybenaLowSaturation.getInstance().factory.dom.addEventListener("click", () => {
+					if (!RybenaLowSaturation.getInstance().factory.tutorial.isActive) {
+						tjsc.localStorage.addObj("tjsc-rybena-visual-perspective", {
+							"contrast": "",
+							"saturation": (RybenaLowSaturation.getInstance().factory.isActive ? "low" : "")
+						});
+					}
+				});
+
+				RybenaMonocromatic.getInstance().factory.dom.addEventListener("click", () => {
+					if (!RybenaMonocromatic.getInstance().factory.tutorial.isActive) {
+						tjsc.localStorage.addObj("tjsc-rybena-visual-perspective", {
+							"contrast": "",
+							"saturation": (RybenaMonocromatic.getInstance().factory.isActive ? "monocromatic" : "")
+						});
+					}
+				});
+			}
+		})();
+
+		RybenaDOM.prototype.tjscStartVisualPerspective = (function(){
+			return function(){
+				var tjscVisualPerspective = tjsc.localStorage.getObj("tjsc-rybena-visual-perspective");
+
+				if (tjscVisualPerspective && (tjscVisualPerspective["contrast"] || tjscVisualPerspective["saturation"])) {
+					if (typeof(RybenaApi) !== "undefined") {
+						if (tjscVisualPerspective["contrast"] == "light") {
+							RybenaApi.getInstance().startLightContrast();
+						} else if (tjscVisualPerspective["contrast"] == "dark") {
+							RybenaApi.getInstance().startDarkContrast();
+						} else if (tjscVisualPerspective["contrast"] == "inverted") {
+							RybenaApi.getInstance().startInvertedContrast();
+						} else if (tjscVisualPerspective["saturation"] == "high") {
+							RybenaApi.getInstance().startHighSaturation();
+						} else if (tjscVisualPerspective["saturation"] == "low") {
+							RybenaApi.getInstance().startLowSaturation();
+						} else if (tjscVisualPerspective["saturation"] == "monocromatic") {
+							RybenaApi.getInstance().startNoSaturation();
+						}
+					} else {
+						this.getRybenaScripts("hidden");
+					}
+				}
+			}
+		})();
+
+		RybenaDOM.prototype.getRybenaScripts = (function(t){
+			let originalFn = RybenaDOM.prototype.getRybenaScripts;
+
+			return function(t){
+				originalFn.apply(this, arguments);
+
+				var tjscScriptReady = function(e){
+					if (t == "hidden") {
+						// Forces the "player close", because it starts translation automatically after 10s
+						RybenaApi.getInstance().closePlayer();
+					}
+
+					e.tjscPersistVisualPerspective();
+					e.tjscStartVisualPerspective();
+				};
+
+				this.script.addEventListener("load", () => {
+					tjscScriptReady(this);
+				});
+
+				this.script.addEventListener("readystatechange", () => {
+					if ("complete" === this.readyState) {
+						tjscScriptReady(this);
+					}
+				});
+			};
+		})();
+
+		RybenaDOM.getInstance().tjscStartVisualPerspective();
+	});
+
+	Liferay.on("endNavigate", function(event){
+		RybenaDOM.getInstance().tjscStartVisualPerspective();
+	});
+</script>	</head>
+
+	<body class="other controls-visible  yui3-skin-sam signed-out public-page site">
+<noscript>
+	<div class="tjsc-theme-alert alert alert-danger rounded-0" role="alert">
+		<strong>ATENÇÃO</strong>: Seu navegador não possui suporte para JavaScript ou então está desabilitado, isto impede o funcionamento correto da página.
+	</div>
+</noscript>
+
+<nav id="cnew_quickAccessNav" class="quick-access-nav w-100 tjsc-style-background-color-palette-primary-dark-gray tjsc-style-color-palette-secondary-white text-center" aria-label="Links rápidos">
+	<a accesskey="1" class="d-block m-1 p-2 sr-only sr-only-focusable font-weight-normal" href="#main-content"><span class="label label-light mr-2">1</span>Ir para o conteúdo</a>
+	<a accesskey="2" class="d-none m-1 p-2 sr-only sr-only-focusable font-weight-normal" href="#"><span class="label label-light mr-2">2</span>Ir para a ferramenta de acessibilidade - Rybená</a>
+</nav>
+
+<div id="tjsc-cookie-policy" class="d-none fixed-bottom tjsc-style-background-color-palette-primary-light-gray border-top tjsc-style-border-color-palette-primary-dark-gray">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="d-sm-flex align-items-center">
+					<div class="px-0 px-sm-3 py-3 tjsc-style-text-link">
+						O TJSC utiliza cookies para melhorar sua experiência de navegação. Ao utilizar nossos serviços, você concorda com esse procedimento. Para mais informações leia nossa <a href="/politica-de-privacidade-e-protecao-de-dados-pessoais">Política de Privacidade e Proteção de Dados Pessoais</a>.
+					</div>
+					<div class="px-0 px-sm-3 pt-0 pt-sm-3 pb-3 text-center">
+						<button class="btn btn-sm btn-primary" type="button" onclick="javascript: tjsc.cookiePolicy.agree();"><strong>Ciente</strong></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex flex-column min-vh-100">
+
+	<div class="d-flex flex-column flex-fill position-relative" id="wrapper">
+
+
+
+<header id="tjsc-header">
+	<style>
+		@media (max-width: 767.98px) {
+			#tjsc-header-main {
+				background-color: var(--tjsc-palette-secondary-white);
+			}
+		}
+
+		#tjsc-header-main #tjsc-header-main-content {
+			padding: 15px 0;
+		}
+
+		@media (min-width: 992px) {
+			#tjsc-header-main #tjsc-header-main-content {
+				background-image: url("/documents/d/global/tjsc-theme-imagens-vector-135-anos");
+				background-image: image-set(
+					url("/documents/d/global/tjsc-theme-imagens-vector-135-anos-webp") type("image/webp"),
+					url("/documents/d/global/tjsc-theme-imagens-vector-135-anos") type("image/png")
+				);
+				background-position: right 0px center;
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+		}
+
+		#tjsc-header-main-search {
+			width: 337px;
+			margin-right: 0px;
+		}
+
+		@media (min-width: 992px) {
+			#tjsc-header-main-search {
+				margin-right: 94px;
+			}
+		}
+	</style>
+
+	<nav id="tjsc-header-mobile" class="d-block d-sm-none navbar navbar-dark p-0">
+		<div class="container d-flex tjsc-style-background-color-palette-primary-dim-green-important py-2">
+			<button id="tjsc-header-mobile-main-menu-toggler" class="navbar-toggler btn btn-monospaced btn-sm text-3 tjsc-line-height-base border-0 ml-n1" type="button" data-toggle="collapse" data-target="#tjsc-header-mobile-main-menu" aria-controls="tjsc-header-mobile-main-menu" aria-expanded="false" aria-label="Menu principal">
+				<span class="navbar-toggler-icon align-baseline w-100 h-100 tjsc-background-image-none">
+					<i class="fa-xl fa fa-bars" aria-hidden="true"></i>
+				</span>
+			</button>
+			<div class="d-flex align-items-center">
+				<a class="navbar-brand p-0" href="https://www.tjsc.jus.br">
+					<img style="height: 32px;" alt="Logo do Poder Judiciário de Santa Catarina" src="/documents/d/global/tjsc-theme-imagens-logo-xs-135-anos" />
+					<span class="sr-only">Página inicial</span>
+				</a>
+				<div class="mx-2" style="height: 32px; border-left: 1px solid #ffffff;">&nbsp;</div>
+				<a class="navbar-brand p-0" href="/135-anos" title="Portal comemorativo dos 135 anos do TJSC" data-toggle="tooltip" data-placement="bottom">
+					<img style="height: 32px;" alt="135 anos do TJSC" src="/documents/d/global/tjsc-theme-imagens-135-anos-xs" />
+					<span class="sr-only">Portal comemorativo dos 135 anos do TJSC</span>
+				</a>
+			</div>
+
+				<a class="navbar-toggler btn btn-monospaced btn-sm text-3 tjsc-line-height-base border-0 mr-n1" href="/c/portal/login?p_l_id=4125301&amp;redirect=%2Fentrar%2Frestrito%2F%3Fportal%3Dhttps%3A%2F%2Fwww.tjsc.jus.br%2Fweb%2Fservidor%2Fdicas-de-gestao%2F-%2Fasset_publisher%2FVzr9I2D1M5Lh%2Fcontent%2Fcomunicacao-nao-violenta"  rel="nofollow" aria-label="Acesso restrito">
+					<span class="navbar-toggler-icon align-baseline w-100 h-100 tjsc-background-image-none">
+						<i class="fa-xl fa fa-sign-in" aria-hidden="true"></i>
+					</span>
+					<span class="sr-only">Acesso restrito</span>
+				</a>
+		</div>
+		<div class="container d-flex tjsc-style-background-color-palette-primary-green-important">
+			<div id="tjsc-header-mobile-main-menu" class="collapse navbar-collapse tjsc-style-color-palette-secondary-white">
+					<div class="my-3" role="navigation">
+
+		<div id="tjsc-header-mobile-main-menu-collapse-0" class="pb-1">
+			<a class="tjsc-fa-toggle-caret-down-up-control tjsc-style-text-decoration font-weight-normal" href="#tjsc-header-mobile-main-menu-collapse-0-collapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="tjsc-header-mobile-main-menu-collapse-0-collapse"><strong>Institucional<i class="fa tjsc-fa-toggle-caret-down-up-element pl-1" aria-hidden="true"></i></strong></a>
+			<div id="tjsc-header-mobile-main-menu-collapse-0-collapse" class="collapse">
+				<ul class="list-unstyled mb-0 pl-3" role="menu">
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/calendario-institucional"  role="menuitem">Calendário e Feriados Locais</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/certidoes"  role="menuitem">Certidões</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/concursos"  role="menuitem">Concursos e Estágio</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/destinacao-de-verbas-pecuniarias"  role="menuitem">Destinação de Verbas Pecuniárias</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/diario-da-justica-eletronico"  role="menuitem">Diário da Justiça Eletrônico</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/documentacao"  role="menuitem">Documentação</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/estrutura-judiciaria"  role="menuitem">Estrutura Judiciária</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/galeria-de-presidentes"  role="menuitem">Galeria de Presidentes</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/identidade-e-comunicacao-visual"  role="menuitem">Identidade e Comunicação Visual</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/missao-e-visao"  role="menuitem">Missão e Visão</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/organograma"  role="menuitem">Organograma</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/visite-o-tjsc"  role="menuitem">Visite o TJSC</a>
+						</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="tjsc-header-mobile-main-menu-collapse-1" class="py-1">
+			<a class="tjsc-fa-toggle-caret-down-up-control tjsc-style-text-decoration font-weight-normal" href="#tjsc-header-mobile-main-menu-collapse-1-collapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="tjsc-header-mobile-main-menu-collapse-1-collapse"><strong>Tribunal de Justiça<i class="fa tjsc-fa-toggle-caret-down-up-element pl-1" aria-hidden="true"></i></strong></a>
+			<div id="tjsc-header-mobile-main-menu-collapse-1-collapse" class="collapse">
+				<ul class="list-unstyled mb-0 pl-3" role="menu">
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/composicao"  role="menuitem">Composição</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/diretorias"  role="menuitem">Diretorias</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/dirigentes"  role="menuitem">Dirigentes</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/nucleo-de-gerenciamento-de-precedentes-e-acoes-coletivas"  role="menuitem">Núcleo de Gerenciamento de Precedentes e Ações Coletivas</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/orgaos-administrativos"  role="menuitem">Órgãos Administrativos</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/orgaos-julgadores"  role="menuitem">Órgãos Julgadores</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/presidencia"  role="menuitem">Presidência</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/primeira-vice-presidencia"  role="menuitem">Primeira Vice-Presidência</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/segunda-vice-presidencia"  role="menuitem">Segunda Vice-Presidência</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/judicial/sessoes-do-tribunal-de-justica"  role="menuitem">Sessões de Julgamento</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/suspensao-de-prazos-e-expediente"  role="menuitem">Suspensão de Prazos e Expediente</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/terceira-vice-presidencia"  role="menuitem">Terceira Vice-Presidência</a>
+						</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="tjsc-header-mobile-main-menu-collapse-2" class="py-1">
+			<a class="tjsc-fa-toggle-caret-down-up-control tjsc-style-text-decoration font-weight-normal" href="#tjsc-header-mobile-main-menu-collapse-2-collapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="tjsc-header-mobile-main-menu-collapse-2-collapse"><strong>Comarcas<i class="fa tjsc-fa-toggle-caret-down-up-element pl-1" aria-hidden="true"></i></strong></a>
+			<div id="tjsc-header-mobile-main-menu-collapse-2-collapse" class="collapse">
+				<ul class="list-unstyled mb-0 pl-3" role="menu">
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/atos-normativos"  role="menuitem">Atos Normativos</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/circunscricoes"  role="menuitem">Circunscrições</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/lotacao-de-magistrados"  role="menuitem">Lotação de Magistrados</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/paginas-das-comarcas"  role="menuitem">Páginas das Comarcas</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/pauta-de-audiencia"  role="menuitem">Pauta de Audiência</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/pontos-de-inclusao-digital"  role="menuitem">Pontos de Inclusão Digital</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/suspensao-de-prazos-e-expediente"  role="menuitem">Suspensão de Prazos e Expediente</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/unidade-das-questoes-agrarias"  role="menuitem">Unidade das Questões Agrárias</a>
+						</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="tjsc-header-mobile-main-menu-collapse-3" class="py-1">
+			<a class="tjsc-fa-toggle-caret-down-up-control tjsc-style-text-decoration font-weight-normal" href="#tjsc-header-mobile-main-menu-collapse-3-collapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="tjsc-header-mobile-main-menu-collapse-3-collapse"><strong>Juizados e Turmas<i class="fa tjsc-fa-toggle-caret-down-up-element pl-1" aria-hidden="true"></i></strong></a>
+			<div id="tjsc-header-mobile-main-menu-collapse-3-collapse" class="collapse">
+				<ul class="list-unstyled mb-0 pl-3" role="menu">
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/juizados-especiais"  role="menuitem">Juizados Especiais</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/pautas-das-sessoes-da-turma-uniformizacao"  role="menuitem">Pautas das Sessões da Turma de Uniformização</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/pautas-das-sessoes-das-turmas-recursais"  role="menuitem">Pautas das Sessões das Turmas Recursais</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/turmas-de-recursos-e-de-uniformizacao"  role="menuitem">Turmas de Recursos e de Uniformização</a>
+						</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="tjsc-header-mobile-main-menu-collapse-4" class="py-1">
+			<a class="tjsc-fa-toggle-caret-down-up-control tjsc-style-text-decoration font-weight-normal" href="#tjsc-header-mobile-main-menu-collapse-4-collapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="tjsc-header-mobile-main-menu-collapse-4-collapse"><strong>Legislação<i class="fa tjsc-fa-toggle-caret-down-up-element pl-1" aria-hidden="true"></i></strong></a>
+			<div id="tjsc-header-mobile-main-menu-collapse-4-collapse" class="collapse">
+				<ul class="list-unstyled mb-0 pl-3" role="menu">
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/legislacao/externa"  role="menuitem">Externa</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/legislacao/interna"  role="menuitem">Interna</a>
+						</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="tjsc-header-mobile-main-menu-collapse-5" class="pt-1">
+			<a class="tjsc-fa-toggle-caret-down-up-control tjsc-style-text-decoration font-weight-normal" href="#tjsc-header-mobile-main-menu-collapse-5-collapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="tjsc-header-mobile-main-menu-collapse-5-collapse"><strong>Portais PJSC<i class="fa tjsc-fa-toggle-caret-down-up-element pl-1" aria-hidden="true"></i></strong></a>
+			<div id="tjsc-header-mobile-main-menu-collapse-5-collapse" class="collapse">
+				<ul class="list-unstyled mb-0 pl-3" role="menu">
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/academia-judicial"  role="menuitem">Academia Judicial</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/acessibilidade-e-inclusao"  role="menuitem">Acessibilidade e Inclusão</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/biblioteca"  role="menuitem">Biblioteca</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/conciliacao-e-mediacao"  role="menuitem">Conciliação e Mediação</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/corregedoria-geral-da-justica"  role="menuitem">Corregedoria-Geral da Justiça</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/extrajudicial"  role="menuitem">Corregedoria-Geral do Foro Extrajudicial</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/eproc"  role="menuitem">eproc - Processo Judicial</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/estatistica"  role="menuitem">Estatística</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/gestao-estrategica"  role="menuitem">Gestão Estratégica</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/gestao-socioambiental"  role="menuitem">Gestão Socioambiental</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/imprensa"  role="menuitem">Imprensa</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/infancia-e-juventude"  role="menuitem">Infância e Juventude</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/jurisprudencia"  role="menuitem">Jurisprudência</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/justica-restaurativa"  role="menuitem">Justiça Restaurativa</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/lei-geral-de-protecao-de-dados-pessoais"  role="menuitem">Lei Geral de Proteção de Dados Pessoais</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/licitacoes-contratos-e-patrimonio"  role="menuitem">Licitações, Contratos e Patrimônio</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/magistrado"  role="menuitem">Magistrado</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/memoria"  role="menuitem">Memória</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/orcamento-e-financas"  role="menuitem">Orçamento e Finanças</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/ouvidoria"  role="menuitem">Ouvidoria</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/ouvidoria-da-mulher"  role="menuitem">Ouvidoria da Mulher</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/seeu"  role="menuitem">SEEU - Execução Penal</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/sei"  role="menuitem">SEI - Processo Administrativo</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/servico-de-informacao-ao-cidadao"  role="menuitem">Serviço de Informação ao Cidadão</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/servidor"  role="menuitem">Servidor</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/sistemas-prisional-e-socioeducativo"  role="menuitem">Sistemas Prisional e Socioeducativo</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/tecnologia-da-informacao"  role="menuitem">Tecnologia da Informação</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/transparencia"  role="menuitem">Transparência</a>
+						</li>
+						<li role="presentation">
+							<a class="tjsc-style-text-decoration font-weight-normal" href="/web/violencia-contra-a-mulher"  role="menuitem">Violência contra a Mulher</a>
+						</li>
+				</ul>
+			</div>
+		</div>
+					</div>
+				<hr class="tjsc-style-border-color-palette-secondary-white" />
+				<div class="mb-3">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/transparencia" >
+						<i class="fa-xl fa fa-eye pr-2" aria-hidden="true"></i><strong>Transparência</strong>
+					</a>
+				</div>
+				<div class="mb-3">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/atendimento-e-contatos" >
+						<i class="fa-xl fa fa-comment pr-2" aria-hidden="true"></i><strong>Atendimento e Contatos</strong>
+					</a>
+				</div>
+				<hr class="tjsc-style-border-color-palette-secondary-white" />
+				<div class="mb-3">
+					
+		<p class="d-block d-sm-none mb-1"><strong>Nossas Redes Sociais</strong></p>
+		<ul class="list-inline mb-0" aria-label="Nossas Redes Sociais">
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/instagram" target="_blank" title="Instagram" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-instagram" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Instagram</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/whatsapp" target="_blank" title="WhatsApp" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-whatsapp" aria-hidden="true"></i>
+					<span class="sr-only">Acessar WhatsApp</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/x" target="_blank" title="X" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-x-twitter" aria-hidden="true"></i>
+					<span class="sr-only">Acessar X</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/threads" target="_blank" title="Threads" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-threads" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Threads</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/facebook" target="_blank" title="Facebook" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-facebook-f" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Facebook</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/youtube" target="_blank" title="YouTube" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-youtube" aria-hidden="true"></i>
+					<span class="sr-only">Acessar YouTube</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/flickr" target="_blank" title="Flickr" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-flickr" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Flickr</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/soundcloud" target="_blank" title="SoundCloud" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-soundcloud" aria-hidden="true"></i>
+					<span class="sr-only">Acessar SoundCloud</span>
+				</a>
+			</li>
+		</ul>
+	
+				</div>
+			</div>
+
+		</div>
+	</nav>
+
+	<div id="tjsc-header-bar-menu" class="d-none d-sm-block py-3 tjsc-style-background-color-palette-primary-dim-green text-2" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="d-flex justify-content-between align-items-center" role="menubar" aria-label="Menu superior">
+							<a class="tjsc-style-text-decoration font-weight-normal tjsc-style-color-palette-secondary-white-important text-uppercase" href="/c/portal/login?p_l_id=4125301&amp;redirect=%2Fentrar%2Frestrito%2F%3Fportal%3Dhttps%3A%2F%2Fwww.tjsc.jus.br%2Fweb%2Fservidor%2Fdicas-de-gestao%2F-%2Fasset_publisher%2FVzr9I2D1M5Lh%2Fcontent%2Fcomunicacao-nao-violenta"  rel="nofollow">
+								<i class="fa-xl fa fa-sign-in pr-2" aria-hidden="true"></i><strong>Acesso restrito</strong>
+							</a>
+						<ul class="list-inline mb-0 tjsc-style-color-palette-secondary-white" role="menu">
+							<li class="list-inline-item text-uppercase mr-0" role="presentation">
+								<a class="tjsc-style-text-decoration font-weight-normal" href="/transparencia" >
+									<i class="fa-xl fa fa-eye pr-2" aria-hidden="true"></i><strong>Transparência</strong>
+								</a>
+							</li>
+							<li class="list-inline-item text-uppercase border-left tjsc-style-border-color-palette-secondary-white ml-3 mr-0 pl-4" role="presentation">
+								<a class="tjsc-style-text-decoration font-weight-normal" href="/atendimento-e-contatos" >
+									<i class="fa-xl fa fa-comment pr-2" aria-hidden="true"></i><strong>Atendimento e Contatos</strong>
+								</a>
+							</li>
+							<li class="list-inline-item d-sm-none d-md-inline-block border-left tjsc-style-border-color-palette-secondary-white ml-3 mr-0 pl-4" role="presentation">
+								
+		<p class="d-block d-sm-none mb-1"><strong>Nossas Redes Sociais</strong></p>
+		<ul class="list-inline mb-0" aria-label="Nossas Redes Sociais">
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/instagram" target="_blank" title="Instagram" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-instagram" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Instagram</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/whatsapp" target="_blank" title="WhatsApp" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-whatsapp" aria-hidden="true"></i>
+					<span class="sr-only">Acessar WhatsApp</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/x" target="_blank" title="X" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-x-twitter" aria-hidden="true"></i>
+					<span class="sr-only">Acessar X</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/threads" target="_blank" title="Threads" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-threads" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Threads</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/facebook" target="_blank" title="Facebook" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-facebook-f" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Facebook</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/youtube" target="_blank" title="YouTube" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-youtube" aria-hidden="true"></i>
+					<span class="sr-only">Acessar YouTube</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/flickr" target="_blank" title="Flickr" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-flickr" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Flickr</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/soundcloud" target="_blank" title="SoundCloud" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-soundcloud" aria-hidden="true"></i>
+					<span class="sr-only">Acessar SoundCloud</span>
+				</a>
+			</li>
+		</ul>
+	
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="tjsc-header-main" class="tjsc-style-background-color-palette-primary-light-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="tjsc-header-main-content" class="d-flex justify-content-between align-items-start">
+						<div class="d-none d-sm-flex align-items-center">
+							<a class="d-inline-block" href="https://www.tjsc.jus.br">
+								<img style="height: 80px;" alt="Logo do Poder Judiciário de Santa Catarina" src="/documents/d/global/tjsc-theme-imagens-logo" />
+								<span class="sr-only">Página inicial</span>
+							</a>
+							<div class="d-inline-block mx-2" style="height: 65px; border-left: 1px solid #c2a34d;">&nbsp;</div>
+							<a class="d-inline-block" href="/135-anos" title="Portal comemorativo dos 135 anos do TJSC" data-toggle="tooltip" data-placement="right">
+								<img style="height: 80px;" alt="135 anos do TJSC" src="/documents/d/global/tjsc-theme-imagens-135-anos" />
+								<span class="sr-only">Portal comemorativo dos 135 anos do TJSC</span>
+							</a>
+						</div>
+						<div id="tjsc-header-main-search" class="col-xs-12 col-sm-auto px-0">
+							<form class="d-flex align-items-center" action="/pesquisa" method="get">
+								<fieldset class="w-100">
+									<legend class="sr-only">Pesquisar no portal</legend>
+									<div class="input-group">
+										<div class="input-group-item input-group-prepend">
+											<input id="tjsc-header-main-search-text" class="form-control" type="text" name="q" value="" placeholder="O que você está procurando?" aria-label="O que você está procurando?" aria-describedby="tjsc-header-main-search-submit" />
+										</div>
+										<div class="input-group-item input-group-append input-group-item-shrink">
+											<button id="tjsc-header-main-search-submit" class="btn border tjsc-style-background-color-palette-secondary-white tjsc-style-color-palette-primary-dark-gray" type="submit">
+												<span class="sr-only">Pesquisar</span>
+												<i class="fa-lg fas fa-magnifying-glass" aria-hidden="true"></i>
+											</button>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="tjsc-header-main-menu" class="d-none d-sm-block tjsc-style-background-color-palette-primary-green" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+						<ul class="nav nav-pills nav-justified" role="menubar" aria-label="Menu principal">
+
+		<li class="nav-item dropdown" role="presentation">
+			<a id="tjsc-header-main-menu-dropdown-toggle-0" class="nav-link btn dropdown-toggle tjsc-fa-toggle-caret-down-up-control rounded-0 tjsc-text-3-5 font-weight-normal tjsc-style-color-palette-secondary-white-important" href="javascript:;" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Institucional<i class="fa tjsc-fa-toggle-caret-down-up-element text-2 pl-1" aria-hidden="true"></i>
+			</a>
+			<ul class="dropdown-menu " role="menu" aria-labelledby="tjsc-header-main-menu-dropdown-toggle-0">
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/calendario-institucional"  role="menuitem">Calendário e Feriados Locais</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/certidoes"  role="menuitem">Certidões</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/concursos"  role="menuitem">Concursos e Estágio</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/destinacao-de-verbas-pecuniarias"  role="menuitem">Destinação de Verbas Pecuniárias</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/diario-da-justica-eletronico"  role="menuitem">Diário da Justiça Eletrônico</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/documentacao"  role="menuitem">Documentação</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/estrutura-judiciaria"  role="menuitem">Estrutura Judiciária</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/galeria-de-presidentes"  role="menuitem">Galeria de Presidentes</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/identidade-e-comunicacao-visual"  role="menuitem">Identidade e Comunicação Visual</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/missao-e-visao"  role="menuitem">Missão e Visão</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/organograma"  role="menuitem">Organograma</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/visite-o-tjsc"  role="menuitem">Visite o TJSC</a>
+					</li>
+			</ul>
+		</li>
+
+		<li class="nav-item dropdown" role="presentation">
+			<a id="tjsc-header-main-menu-dropdown-toggle-1" class="nav-link btn dropdown-toggle tjsc-fa-toggle-caret-down-up-control rounded-0 tjsc-text-3-5 font-weight-normal tjsc-style-color-palette-secondary-white-important" href="javascript:;" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Tribunal de Justiça<i class="fa tjsc-fa-toggle-caret-down-up-element text-2 pl-1" aria-hidden="true"></i>
+			</a>
+			<ul class="dropdown-menu " role="menu" aria-labelledby="tjsc-header-main-menu-dropdown-toggle-1">
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/composicao"  role="menuitem">Composição</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/diretorias"  role="menuitem">Diretorias</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/dirigentes"  role="menuitem">Dirigentes</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/nucleo-de-gerenciamento-de-precedentes-e-acoes-coletivas"  role="menuitem">Núcleo de Gerenciamento de Precedentes e Ações Coletivas</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/orgaos-administrativos"  role="menuitem">Órgãos Administrativos</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/orgaos-julgadores"  role="menuitem">Órgãos Julgadores</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/presidencia"  role="menuitem">Presidência</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/primeira-vice-presidencia"  role="menuitem">Primeira Vice-Presidência</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/segunda-vice-presidencia"  role="menuitem">Segunda Vice-Presidência</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/judicial/sessoes-do-tribunal-de-justica"  role="menuitem">Sessões de Julgamento</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/suspensao-de-prazos-e-expediente"  role="menuitem">Suspensão de Prazos e Expediente</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/terceira-vice-presidencia"  role="menuitem">Terceira Vice-Presidência</a>
+					</li>
+			</ul>
+		</li>
+
+		<li class="nav-item dropdown" role="presentation">
+			<a id="tjsc-header-main-menu-dropdown-toggle-2" class="nav-link btn dropdown-toggle tjsc-fa-toggle-caret-down-up-control rounded-0 tjsc-text-3-5 font-weight-normal tjsc-style-color-palette-secondary-white-important" href="javascript:;" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Comarcas<i class="fa tjsc-fa-toggle-caret-down-up-element text-2 pl-1" aria-hidden="true"></i>
+			</a>
+			<ul class="dropdown-menu " role="menu" aria-labelledby="tjsc-header-main-menu-dropdown-toggle-2">
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/atos-normativos"  role="menuitem">Atos Normativos</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/circunscricoes"  role="menuitem">Circunscrições</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/lotacao-de-magistrados"  role="menuitem">Lotação de Magistrados</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/paginas-das-comarcas"  role="menuitem">Páginas das Comarcas</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/pauta-de-audiencia"  role="menuitem">Pauta de Audiência</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/pontos-de-inclusao-digital"  role="menuitem">Pontos de Inclusão Digital</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/suspensao-de-prazos-e-expediente"  role="menuitem">Suspensão de Prazos e Expediente</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/unidade-das-questoes-agrarias"  role="menuitem">Unidade das Questões Agrárias</a>
+					</li>
+			</ul>
+		</li>
+
+		<li class="nav-item dropdown" role="presentation">
+			<a id="tjsc-header-main-menu-dropdown-toggle-3" class="nav-link btn dropdown-toggle tjsc-fa-toggle-caret-down-up-control rounded-0 tjsc-text-3-5 font-weight-normal tjsc-style-color-palette-secondary-white-important" href="javascript:;" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Juizados e Turmas<i class="fa tjsc-fa-toggle-caret-down-up-element text-2 pl-1" aria-hidden="true"></i>
+			</a>
+			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="tjsc-header-main-menu-dropdown-toggle-3">
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/juizados-especiais"  role="menuitem">Juizados Especiais</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/pautas-das-sessoes-da-turma-uniformizacao"  role="menuitem">Pautas das Sessões da Turma de Uniformização</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/pautas-das-sessoes-das-turmas-recursais"  role="menuitem">Pautas das Sessões das Turmas Recursais</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/turmas-de-recursos-e-de-uniformizacao"  role="menuitem">Turmas de Recursos e de Uniformização</a>
+					</li>
+			</ul>
+		</li>
+
+		<li class="nav-item dropdown" role="presentation">
+			<a id="tjsc-header-main-menu-dropdown-toggle-4" class="nav-link btn dropdown-toggle tjsc-fa-toggle-caret-down-up-control rounded-0 tjsc-text-3-5 font-weight-normal tjsc-style-color-palette-secondary-white-important" href="javascript:;" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Legislação<i class="fa tjsc-fa-toggle-caret-down-up-element text-2 pl-1" aria-hidden="true"></i>
+			</a>
+			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="tjsc-header-main-menu-dropdown-toggle-4">
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/legislacao/externa"  role="menuitem">Externa</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/legislacao/interna"  role="menuitem">Interna</a>
+					</li>
+			</ul>
+		</li>
+
+		<li class="nav-item dropdown" role="presentation">
+			<a id="tjsc-header-main-menu-dropdown-toggle-5" class="nav-link btn dropdown-toggle tjsc-fa-toggle-caret-down-up-control rounded-0 tjsc-text-3-5 font-weight-normal tjsc-style-color-palette-secondary-white-important" href="javascript:;" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Portais PJSC<i class="fa tjsc-fa-toggle-caret-down-up-element text-2 pl-1" aria-hidden="true"></i>
+			</a>
+			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="tjsc-header-main-menu-dropdown-toggle-5">
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/academia-judicial"  role="menuitem">Academia Judicial</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/acessibilidade-e-inclusao"  role="menuitem">Acessibilidade e Inclusão</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/biblioteca"  role="menuitem">Biblioteca</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/conciliacao-e-mediacao"  role="menuitem">Conciliação e Mediação</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/corregedoria-geral-da-justica"  role="menuitem">Corregedoria-Geral da Justiça</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/extrajudicial"  role="menuitem">Corregedoria-Geral do Foro Extrajudicial</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/eproc"  role="menuitem">eproc - Processo Judicial</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/estatistica"  role="menuitem">Estatística</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/gestao-estrategica"  role="menuitem">Gestão Estratégica</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/gestao-socioambiental"  role="menuitem">Gestão Socioambiental</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/imprensa"  role="menuitem">Imprensa</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/infancia-e-juventude"  role="menuitem">Infância e Juventude</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/jurisprudencia"  role="menuitem">Jurisprudência</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/justica-restaurativa"  role="menuitem">Justiça Restaurativa</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/lei-geral-de-protecao-de-dados-pessoais"  role="menuitem">Lei Geral de Proteção de Dados Pessoais</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/licitacoes-contratos-e-patrimonio"  role="menuitem">Licitações, Contratos e Patrimônio</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/magistrado"  role="menuitem">Magistrado</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/memoria"  role="menuitem">Memória</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/orcamento-e-financas"  role="menuitem">Orçamento e Finanças</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/ouvidoria"  role="menuitem">Ouvidoria</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/ouvidoria-da-mulher"  role="menuitem">Ouvidoria da Mulher</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/seeu"  role="menuitem">SEEU - Execução Penal</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/sei"  role="menuitem">SEI - Processo Administrativo</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/servico-de-informacao-ao-cidadao"  role="menuitem">Serviço de Informação ao Cidadão</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/servidor"  role="menuitem">Servidor</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/sistemas-prisional-e-socioeducativo"  role="menuitem">Sistemas Prisional e Socioeducativo</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/tecnologia-da-informacao"  role="menuitem">Tecnologia da Informação</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/transparencia"  role="menuitem">Transparência</a>
+					</li>
+					<li role="presentation">
+						<a class="dropdown-item px-3 py-1" href="/web/violencia-contra-a-mulher"  role="menuitem">Violência contra a Mulher</a>
+					</li>
+			</ul>
+		</li>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(function(){
+			$('#tjsc-header-mobile button[data-target="#tjsc-header-mobile-main-menu"]').on("click", function(){
+				$(this).blur();
+
+				if (!$("#tjsc-header-mobile-main-menu").hasClass("show")) {
+					$("#tjsc-header-mobile-main-menu").css("display", "block").attr("tabindex", "-1").focus().removeAttr("tabindex");
+				} else {
+					$("#tjsc-header-mobile-main-menu").css("display", "");
+				}
+			});
+			$('#tjsc-header-mobile button[data-target="#tjsc-header-mobile-user-menu"]').on("click", function(){
+				$(this).blur();
+
+				if (!$("#tjsc-header-mobile-user-menu").hasClass("show")) {
+					$("#tjsc-header-mobile-user-menu").css("display", "block").attr("tabindex", "-1").focus().removeAttr("tabindex");
+				} else {
+					$("#tjsc-header-mobile-user-menu").css("display", "");
+				}
+			});
+
+			$("#tjsc-header-main-search > form").on("submit", function(event){
+				$("#tjsc-header-main-search-text").prop("readonly", true);
+				$("#tjsc-header-main-search-submit").prop("disabled", true);
+				$("#tjsc-header-main-search-submit > i").attr("class", "fa-fw fas fa-spinner fa-spin-pulse");
+			});
+		});
+	</script>
+</header>
+		<main class=" flex-fill" id="content">
+
+
+<div id="tjsc-content-breadcrumb" class="mb-3">
+			<div class="container d-none d-sm-block">
+			<div class="row">
+				<div class="col-sm-12">
+					<ol class="breadcrumb mb-0" aria-label="Você está em">
+						<li class="breadcrumb-item">
+							<a class="breadcrumb-link" href="https://www.tjsc.jus.br"><i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">Página inicial</span></a>
+						</li>
+
+							<li class="breadcrumb-item ">
+									<a class="breadcrumb-link" href="/web/servidor">
+								Servidor
+									</a>
+							</li>
+							<li class="breadcrumb-item ">
+									<a class="breadcrumb-link" href="/web/servidor/outros-destaques">
+								Outros destaques
+									</a>
+							</li>
+							<li class="breadcrumb-item ">
+									<a class="breadcrumb-link" href="/web/servidor/dicas">
+								Dicas
+									</a>
+							</li>
+							<li class="breadcrumb-item ">
+									<a class="breadcrumb-link" href="/web/servidor/dicas-de-gestao">
+								Dicas de gestão
+									</a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+									<a class="breadcrumb-link" href="/web/servidor/dicas-de-gestao/-/asset_publisher/Vzr9I2D1M5Lh/content/comunicacao-nao-violenta">
+								Comunicação Não-violenta
+									</a>
+							</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+</div>
+			<h1 class="sr-only">Comunicação Não-violenta - Servidor - Poder Judiciário de Santa Catarina</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		<style type="text/css">
+			.master-layout-fragment .portlet-header {
+				display: none;
+			}
+		</style>
+
+		
+
+		<div class="bootstrap-sm3-sm9-layouttpl container" id="main-content">
+	<div class="portlet-layout row">
+		<div class="col-sm-3 portlet-column portlet-column-first" id="column-1">
+			<div class="portlet-dropzone portlet-column-content portlet-column-content-first" id="layout-column_column-1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	<div class="portlet-boundary portlet-boundary_com_liferay_journal_content_web_portlet_JournalContentPortlet_  portlet-static portlet-static-end tjsc-portlet-only-content portlet-journal-content " id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_iJ9S1sfOY84r_">
+		<span id="p_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_iJ9S1sfOY84r"></span>
+
+
+
+
+	
+
+	
+		
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+
+<section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_iJ9S1sfOY84r">
+
+
+	<div class="portlet-content">
+
+			<div class="autofit-float autofit-row portlet-header">
+
+
+					<div class="autofit-col autofit-col-end">
+						<div class="autofit-section">
+							<div class="visible-interaction">
+
+	
+
+	
+</div>
+						</div>
+					</div>
+			</div>
+
+		
+			<div class=" portlet-content-container">
+				
+
+
+	<div class="portlet-body">
+
+
+
+	
+		
+			
+			
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+	
+
+				
+
+				
+					
+					
+						
+
+
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+			
+			
+				
+					
+					
+					
+					
+
+						
+
+						
+
+							
+
+							<div class="" data-fragments-editor-item-id="10108-15458796" data-fragments-editor-item-type="fragments-editor-mapped-item" >
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		<div class="journal-content-article " data-analytics-asset-id="15458796" data-analytics-asset-title="Título do portal" data-analytics-asset-type="web-content" data-analytics-external-reference-code="15458794" data-analytics-web-content-resource-pk="15458796">
+			
+
+			
+
+<style>
+	#tjsc-portal-title_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_wPnHl4nsIuFb_ > a {
+		background-color: var(--tjsc-palette-primary-light-gray);
+		color: var(--tjsc-palette-primary-darker-gray);
+		min-height: 90px;
+		font-size: 1.25rem;
+	}
+
+	@media (min-width: 992px) {
+		.tjsc-page-home #tjsc-portal-title_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_wPnHl4nsIuFb_ > a {
+			font-size: 1.625rem;
+		}
+	}
+</style>
+
+<div id="tjsc-portal-title_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_wPnHl4nsIuFb_">
+	<a class="d-flex justify-content-center align-items-center mb-3 p-3 rounded text-center" href="/web/servidor"><strong class="tjsc-text-break">Servidor</strong></a>
+</div>
+
+			
+		</div>
+
+		
+
+	
+
+
+
+							</div>
+						
+					
+				
+			
+		
+	
+
+
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+
+	
+	
+
+					
+				
+			
+		
+	
+	
+
+
+
+	</div>
+
+			</div>
+		
+	</div>
+</section>
+	
+
+		
+		
+	
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	<div class="portlet-boundary portlet-boundary_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_  portlet-static portlet-static-end tjsc-portlet-only-content portlet-navigation " id="p_p_id_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_KCrlB0k0kE4T_">
+		<span id="p_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_KCrlB0k0kE4T"></span>
+
+
+
+
+	
+
+	
+		
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+
+<section class="portlet" id="portlet_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_KCrlB0k0kE4T">
+
+
+	<div class="portlet-content">
+
+			<div class="autofit-float autofit-row portlet-header">
+
+
+			</div>
+
+		
+			<div class=" portlet-content-container">
+				
+
+
+	<div class="portlet-body">
+
+
+
+	
+		
+			
+			
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+	
+
+				
+
+				
+					
+					
+						
+
+
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+		
+
+		
+
+		
+
+
+
+
+	<div class="list-menu">
+		<ul class="layouts level-1" aria-label="Páginas do site">
+
+
+
+				<li class="lfr-nav-item">
+						<a class="lfr-nav-item" href="https://www.tjsc.jus.br/web/acessibilidade-e-inclusao/dicas-de-acessibilidade" >Dicas de acessibilidade</a>
+
+				</li>
+
+
+
+				<li class="lfr-nav-item">
+						<a class="lfr-nav-item" href="https://www.tjsc.jus.br/web/servidor/dicas-de-avaliacao" >Dicas de avaliação</a>
+
+				</li>
+
+
+
+				<li class="lfr-nav-item open selected active">
+						<a class="lfr-nav-item open selected active" href="https://www.tjsc.jus.br/web/servidor/dicas-de-gestao" >Dicas de gestão</a>
+
+				</li>
+
+
+
+				<li class="lfr-nav-item">
+						<a class="lfr-nav-item" href="https://www.tjsc.jus.br/web/servidor/dicas-de-portugues" >Dicas de português</a>
+
+				</li>
+
+
+
+				<li class="lfr-nav-item">
+						<a class="lfr-nav-item" href="https://www.tjsc.jus.br/web/servidor/dicas-de-redacao" >Dicas de redação</a>
+
+				</li>
+
+
+
+				<li class="lfr-nav-item">
+						<a class="lfr-nav-item" href="https://www.tjsc.jus.br/web/servidor/dicas-de-saude" >Dicas de saúde</a>
+
+				</li>
+
+
+
+				<li class="lfr-nav-item">
+						<a class="lfr-nav-item" href="https://www.tjsc.jus.br/web/servidor/dicas-de-sustentabilidade" >Dicas de sustentabilidade</a>
+
+				</li>
+
+
+
+				<li class="lfr-nav-item">
+						<a class="lfr-nav-item" href="https://www.tjsc.jus.br/web/servidor/dicas-financeiras" >Dicas financeiras</a>
+
+				</li>
+		</ul>
+	</div>
+
+	
+	
+	
+
+
+	
+	
+
+					
+				
+			
+		
+	
+	
+
+
+
+	</div>
+
+			</div>
+		
+	</div>
+</section>
+	
+
+		
+		
+	
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+</div>
+		</div>
+		<div class="col-sm-9 portlet-column portlet-column-last" id="column-2">
+			<div class="portlet-dropzone portlet-column-content portlet-column-content-last" id="layout-column_column-2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	<div class="portlet-boundary portlet-boundary_com_liferay_journal_content_web_portlet_JournalContentPortlet_  portlet-static portlet-static-end tjsc-portlet-only-content portlet-journal-content " id="p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_RUf6zCjbNyCI_">
+		<span id="p_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_RUf6zCjbNyCI"></span>
+
+
+
+
+	
+
+	
+		
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+
+<section class="portlet" id="portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_RUf6zCjbNyCI">
+
+
+	<div class="portlet-content">
+
+			<div class="autofit-float autofit-row portlet-header">
+
+
+					<div class="autofit-col autofit-col-end">
+						<div class="autofit-section">
+							<div class="visible-interaction">
+
+	
+
+	
+</div>
+						</div>
+					</div>
+			</div>
+
+		
+			<div class=" portlet-content-container">
+				
+
+
+	<div class="portlet-body">
+
+
+
+	
+		
+			
+			
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+	
+
+				
+
+				
+					
+					
+						
+
+
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+			
+			
+				
+					
+					
+					
+					
+
+						
+
+						
+
+							
+
+							<div class="" data-fragments-editor-item-id="10108-4125318" data-fragments-editor-item-type="fragments-editor-mapped-item" >
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		<div class="journal-content-article " data-analytics-asset-id="4125318" data-analytics-asset-title="Dicas de gestão - Cabeçalho" data-analytics-asset-type="web-content" data-analytics-external-reference-code="4125316" data-analytics-web-content-resource-pk="4125318">
+			
+
+			<h2 class="tjsc-style-page-header">Dicas de gestão</h2>
+
+			
+		</div>
+
+		
+
+	
+
+
+
+							</div>
+						
+					
+				
+			
+		
+	
+
+
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+
+	
+	
+
+					
+				
+			
+		
+	
+	
+
+
+
+	</div>
+
+			</div>
+		
+	</div>
+</section>
+	
+
+		
+		
+	
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	<div class="portlet-boundary portlet-boundary_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_  portlet-static portlet-static-end tjsc-portlet-only-content portlet-asset-publisher " id="p_p_id_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh_">
+		<span id="p_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh"></span>
+
+
+
+
+	
+
+	
+		
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+
+<section class="portlet" id="portlet_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh">
+
+
+	<div class="portlet-content">
+
+			<div class="autofit-float autofit-row portlet-header">
+
+
+			</div>
+
+		
+			<div class=" portlet-content-container">
+				
+
+
+	<div class="portlet-body">
+
+
+
+	
+		
+			
+			
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+	
+
+				
+
+				
+					
+					
+						
+
+
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+		
+		
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="asset-full-content clearfix mb-5  show-asset-title " data-fragments-editor-item-id="10108-5497243" data-fragments-editor-item-type="fragments-editor-mapped-item" >
+
+	
+
+	
+
+	
+		<div class="align-items-center d-flex mb-2">
+			<p class="component-title h4">
+				
+					<a class="header-back-to lfr-portal-tooltip" rel="nofollow" href="https://www.tjsc.jus.br/web/servidor/dicas-de-gestao/-/asset_publisher/Vzr9I2D1M5Lh/" title="Voltar" aria-label="Voltar" ><svg class="lexicon-icon lexicon-icon-angle-left" role="presentation" ><use xlink:href="https://www.tjsc.jus.br/o/tjsc-theme/images/clay/icons.svg#angle-left" /></svg></a>
+				
+
+				
+					<span class="asset-title d-inline">
+						Comunicação Não-violenta
+					</span>
+				
+			</p>
+
+			
+				
+			
+		</div>
+	
+
+	<span class="asset-anchor lfr-asset-anchor" id="5497247"></span>
+
+	
+
+	<div class="asset-content mb-3">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		<div class="journal-content-article " data-analytics-asset-id="5497243" data-analytics-asset-title="Comunicação Não-violenta" data-analytics-asset-type="web-content" data-analytics-external-reference-code="5497241" data-analytics-web-content-resource-pk="5497243">
+			
+
+			
+
+
+
+		<div class="mb-3">
+			<p>Quando pensamos em gestão de pessoas, a palavra-chave é COMUNICAÇÃO.</p>
+
+<p>O investimento em conhecimentos nessa área é imprescindível para um bom gestor; afinal, como vimos na dica sobre comunicação e feedback, a comunicação constitui o pilar de qualquer relação interpessoal.</p>
+
+<p>Por isso, nesta dica será apresentada a metodologia de <a href="https://www.youtube.com/watch?v=6pbpOV7_8RY">Comunicação Não-Violenta (CNV),</a> desenvolvida pelo psicólogo Marshall Rosenberg, que apoia o estabelecimento de relações de parceria e cooperação, em que predomina a comunicação eficaz e com empatia.</p>
+
+<p>Esse método está baseado na compreensão dos sentimentos e das necessidades que estão ocultas em cada fala. Nas palavras de Rosenberg (2006, p. 21-22):</p>
+
+<p style="margin-left:4.0cm;">A CNV nos ajuda a reformular a maneira pela qual nos expressamos e ouvimos os outros. Nossas palavras, em vez de serem reações repetitivas e automáticas, tornam-se respostas conscientes, firmemente baseadas na consciência do que estamos percebendo, sentindo e desejando. [...] A CNV nos ensina a observarmos cuidadosamente (e sermos capazes de identificar) os comportamentos e as condições que estão nos afetando. Aprendemos a identificar e a articular claramente o que de fato desejamos em determinada situação. A forma é simples, mas profundamente transformadora.</p>
+
+<p>Nesse sentido, a CNV favorece a ampliação da empatia e da aceitação da diversidade humana, promovendo verdadeira conexão entre as pessoas.</p>
+
+<p>Rosenberg organiza o método em 4 componentes:</p>
+
+<p>#1 Observação: observar o que realmente está acontecendo em determinada situação, ou seja, os fatos concretos, colocando de lado os julgamentos antecipados e as críticas;<br />
+&nbsp;<br />
+#2 Sentimento: identificar como se sente em relação ao que é observado. Mas atenção: sentir é diferente de interpretar pensamentos! Devemos identificar e dar nomes às emoções que estão se manifestando, como por exemplo: medo, desconforto, vergonha, raiva, confusão, frustração, cansaço, felicidade, entre outros;<br />
+&nbsp;<br />
+#3 Necessidades: reconhecer a necessidade que está gerando o sentimento, como por exemplo: segurança, acolhimento, apoio, respeito, aceitação, compreensão, honestidade, confiança, liberdade, entre outras;<br />
+&nbsp;<br />
+#4 Pedido: realizar os pedidos de forma que contemple o atendimento às nossas necessidades.</p>
+
+<p>Assim, uma fala utilizando a Comunicação Não-Violenta poderia ser expressa da seguinte forma:</p>
+
+<p style="margin-left:3.0cm;"><em>Quando você determinou o cumprimento imediato daquela tarefa</em> [observação], <em>eu me senti desconfortável e desorientado </em>[meus sentimentos],<em> pois preciso compreender a razão da urgência</em> [minha necessidade]. <em>Em uma próxima vez, você poderia me contextualizar da importância de sua determinação?</em> [meu pedido]</p>
+
+<p>Para saber mais sobre esta metodologia, <a href="https://www.youtube.com/watch?v=NyA008N4wOs">assista a entrevista</a>.</p>
+
+<div>Elaboração:</div>
+
+<div>Diretoria de Gestão de Pessoas</div>
+
+<div>Divisão de Desenvolvimento de Pessoas</div>
+
+<div>E-mail: <a href="mailto:dgp.ddp@tjsc.jus.br">dgp.ddp@tjsc.jus.br</a></div>
+
+<div>&nbsp;</div>
+
+<div>Referências:</div>
+
+<div>Rosenberg. Marshall B. <strong>Comunicação não-violenta</strong>: técnicas para aprimorar relacionamentos pessoais e profissionais I Marshall B. Rosenberg; [tradução Mário Vilela]. - São Paulo: Ágora, 2006.</div>
+
+<div>&nbsp;</div>
+
+<div>Comunicação Não-Violenta (CNV): Disponível em: &lt;<a href="http://www.institutodialogo.com.br/comunicacao-nao-violenta-e-os-4-passos-fundamentais/">http://www.institutodialogo.com.br/comunicacao-nao-violenta-e-os-4-passos-fundamentais/</a>&gt;Acesso em 28 fev 2020.</div>
+
+<div>&nbsp;</div>
+
+<div>Comunicação Não-Violenta (CNV): o que é, como funciona e como aplicar o conceito. Disponível em: &lt;<a href="https://www.napratica.org.br/comunicacao-nao-violenta/">https://www.napratica.org.br/comunicacao-nao-violenta/</a>&gt;Acesso em 27 dez 2019.</div>
+		</div>
+
+
+			
+		</div>
+
+		
+
+	
+
+
+
+
+
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</div>
+	
+	
+
+
+
+
+
+
+	
+
+
+
+
+	
+	
+
+					
+				
+			
+		
+	
+	
+
+
+
+	</div>
+
+			</div>
+		
+	</div>
+</section>
+	
+
+		
+		
+	
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+</div>
+		</div>
+	</div>
+</div>
+	
+
+
+<form action="#" aria-hidden="true" class="hide" id="hrefFm" method="post" name="hrefFm"><span></span><button hidden type="submit">Oculto</button></form>
+
+	
+
+		</main>
+
+
+
+
+<footer id="tjsc-footer">
+	<div class="tjsc-style-background-color-palette-primary-light-gray tjsc-style-color-palette-primary-dark-green-important text-center" role="navigation">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xs-12 col-sm-4 col-md-3 py-2">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/atendimento-e-contatos" >
+						<i class="fa-xl fa fa-comment pr-2" aria-hidden="true"></i><strong>Atendimento e Contatos</strong>
+					</a>
+				</div>
+				<div class="col-xs-12 d-sm-none pt-1 tjsc-style-background-color-palette-secondary-white"></div>
+				<div class="col-xs-12 col-sm-4 col-md-3 py-2">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/mapa-do-site" >
+						<i class="fa-xl fa fa-sitemap pr-2" aria-hidden="true"></i><strong>Mapa do Site</strong>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="d-none d-sm-block tjsc-style-background-color-palette-primary-dim-green tjsc-style-color-palette-secondary-white py-3" role="navigation">
+		<div class="container">
+			<div class="row">
+					<div class="col-sm-6 col-md-3">
+	<strong>Institucional</strong>
+
+		<ul class="list-unstyled mb-0 text-2" aria-label="Institucional">
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/calendario-institucional" >Calendário e Feriados Locais</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/certidoes" >Certidões</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/concursos" >Concursos e Estágio</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/destinacao-de-verbas-pecuniarias" >Destinação de Verbas Pecuniárias</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/diario-da-justica-eletronico" >Diário da Justiça Eletrônico</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/documentacao" >Documentação</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/estrutura-judiciaria" >Estrutura Judiciária</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/galeria-de-presidentes" >Galeria de Presidentes</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/identidade-e-comunicacao-visual" >Identidade e Comunicação Visual</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/missao-e-visao" >Missão e Visão</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/organograma" >Organograma</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/visite-o-tjsc" >Visite o TJSC</a>
+				</li>
+		</ul>
+					</div>
+					<div class="col-sm-6 col-md-3">
+	<strong>Tribunal de Justiça</strong>
+
+		<ul class="list-unstyled mb-0 text-2" aria-label="Tribunal de Justiça">
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/composicao" >Composição</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/diretorias" >Diretorias</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/dirigentes" >Dirigentes</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/nucleo-de-gerenciamento-de-precedentes-e-acoes-coletivas" >Núcleo de Gerenciamento de Precedentes e Ações Coletivas</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/orgaos-administrativos" >Órgãos Administrativos</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/orgaos-julgadores" >Órgãos Julgadores</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/presidencia" >Presidência</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/primeira-vice-presidencia" >Primeira Vice-Presidência</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/segunda-vice-presidencia" >Segunda Vice-Presidência</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/judicial/sessoes-do-tribunal-de-justica" >Sessões de Julgamento</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/suspensao-de-prazos-e-expediente" >Suspensão de Prazos e Expediente</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/terceira-vice-presidencia" >Terceira Vice-Presidência</a>
+				</li>
+		</ul>
+					</div>
+					<div class="col-sm-6 col-md-3 mt-sm-3 mt-md-0">
+	<strong>Comarcas</strong>
+
+		<ul class="list-unstyled mb-0 text-2" aria-label="Comarcas">
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/atos-normativos" >Atos Normativos</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/circunscricoes" >Circunscrições</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/lotacao-de-magistrados" >Lotação de Magistrados</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/paginas-das-comarcas" >Páginas das Comarcas</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/pauta-de-audiencia" >Pauta de Audiência</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/pontos-de-inclusao-digital" >Pontos de Inclusão Digital</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/suspensao-de-prazos-e-expediente" >Suspensão de Prazos e Expediente</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/unidade-das-questoes-agrarias" >Unidade das Questões Agrárias</a>
+				</li>
+		</ul>
+						<br /><br />
+	<strong>Juizados e Turmas</strong>
+
+		<ul class="list-unstyled mb-0 text-2" aria-label="Juizados e Turmas">
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/juizados-especiais" >Juizados Especiais</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/pautas-das-sessoes-da-turma-uniformizacao" >Pautas das Sessões da Turma de Uniformização</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/pautas-das-sessoes-das-turmas-recursais" >Pautas das Sessões das Turmas Recursais</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/turmas-de-recursos-e-de-uniformizacao" >Turmas de Recursos e de Uniformização</a>
+				</li>
+		</ul>
+						<br /><br />
+	<strong>Legislação</strong>
+
+		<ul class="list-unstyled mb-0 text-2" aria-label="Legislação">
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/legislacao/externa" >Externa</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/legislacao/interna" >Interna</a>
+				</li>
+		</ul>
+					</div>
+					<div class="col-sm-6 col-md-3 mt-sm-3 mt-md-0">
+	<strong>Portais PJSC</strong>
+
+		<ul class="list-unstyled mb-0 text-2" aria-label="Portais PJSC">
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/academia-judicial" >Academia Judicial</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/acessibilidade-e-inclusao" >Acessibilidade e Inclusão</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/biblioteca" >Biblioteca</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/conciliacao-e-mediacao" >Conciliação e Mediação</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/corregedoria-geral-da-justica" >Corregedoria-Geral da Justiça</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/extrajudicial" >Corregedoria-Geral do Foro Extrajudicial</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/eproc" >eproc - Processo Judicial</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/estatistica" >Estatística</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/gestao-estrategica" >Gestão Estratégica</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/gestao-socioambiental" >Gestão Socioambiental</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/imprensa" >Imprensa</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/infancia-e-juventude" >Infância e Juventude</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/jurisprudencia" >Jurisprudência</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/justica-restaurativa" >Justiça Restaurativa</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/lei-geral-de-protecao-de-dados-pessoais" >Lei Geral de Proteção de Dados Pessoais</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/licitacoes-contratos-e-patrimonio" >Licitações, Contratos e Patrimônio</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/magistrado" >Magistrado</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/memoria" >Memória</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/orcamento-e-financas" >Orçamento e Finanças</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/ouvidoria" >Ouvidoria</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/ouvidoria-da-mulher" >Ouvidoria da Mulher</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/seeu" >SEEU - Execução Penal</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/sei" >SEI - Processo Administrativo</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/servico-de-informacao-ao-cidadao" >Serviço de Informação ao Cidadão</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/servidor" >Servidor</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/sistemas-prisional-e-socioeducativo" >Sistemas Prisional e Socioeducativo</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/tecnologia-da-informacao" >Tecnologia da Informação</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/transparencia" >Transparência</a>
+				</li>
+				<li class="mt-1" role="presentation">
+					<a class="tjsc-style-text-decoration font-weight-normal" href="/web/violencia-contra-a-mulher" >Violência contra a Mulher</a>
+				</li>
+		</ul>
+					</div>
+				<div class="col-xs-12 mt-3 pt-3 border-top tjsc-style-border-color-palette-secondary-white text-center">
+					<div class="d-md-none mt-1 mb-3">
+						
+		<p class="d-block d-sm-none mb-1"><strong>Nossas Redes Sociais</strong></p>
+		<ul class="list-inline mb-0" aria-label="Nossas Redes Sociais">
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/instagram" target="_blank" title="Instagram" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-instagram" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Instagram</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/whatsapp" target="_blank" title="WhatsApp" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-whatsapp" aria-hidden="true"></i>
+					<span class="sr-only">Acessar WhatsApp</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/x" target="_blank" title="X" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-x-twitter" aria-hidden="true"></i>
+					<span class="sr-only">Acessar X</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/threads" target="_blank" title="Threads" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-threads" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Threads</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/facebook" target="_blank" title="Facebook" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-facebook-f" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Facebook</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/youtube" target="_blank" title="YouTube" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-youtube" aria-hidden="true"></i>
+					<span class="sr-only">Acessar YouTube</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/flickr" target="_blank" title="Flickr" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-flickr" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Flickr</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/soundcloud" target="_blank" title="SoundCloud" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-soundcloud" aria-hidden="true"></i>
+					<span class="sr-only">Acessar SoundCloud</span>
+				</a>
+			</li>
+		</ul>
+	
+					</div>
+					<address class="d-inline mb-0">Rua Álvaro Millen da Silveira, n. 208 - Florianópolis/SC - CEP: 88020-901</address>
+					<span class="d-none d-md-inline"> | </span>
+					<span class="d-block d-md-inline">(48) 3287-1000 | Segunda a sexta das 12h às 19h</span>
+				</div>
+				<div class="col-xs-12 mt-3 text-center">
+					<a class="d-inline-block" href="/premios-conquistados">
+						<img style="height: 116px;" src="/documents/d/global/tjsc-theme-imagens-premios-conquistados" alt="Selos de Qualidade em Transparência Pública e Prêmios CNJ de Qualidade - 2020 a 2025" title="Prêmios conquistados pelo TJSC" data-toggle="tooltip" data-placement="bottom" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="d-sm-none tjsc-style-background-color-palette-primary-dim-green tjsc-style-color-palette-secondary-white py-3" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					
+		<p class="d-block d-sm-none mb-1"><strong>Nossas Redes Sociais</strong></p>
+		<ul class="list-inline mb-0" aria-label="Nossas Redes Sociais">
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/instagram" target="_blank" title="Instagram" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-instagram" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Instagram</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/whatsapp" target="_blank" title="WhatsApp" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-whatsapp" aria-hidden="true"></i>
+					<span class="sr-only">Acessar WhatsApp</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/x" target="_blank" title="X" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-x-twitter" aria-hidden="true"></i>
+					<span class="sr-only">Acessar X</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/threads" target="_blank" title="Threads" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-threads" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Threads</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/facebook" target="_blank" title="Facebook" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-facebook-f" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Facebook</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/youtube" target="_blank" title="YouTube" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-youtube" aria-hidden="true"></i>
+					<span class="sr-only">Acessar YouTube</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/flickr" target="_blank" title="Flickr" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-flickr" aria-hidden="true"></i>
+					<span class="sr-only">Acessar Flickr</span>
+				</a>
+			</li>
+			<li class="list-inline-item">
+				<a class="font-weight-normal" href="/redes-sociais/soundcloud" target="_blank" title="SoundCloud" data-toggle="tooltip" data-placement="bottom">
+					<i class="fa-xl fa-brands fa-soundcloud" aria-hidden="true"></i>
+					<span class="sr-only">Acessar SoundCloud</span>
+				</a>
+			</li>
+		</ul>
+	
+					<hr class="tjsc-style-border-color-palette-secondary-white" />
+					<address class="mb-0">Rua Álvaro Millen da Silveira, n. 208<br />Florianópolis/SC - CEP: 88020-901</address>
+					<p class="my-2">(48) 3287-1000</p>
+					<p class="mb-0">Segunda a sexta das 12h às 19h</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(function(){
+			$("body:not(.portal-popup) .quick-access-nav")
+				.append('<a accesskey="3" class="d-none d-sm-block m-1 p-2 sr-only sr-only-focusable font-weight-normal" href="#tjsc-header-main-menu"><span class="label label-light mr-2">3</span>Ir para o menu principal</a>')
+				.append('<a accesskey="4" class="d-block d-sm-none m-1 p-2 sr-only sr-only-focusable font-weight-normal" href="#tjsc-header-mobile-main-menu-toggler"><span class="label label-light mr-2">4</span>Ir para o menu principal</a>')
+				.append('<a accesskey="5" class="d-block m-1 p-2 sr-only sr-only-focusable font-weight-normal" href="#tjsc-header-main-search-text"><span class="label label-light mr-2">5</span>Ir para a pesquisa</a>')
+				.append('<a accesskey="6" class="d-block m-1 p-2 sr-only sr-only-focusable font-weight-normal" href="#tjsc-footer"><span class="label label-light mr-2">6</span>Ir para o rodapé</a>')
+				.append('<a accesskey="7" class="d-block m-1 p-2 sr-only sr-only-focusable font-weight-normal" href="https://www.tjsc.jus.br"><span class="label label-light mr-2">7</span>Ir para a página inicial</a>');
+		});
+
+			if (typeof window.clarity !== "function") {
+				(function(c,l,a,r,i,t,y){
+					c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+					t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+					t.setAttribute("data-senna-track", "permanent");
+					y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+				})(window, document, "clarity", "script", "yu5ukfg3rr");
+			}
+	</script>
+</footer>	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+	
+		
+		
+
+			
+
+			
+		
+	
+
+
+</script><script>
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script type="module">
+		import {Session} from '/o/frontend-js-web/__liferay__/legacy.js';
+
+		if (Liferay.Session && Liferay.Session.destructor) {
+			Liferay.Session.destructor();
+		}
+
+		Liferay.Session = new Session(
+			{
+				autoExtend: true,
+				redirectOnExpire: false,
+				redirectUrl: 'https\x3a\x2f\x2fwww\x2etjsc\x2ejus\x2ebr\x2fweb\x2ftjsc\x2finicio',
+				rememberMe: false,
+				sessionLength: 14400,
+				sessionTimeoutOffset: 70,
+				warningLength: 1200
+			})
+	</script>
+
+
+<script type="text/javascript">
+
+	
+		Liferay.Portlet.register('com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_iJ9S1sfOY84r');
+	
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 0,
+			isAjaxable: true,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_iJ9S1sfOY84r_',
+			portletId: 'com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_iJ9S1sfOY84r',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d4125301\x26p_p_id\x3dcom_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_iJ9S1sfOY84r\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Fweb\x252Fservidor\x252Fdicas-de-gestao\x252F-\x252Fasset_publisher\x252FVzr9I2D1M5Lh\x252Fcontent\x252Fcomunicacao-nao-violenta',
+			refreshURLData: {}
+		}
+	);
+
+
+	function getValueByAttribute(node, attr) {
+		return (
+			node.dataset[attr] ||
+			(node.parentElement && node.parentElement.dataset[attr])
+		);
+	}
+
+	function sendDocumentDownloadedAnalyticsEvent(anchor) {
+		var fileEntryId = getValueByAttribute(
+			anchor,
+			'analyticsFileEntryId'
+		);
+		var title = getValueByAttribute(
+			anchor,
+			'analyticsFileEntryTitle'
+		);
+		var version = getValueByAttribute(
+			anchor,
+			'analyticsFileEntryVersion'
+		);
+		var externalReferenceCode = getValueByAttribute(
+			anchor,
+			'analyticsExternalReferenceCode'
+		);
+
+		if (fileEntryId) {
+			Analytics.send('documentDownloaded', 'Document', {
+				externalReferenceCode,
+				fileEntryId,
+				groupId: themeDisplay.getScopeGroupId(),
+				preview:
+					!!window._com_liferay_document_library_analytics_isViewFileEntry,
+				title,
+				version,
+			});
+		}
+	}
+
+	function handleDownloadClick(event) {
+		if (window.Analytics) {
+			if (event.target.nodeName.toLowerCase() === 'a') {
+				sendDocumentDownloadedAnalyticsEvent(
+					event.target
+				);
+			}
+			else if (
+				event.target.parentNode &&
+				event.target.parentNode.nodeName.toLowerCase() === 'a'
+			) {
+				sendDocumentDownloadedAnalyticsEvent(
+					event.target.parentNode
+				);
+			}
+			else {
+				var target = event.target;
+				var matchTextContent =
+					target.textContent &&
+					target.textContent.toLowerCase() ===
+						'baixar';
+				var matchTitle =
+					target.title && target.title.toLowerCase() === 'download';
+				var matchAction = target.action === 'download';
+				var matchLexiconIcon = !!target.querySelector(
+					'.lexicon-icon-download'
+				);
+				var matchLexiconClassName = target.classList.contains(
+					'lexicon-icon-download'
+				);
+				var matchParentTitle =
+					target.parentNode &&
+					target.parentNode.title &&
+					target.parentNode.title.toLowerCase() === 'download';
+				var matchParentLexiconClassName =
+					target.parentNode &&
+					target.parentNode.classList.contains('lexicon-icon-download');
+
+				if (
+					matchTextContent ||
+					matchTitle ||
+					matchParentTitle ||
+					matchAction ||
+					matchLexiconIcon ||
+					matchLexiconClassName ||
+					matchParentLexiconClassName
+				) {
+					var selectedFiles = document.querySelectorAll(
+						'.form .custom-control-input:checked'
+					);
+
+					selectedFiles.forEach(({value}) => {
+						var selectedFile = document.querySelector(
+							'[data-analytics-file-entry-id="' + value + '"]'
+						);
+
+						sendDocumentDownloadedAnalyticsEvent(
+							selectedFile
+						);
+					});
+				}
+			}
+		}
+	}
+
+	Liferay.once('destroyPortlet', () => {
+		document.body.removeEventListener(
+			'click',
+			handleDownloadClick
+		);
+	});
+
+	Liferay.once('portletReady', () => {
+		document.body.addEventListener(
+			'click',
+			handleDownloadClick
+		);
+	});
+
+(function() {var $ = AUI.$;var _ = AUI._;
+	var onVote = function (event) {
+		if (window.Analytics) {
+			let title = event.contentTitle;
+
+			if (!title) {
+				const dmNode = document.querySelector(
+					'[data-analytics-file-entry-id="' + event.classPK + '"]'
+				);
+
+				if (dmNode) {
+					title = dmNode.dataset.analyticsFileEntryTitle;
+				}
+			}
+
+			Analytics.send('VOTE', 'Ratings', {
+				className: event.className,
+				classPK: event.classPK,
+				externalReferenceCode: event.externalReferenceCode,
+				ratingType: event.ratingType,
+				score: event.score,
+				title,
+			});
+		}
+	};
+
+	var onDestroyPortlet = function () {
+		Liferay.detach('ratings:vote', onVote);
+		Liferay.detach('destroyPortlet', onDestroyPortlet);
+	};
+
+	Liferay.on('ratings:vote', onVote);
+	Liferay.on('destroyPortlet', onDestroyPortlet);
+})();
+(function() {var $ = AUI.$;var _ = AUI._;
+	var onDestroyPortlet = function () {
+		Liferay.detach('messagePosted', onMessagePosted);
+		Liferay.detach('destroyPortlet', onDestroyPortlet);
+	};
+
+	Liferay.on('destroyPortlet', onDestroyPortlet);
+
+	var onMessagePosted = function (event) {
+		if (window.Analytics) {
+			const eventProperties = {
+				className: event.className,
+				classPK: event.classPK,
+				commentId: event.commentId,
+				externalReferenceCode: event.externalReferenceCode,
+				text: event.text,
+			};
+
+			const blogNode = document.querySelector(
+				'[data-analytics-asset-id="' + event.classPK + '"]'
+			);
+
+			const dmNode = document.querySelector(
+				'[data-analytics-file-entry-id="' + event.classPK + '"]'
+			);
+
+			if (blogNode) {
+				eventProperties.title = blogNode.dataset.analyticsAssetTitle;
+			}
+			else if (dmNode) {
+				eventProperties.title = dmNode.dataset.analyticsFileEntryTitle;
+			}
+
+			Analytics.send('posted', 'Comment', eventProperties);
+		}
+	};
+
+	Liferay.on('messagePosted', onMessagePosted);
+})();
+(function() {var $ = AUI.$;var _ = AUI._;
+	var onShare = function (data) {
+		if (window.Analytics) {
+			Analytics.send('shared', 'SocialBookmarks', {
+				className: data.className,
+				classPK: data.classPK,
+				type: data.type,
+				url: data.url,
+			});
+		}
+	};
+
+	var onDestroyPortlet = function () {
+		Liferay.detach('socialBookmarks:share', onShare);
+		Liferay.detach('destroyPortlet', onDestroyPortlet);
+	};
+
+	Liferay.on('socialBookmarks:share', onShare);
+	Liferay.on('destroyPortlet', onDestroyPortlet);
+})();
+
+	if (window.svg4everybody && Liferay.Data.ICONS_INLINE_SVG) {
+		svg4everybody(
+			{
+				polyfill: true,
+				validate: function (src, svg, use) {
+					return !src || !src.startsWith('#');
+				}
+			}
+		);
+	}
+
+(function() {var $ = AUI.$;var _ = AUI._;
+	Liferay.Util.delegate(
+		document,
+		'focusin',
+		'.portlet',
+		function(event) {
+			event.delegateTarget.closest('.portlet').classList.add('open');
+		}
+	);
+
+	Liferay.Util.delegate(
+		document,
+		'focusout',
+		'.portlet',
+		function(event) {
+			event.delegateTarget.closest('.portlet').classList.remove('open');
+		}
+	);
+})();
+
+	// <![CDATA[
+
+		
+
+		Liferay.currentURL = '\x2fweb\x2fservidor\x2fdicas-de-gestao\x2f-\x2fasset_publisher\x2fVzr9I2D1M5Lh\x2fcontent\x2fcomunicacao-nao-violenta';
+		Liferay.currentURLEncoded = '\x252Fweb\x252Fservidor\x252Fdicas-de-gestao\x252F-\x252Fasset_publisher\x252FVzr9I2D1M5Lh\x252Fcontent\x252Fcomunicacao-nao-violenta';
+
+	// ]]>
+
+
+	
+		Liferay.Portlet.register('com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_KCrlB0k0kE4T');
+	
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 1,
+			isAjaxable: true,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_KCrlB0k0kE4T_',
+			portletId: 'com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_KCrlB0k0kE4T',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d4125301\x26p_p_id\x3dcom_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet_INSTANCE_KCrlB0k0kE4T\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d1\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Fweb\x252Fservidor\x252Fdicas-de-gestao\x252F-\x252Fasset_publisher\x252FVzr9I2D1M5Lh\x252Fcontent\x252Fcomunicacao-nao-violenta',
+			refreshURLData: {}
+		}
+	);
+
+
+		Liferay.once('allPortletsReady', () => {
+			document
+				.getElementById('p_p_id_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh_')
+				.scrollIntoView();
+		});
+	
+
+	
+		Liferay.Portlet.register('com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh');
+	
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 1,
+			isAjaxable: true,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh_',
+			portletId: 'com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d4125301\x26p_p_id\x3dcom_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-2\x26p_p_col_pos\x3d1\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Fweb\x252Fservidor\x252Fdicas-de-gestao\x252F-\x252Fasset_publisher\x252FVzr9I2D1M5Lh\x252Fcontent\x252Fcomunicacao-nao-violenta',
+			refreshURLData: {"_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh_mvcPath":["\/view_content.jsp"],"_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh_urlTitle":["comunicacao-nao-violenta"],"_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_Vzr9I2D1M5Lh_type":["content"]}
+		}
+	);
+
+
+	
+		Liferay.Portlet.register('com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_RUf6zCjbNyCI');
+	
+
+	Liferay.Portlet.onLoad(
+		{
+			canEditTitle: false,
+			columnPos: 0,
+			isAjaxable: true,
+			isStatic: 'end',
+			namespacedId: 'p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_RUf6zCjbNyCI_',
+			portletId: 'com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_RUf6zCjbNyCI',
+			refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d4125301\x26p_p_id\x3dcom_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_RUf6zCjbNyCI\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-2\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Fweb\x252Fservidor\x252Fdicas-de-gestao\x252F-\x252Fasset_publisher\x252FVzr9I2D1M5Lh\x252Fcontent\x252Fcomunicacao-nao-violenta',
+			refreshURLData: {}
+		}
+	);
+
+
+</script><script type="module">
+import {InfoItemActionHandler as ComponentModule} from '/o/layout-taglib/__liferay__/render.js';
+AUI().use(
+  'liferay-menu',
+function(A) {
+{
+Liferay.component('infoItemActionComponent', new ComponentModule({"executeInfoItemActionURL":"https:\/\/www.tjsc.jus.br\/c\/portal\/execute_info_item_action?p_l_mode=view&plid=4125301","namespace":"","spritemap":"https:\/\/www.tjsc.jus.br\/o\/tjsc-theme\/images\/clay\/icons.svg"}), { destroyOnNavigate: true, portletId: ''});
+}
+(function() {
+var $ = AUI.$;var _ = AUI._;
+	new Liferay.Menu();
+
+	var liferayNotices = Liferay.Data.notices;
+
+	for (var i = 0; i < liferayNotices.length; i++) {
+		Liferay.Util.openToast(liferayNotices[i]);
+	}
+
+})();
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+<script src="https://www.tjsc.jus.br/o/tjsc-theme/js/main.js?browserId=other&amp;minifierType=js&amp;languageId=pt_BR&amp;t=1794082754000" type="text/javascript"></script>
+
+
+
+
+<script type="text/javascript">
+Liferay.CustomDialogs = {enabled: false};
+
+</script><script>
+
+</script><script type="module">
+import {main} from '/o/frontend-js-bootstrap-support-web/__liferay__/index.js';
+{
+main();
+}
+
+</script><script type="module">
+import {main} from '/o/frontend-js-tooltip-support-web/__liferay__/index.js';
+{
+main();
+}
+
+</script>	</body>
+
+	</html>
+
+		
+	
+

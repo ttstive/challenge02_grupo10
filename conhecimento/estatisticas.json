@@ -1,0 +1,13 @@
+{
+  "pdf_files": 31,
+  "unique_pdf_files": 30,
+  "pdf_pages": 1431,
+  "complexity_text_files": 2076,
+  "bosque_sentences": {
+    "pt_bosque-ud-test.conllu": 1167,
+    "pt_bosque-ud-dev.conllu": 1172,
+    "pt_bosque-ud-train.conllu": 7018
+  },
+  "new_sources_downloaded": 12,
+  "new_sources_failed": 4
+}

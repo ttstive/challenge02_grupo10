@@ -1,0 +1,70 @@
+[
+  {
+    "id": "complexidade",
+    "url": "https://github.com/gazzola/corpus_readability_nlp_portuguese",
+    "commit": "d72bf1fe26100a65c8b6386d79ce839805fa499d",
+    "license": "CC BY 4.0 declarada no README",
+    "file": "datasets/complexidade.zip",
+    "sha256": "19e5721cd7202f7f6b93cba4aa68014632c7fb4154c964bec788e6a53abdbffc",
+    "entries": 2083,
+    "uncompressed_bytes": 5317584,
+    "status": "downloaded",
+    "data_files": 2076
+  },
+  {
+    "id": "nilcmetrix",
+    "url": "https://github.com/nilc-nlp/nilcmetrix",
+    "commit": "5416e430747530e0054a45259329a306d37c8b69",
+    "license": "AGPLv3; preservar licença do código e componentes",
+    "file": "datasets/nilcmetrix.zip",
+    "sha256": "c1dfa2a75bfef93165a93374d00f6bd3fad22a737d7ef25b808e5264f2dfab5b",
+    "entries": 192,
+    "uncompressed_bytes": 30939765,
+    "status": "downloaded"
+  },
+  {
+    "id": "bosque_README.md",
+    "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Portuguese-Bosque/master/README.md",
+    "file": "datasets/bosque/README.md",
+    "sha256": "6b603f73859f6648bf9bf3d4e582cfb9507995972d2d948b11b61ab9f19614ab",
+    "status": "downloaded",
+    "purpose": "Treebank anotado de português brasileiro/europeu; sintaxe, não assertividade",
+    "license": "Ver LICENSE.txt preservada"
+  },
+  {
+    "id": "bosque_LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Portuguese-Bosque/master/LICENSE.txt",
+    "file": "datasets/bosque/LICENSE.txt",
+    "sha256": "ab3a36080055dd29ad2b59162e43d1368c7f15643666bea982d4e103f546e025",
+    "status": "downloaded",
+    "purpose": "Treebank anotado de português brasileiro/europeu; sintaxe, não assertividade",
+    "license": "Ver LICENSE.txt preservada"
+  },
+  {
+    "id": "bosque_pt_bosque-ud-train.conllu",
+    "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Portuguese-Bosque/master/pt_bosque-ud-train.conllu",
+    "file": "datasets/bosque/pt_bosque-ud-train.conllu",
+    "sha256": "b56d7124af821e2968302c38298904ec67af342304a33ae8a9dc4fa57df89648",
+    "status": "downloaded",
+    "purpose": "Treebank anotado de português brasileiro/europeu; sintaxe, não assertividade",
+    "license": "Ver LICENSE.txt preservada"
+  },
+  {
+    "id": "bosque_pt_bosque-ud-dev.conllu",
+    "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Portuguese-Bosque/master/pt_bosque-ud-dev.conllu",
+    "file": "datasets/bosque/pt_bosque-ud-dev.conllu",
+    "sha256": "f8a67abae12fbab85a3995204a6459d1958c11065062d4ea5349d6b914e78f81",
+    "status": "downloaded",
+    "purpose": "Treebank anotado de português brasileiro/europeu; sintaxe, não assertividade",
+    "license": "Ver LICENSE.txt preservada"
+  },
+  {
+    "id": "bosque_pt_bosque-ud-test.conllu",
+    "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Portuguese-Bosque/master/pt_bosque-ud-test.conllu",
+    "file": "datasets/bosque/pt_bosque-ud-test.conllu",
+    "sha256": "9a824650b7a02cf411f6e09b39e8fb423c85e1a5fb3a55b87e7f4c0c2ea5b3bb",
+    "status": "downloaded",
+    "purpose": "Treebank anotado de português brasileiro/europeu; sintaxe, não assertividade",
+    "license": "Ver LICENSE.txt preservada"
+  }
+]

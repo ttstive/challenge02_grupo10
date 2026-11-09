@@ -1,0 +1,3835 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Escola Virtual Gov">
+<title>Escola Virtual Gov</title>
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.escolavirtual.gov.br/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.escolavirtual.gov.br/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.escolavirtual.gov.br/img/favicon-16x16.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="https://www.escolavirtual.gov.br/bootstrap-theme/vendor/font-awesome/css/all.min.css?v=82554bb48" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL,wght,GRAD,opsz@0,400,0,24" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+<link rel="stylesheet" href="https://www.escolavirtual.gov.br/css/variables.min.css?v=82554bb48" />
+<link rel="stylesheet" href="https://www.escolavirtual.gov.br/css/portal.min.css?v=82554bb48" />
+    <link rel="stylesheet" href="https://www.escolavirtual.gov.br/assets/css/style.min.css?v=82554bb48" />
+<link href="https://www.escolavirtual.gov.br/css/aluno.min.css?v=82554bb48" rel="stylesheet">
+<link href="https://www.escolavirtual.gov.br/sweet-alert/sweetalert.css?v=82554bb48" rel="stylesheet">
+
+<script src="https://www.escolavirtual.gov.br/sweet-alert/sweetalert.min.js?v=82554bb48"></script>
+<!-- jQuery  A pagina não herda as bibliotecas do sistema, pois não utilizamos o '@ extends' -->
+<script src="https://www.escolavirtual.gov.br/bootstrap-theme/vendor/jquery/jquery.min.js?v=82554bb48"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://www.escolavirtual.gov.br/js/portal.js?v=82554bb48"></script>
+
+    <link rel="stylesheet" href="https://www.escolavirtual.gov.br/css/video_iframe.css?v=82554bb48" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-04XXKP41BV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-04XXKP41BV');
+</script>
+
+</head>
+<style>
+.botao-login{
+    background-color: #007D7A !important;
+}
+
+.botao-login:hover{
+    background-color: #006969 !important;
+}
+
+.botao-login:active{
+    background-color: #025257 !important;
+}
+
+.aviso {
+    top: 128px;
+    position: relative;
+    z-index: 1;
+    background: #292D33;
+    color: #fff;
+    padding: 28px 0;
+}
+
+.aviso .warning-content {
+    max-width: 860px;
+}
+
+.aviso .warning-title {
+    margin: 0 0 12px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 125%;
+}
+
+.aviso .warning-content p {
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.aviso .warning-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 767.98px) {
+    .aviso {
+        padding: 24px 0;
+    }
+    .aviso .warning-title {
+        font-size: 20px;
+    }
+}
+</style>
+<body class="nav-collapsed">
+<div id="barra-brasil" style="background:#7F7F7F; height: 20px; padding:0 0 0 10px;display:block;">
+    <ul id="menu-barra-temp" style="list-style:none;">
+        <li style="display:inline; float:left;padding-right:10px; margin-right:10px; border-right:1px solid #EDEDED">
+            <a href="http://brasil.gov.br" style="font-family:sans,sans-serif; text-decoration:none; color:white;">Portal do Governo Brasileiro</a>
+        </li>
+    </ul>
+</div>
+
+
+<header style="margin-bottom: 45px">
+    <div class="container">
+        <div class="wrapper">
+            <h1 class="title-header">
+                <a href="/" title='Escola Virtual de Governo'>Escola Virtual de Governo</a>
+            </h1>
+
+            <nav class="navbar navbar-expand-xl gap-4">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h2 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label='Fechar'></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav flex-wrap gap-3 px-0" style="gap: 12px !important">
+                            <li class="nav-item">
+                                <a class="nav-link " href="/aprendizagil">Aprendizágil</a>
+                            </li>
+                                                            <li class="nav-item">
+                                    <a class="nav-link " href="/catalogo">Cursos</a>
+                                </li>
+                                                                                        <li class="nav-item">
+                                    <a class="nav-link " href="/programas">Programas</a>
+                                </li>
+                            
+
+
+                            <li class="nav-item">
+                                <a class="nav-link " href="/conheca-a-escola">Institucional</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="/perguntas-frequentes">Ajuda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="/adesao">Parceiros</a>
+                            </li>
+                            <li class="nav-item d-flex align-items-center">
+                                <div class="dropdown language-selector">
+                                    <button class="btn btn-language btn-link btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="selected">PT</span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li class="en">
+                                            <a href="https://www.escolavirtual.gov.br/locale/en" class="dropdown-item flag_link en" data-lang="en">EN</a>
+                                        </li>
+                                        <li class="es">
+                                            <a href="https://www.escolavirtual.gov.br/locale/es" class="dropdown-item flag_link es" data-lang="es">ES</a>
+                                        </li>
+                                        <li class="pt_br">
+                                            <a href="https://www.escolavirtual.gov.br/locale/pt_br" class="dropdown-item flag_link pt_br" data-lang="pt_br">PT</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                                                            <li class="nav-item d-flex align-items-center">
+                                    <a href="/login" class="btn btn-primary botao-login">Entrar</a>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </nav>
+    
+            
+            <div id="google_translate_element" class="boxTradutor"></div>
+        </div>
+    </div>
+</header>
+
+<div class="aviso" role="region" aria-labelledby="aviso-titulo">
+    <div class="container">
+        <div class="warning-content">
+            <div class="warning-title" id="aviso-titulo" role="heading" aria-level="2">Comunicado – Manutenção programada da EV.G</div>
+            <p>Prezados usuários,</p>
+            <p>Informamos que a Escola Virtual de Governo (EV.G) ficará temporariamente indisponível para a realização de manutenção programada, <strong>das 18h de segunda-feira (09/11) até as 0h de terça-feira (10/11)</strong>.</p>
+            <p>Durante esse período, não será possível acessar a plataforma nem realizar atividades nos cursos.</p>
+            <p>Solicitamos que se programem com antecedência, organizando seus estudos e a realização de atividades e avaliações, a fim de evitar possíveis transtornos decorrentes da indisponibilidade.</p>
+            <p>Agradecemos a compreensão.</p>
+        </div>
+    </div>
+</div>
+
+
+    <main class="curso-detalhe">
+        <div data-paleta-bg="" class="box-tematica">
+            <div class="container">
+                <div class="box-curso-intro">
+                    <div>
+                        <h2>Comunicação Assertiva: Oratória, Retórica e Técnicas de Apresentação</h2>
+                                                    <ul class="badges">
+                                <li class="badge">Curso Aberto</li>
+                            </ul>
+                                                <p class="fs-5">Desenvolva sua comunicação com assertividade, oratória e impacto! O curso aborda fundamentos da comunicação assertiva, linguagem e contextos culturais, retórica e oratória, linguagem corporal, superação do medo de falar em público, formulação de argumentos e comunicação escrita. Destinado a gestores, servidores e profissionais que desejam se expressar com mais clareza, confiança e persuasão em apresentações, reuniões e comunicações institucionais.</p>
+                    </div>
+                    <div>
+                        <img src="https://cdn.evg.gov.br/cursos/1347_EVG/imagem_curso_1347.png" alt="Imagem do curso: Comunicação Assertiva: Oratória, Retórica e Técnicas de Apresentação">
+                        
+                    </div>
+                </div>
+                            </div>
+        </div>
+
+        <div class="container mt-3">
+
+            
+            <div class="mb-3">
+                <div class="text-secondary text-end mb-2">
+                                            <small>Lançamento: 25/02/2025</small>
+                                    </div>
+                <div class="rating-curso">
+                                        <div class="stars">
+                        
+                        
+                                                    <span class="fas fa-star"></span>
+                                                    <span class="fas fa-star"></span>
+                                                    <span class="fas fa-star"></span>
+                                                    <span class="fas fa-star"></span>
+                        
+                        
+                                                    <span class="fas fa-star-half-alt"></span>
+                                                        
+                        
+                        
+                        
+                        <span class="rating-score">4.6</span>
+                        <span class="rating-count">(1442 avaliações)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOferta" aria-expanded="true" aria-controls="collapseOferta">
+                            Oferta
+                        </button>
+                    </h3>
+                    <div id="collapseOferta" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            <dl class="d-flex flex-wrap gap-4">
+                                                                                                    <div class="flex-fill">
+                                        <dt>Conteudista:</dt>
+                                        <dd>Secretaria Especial da Receita Federal do Brasil</dd>
+                                    </div>
+                                                                                                    <div class="flex-fill">
+                                        <dt>Certificador:</dt>
+                                        <dd>Enap - Escola Nacional de Administração Pública</dd>
+                                    </div>
+                                                                                                    <div class="flex-fill">
+                                        <dt>Carga Horária:</dt>
+                                        <dd><span class="notranslate">50h</span></dd>
+                                    </div>
+                                                                                                    <div class="flex-fill">
+                                        <dt>Disponibilidade:</dt>
+                                        <dd>30 dias</dd>
+                                    </div>
+                                                                                                    <div class="flex-fill">
+                                        <dt>Idioma:</dt>
+                                                                                    <dd>Português</dd>
+                                                                            </div>
+                                                                                                    <div class="flex-basis-100">
+                                        <dt>Público Alvo:</dt>
+                                        <dd>Gestores públicos, servidores públicos e todo cidadão interessado na temática. Curso aberto, gratuito e com certificado.</dd>
+                                    </div>
+                                                                <div class="flex-basis-100">
+                                    <dt>Conteúdo Programático:</dt>
+                                    <dd class="columns rich-text">
+                                        <ul><li>Módulo 1 - Fundamentos da comunicação assertiva</li><li>Módulo 2 - Linguagem e contextos culturais</li><li>Módulo 3 - Retórica e oratória</li><li>Módulo 4 - Linguagem corporal e medo de falar em público</li><li>Módulo 5 - Formulação de argumentos e engajamento do público</li><li>Módulo 6 - Comunicação escrita assertiva</li></ul>
+                                    </dd>
+                                </div>
+                            </dl>
+
+                                                                                                <a href="https://www.escolavirtual.gov.br/secretaria/inscricao/51710" class="btn btn-primary mt-2">Inscreva-se</a>
+                                	
+                                                    </div>
+                    </div>
+                </div>
+
+                                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConteudoRelacionado" aria-expanded="true" aria-controls="collapseConteudoRelacionado">
+                                Conteúdo relacionado
+                            </button>
+                        </h3>
+                        <div id="collapseConteudoRelacionado" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <iframe class="iframe_video" src="https://cdn.evg.gov.br/cursos/1347_EVG/videos/trailer.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOutrasInformacoes" aria-expanded="true" aria-controls="collapseOutrasInformacoes">
+                            Outras Informações
+                        </button>
+                    </h3>
+                    <div id="collapseOutrasInformacoes" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                                                            <p>Você pode inscrever-se a qualquer momento e iniciar imediatamente.</p>
+                                                        <p>Realize o <strong>seu cadastro</strong> ou inicie <strong>seu login</strong> no botão <a href="/login">Entrar</a>.</p>
+                            <p>Verifique no campo Público-Alvo se este curso é aberto ou restrito a um público específico.</p>
+                        </div>
+                    </div>
+                </div>
+
+                                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCertificacoes" aria-expanded="true" aria-controls="collapseCertificacoes">
+                                Programas
+                            </button>
+                        </h3>
+                        <div id="collapseCertificacoes" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <p>Este curso faz parte dos seguintes <strong>Programas:</strong></p>
+                                <ul class="list-group list-group-numbered list-group-flush">
+                                                                            <li class="list-group-item">
+                                            <a href="https://www.escolavirtual.gov.br/trilha/381">Poder Legislativo Municipal – Comunicação e Relação com o Cidadão</a>
+                                        </li>
+                                                                    </ul>
+                                <br>
+                                <p>Saiba mais nos nossos <a href="/programas">Programas</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCursosRelacionados" aria-expanded="true" aria-controls="collapseCursosRelacionados">
+                            Cursos Relacionados
+                        </button>
+                    </h3>
+                    <div id="collapseCursosRelacionados" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            <p>Temática: <strong>Comunicação Institucional</strong></p>
+                            <div class="card-group courseboxes">
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/563">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/563_EVG/imagem_curso_563.png" alt="Logo do Curso Redação Oficial e Noções de SEI e suas aplicações">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/563">Redação Oficial e Noções de SEI e suas aplicações</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/843">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/843_EVG/imagem_curso_843.png" alt="Logo do Curso Entendendo a Gamificação">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/843">Entendendo a Gamificação</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/445">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/445_EVG/imagem_curso_445.png" alt="Logo do Curso Uso de Mídias Sociais na Comunicação Institucional">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/445">Uso de Mídias Sociais na Comunicação Institucional</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/315">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/315_EVG/imagem_curso_315.png" alt="Logo do Curso Primeiros passos para uso de Linguagem Simples">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/315">Primeiros passos para uso de Linguagem Simples</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/332">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/332_EVG/imagem_curso_332.png" alt="Logo do Curso Linguagem simples aproxima o governo das pessoas. Como usar?">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/332">Linguagem simples aproxima o governo das pessoas. Como usar?</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/466">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/466_EVG/imagem_curso_466.png" alt="Logo do Curso Fotografia Institucional">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/466">Fotografia Institucional</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/488">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/488_EVG/imagem_curso_488.png" alt="Logo do Curso Comunicação Pública e Comunicação de Governo">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/488">Comunicação Pública e Comunicação de Governo</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/674">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/674_EVG/imagem_curso_674.png" alt="Logo do Curso Eventos Virtuais: da Gestão à Execução">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/674">Eventos Virtuais: da Gestão à Execução</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/772">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/772_EVG/imagem_curso_772.png" alt="Logo do Curso Comunicação Pública e Gestão de Relacionamento com Cidadão">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/772">Comunicação Pública e Gestão de Relacionamento com Cidadão</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/806">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/806_EVG/imagem_curso_806.png" alt="Logo do Curso Estratégias de Marketing Digital para a Administração Pública">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/806">Estratégias de Marketing Digital para a Administração Pública</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/815">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/815_EVG/imagem_curso_815.png" alt="Logo do Curso Storytelling com Dados para Comunicação Profissional de Sucesso">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/815">Storytelling com Dados para Comunicação Profissional de Sucesso</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/844">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/844_EVG/imagem_curso_844.png" alt="Logo do Curso Produção de Vídeos: uma introdução">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/844">Produção de Vídeos: uma introdução</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/959">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/959_EVG/imagem_curso_959.png" alt="Logo do Curso Comunicação para Reguladores - GR6">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/959">Comunicação para Reguladores - GR6</a></h3>
+                                        </div>
+                                    </div>
+                                                                    <div class="card">
+                                        <!-- <a href="https://www.escolavirtual.gov.br/curso/1347">
+                                            <img class="card-img-top" src="https://cdn.evg.gov.br/cursos/1347_EVG/imagem_curso_1347.png" alt="Logo do Curso Comunicação Assertiva: Oratória, Retórica e Técnicas de Apresentação">
+                                        </a> -->
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="https://www.escolavirtual.gov.br/curso/1347">Comunicação Assertiva: Oratória, Retórica e Técnicas de Apresentação</a></h3>
+                                        </div>
+                                    </div>
+                                                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Avaliação -->
+    <div id="modalAvaliacaoCurso" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="border-radius: 32px;">
+                <div class="modal-body text-center" style="background: #f5f5f5; padding: 30px; border-radius: 28px;">
+                    <h4 id="titulo-modal">Avalie o curso:</h4>
+                    <h5 class="mt-3" id="nomeCurso"></h5>
+                    <div class="stars mt-4">
+                        <form id="rating" class="rating" action="https://www.escolavirtual.gov.br/avaliacao/curso" method="POST">
+                            <input type="hidden" name="_token" value="CuTlxWCPlLrrfi2G45iL6DZipU5AnCVsv8Iap9Lx">
+                            <input type="hidden" name="id_curso" value="">
+                            <input type="hidden" name="id_avaliacao" value="">
+
+                            <input type="radio" name="avaliacao" id="star5" value="5">
+                            <label for="star5"><span class="far fa-star"></span></label>
+
+                            <input type="radio" name="avaliacao" id="star4" value="4">
+                            <label for="star4"><span class="far fa-star"></span></label>
+
+                            <input type="radio" name="avaliacao" id="star3" value="3">
+                            <label for="star3"><span class="far fa-star"></span></label>
+
+                            <input type="radio" name="avaliacao" id="star2" value="2">
+                            <label for="star2"><span class="far fa-star"></span></label>
+
+                            <input type="radio" name="avaliacao" id="star1" value="1">
+                            <label for="star1"><span class="far fa-star"></span></label>
+                        </form>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal" id="close-modal-ratings">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // Adicione este código JavaScript
+
+        const ratingForm = document.getElementById('rating');
+        const radioInputs = ratingForm.querySelectorAll('input[name="avaliacao"]');
+
+        // Adiciona evento de clique para cada radio button
+        radioInputs.forEach(radio => {
+            radio.addEventListener('click', function() {
+                if (this.checked) {
+                    submitRatingForm();
+                }
+            });
+        });
+
+        function submitRatingForm() {
+            // Coleta os dados do formulário
+            const formData = new FormData(ratingForm);
+
+
+            // Configura e envia a requisição AJAX
+            fetch(ratingForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest' // Identifica como AJAX
+                }
+            })
+                .then(response => {
+
+                    if (!response.ok) {
+                        throw new Error('Erro na requisição');
+                    }
+                    return response;
+                })
+                .then(data => {
+                    // Sucesso - você pode adicionar feedback visual aqui
+                    console.log('Avaliação enviada com sucesso:', data);
+
+                    // Exemplo de feedback visual
+                    showFeedback('Avaliação enviada com sucesso!', 'success');
+                })
+                .catch(error => {
+                    // Erro - tratamento de erro
+                    console.error('Erro ao enviar avaliação:', error);
+                    showFeedback('Erro ao enviar avaliação.', 'error');
+                });
+        }
+
+        // Função para mostrar feedback visual (opcional)
+        function showFeedback(message, type) {
+            const modal = document.getElementById('modalAvaliacaoCurso');
+
+            // Remove feedback anterior se existir
+            const existingFeedback = document.querySelector('.rating-feedback');
+            if (existingFeedback) {
+                existingFeedback.remove();
+            }
+
+            // Cria novo elemento de feedback
+            const feedback = document.createElement('div');
+            feedback.className = `rating-feedback alert alert-${type === 'success' ? 'success' : 'danger'} mt-2`;
+            feedback.textContent = message;
+            feedback.style.cssText = 'padding: 8px 12px; border-radius: 4px; font-size: 14px;';
+
+            // Insere após o formulário
+            ratingForm.parentNode.appendChild(feedback);
+
+            // Remove automaticamente após 3 segundos
+            setTimeout(() => {
+                feedback.remove();
+                $(modal).modal('hide');
+            }, 3000);
+        }
+
+        // Função para mostrar a modal de agradecimento
+        function mostrarModalAvaliacao(nome, id_curso) {
+            const modal = document.getElementById('modalAvaliacaoCurso');
+
+            $.get('https://www.escolavirtual.gov.br/avaliacao/curso/' + id_curso, function (retorno) {
+                $('#rating span').removeClass('fas rating').addClass('far');
+                document.querySelector('input[name="id_avaliacao"]').value = '';
+
+                console.log(retorno);
+
+                const tituloModal = document.getElementById('titulo-modal');
+                tituloModal.textContent = 'Avalie o curso:';
+
+                if (retorno && retorno.tp_avaliacao) {
+                    // Preenche o input hidden
+                    document.querySelector('input[name="id_avaliacao"]').value = retorno.id_avaliacao_curso;
+
+
+                    // Preenche o nome do curso
+                    tituloModal.textContent = 'Reavalie o curso:';
+                    const avaliacao = parseInt(retorno.tp_avaliacao);
+
+                    // Para cada estrela de 1 a 5
+                    $('input[name="avaliacao"]').each(function() {
+                        const starValue = parseInt($(this).val());
+                        const icon = $(this).next('label').find('span');
+
+                        if (starValue <= avaliacao) {
+                            // Estrelas até a avaliação: preenchidas
+                            icon.removeClass('far fa-star').addClass('fas fa-star rating');
+                        } else {
+                            // Estrelas acima da avaliação: vazias
+                            icon.removeClass('fas fa-star rating').addClass('far fa-star');
+                        }
+                    });
+
+                    // Marca o radio button correspondente
+                    $('#star' + avaliacao).prop('checked', true);
+                }
+            })
+
+            // Preenche o nome do curso
+            document.getElementById('nomeCurso').textContent = nome;
+
+            // Preenche o input hidden
+            document.querySelector('input[name="id_curso"]').value = id_curso;
+
+            $(modal).modal('show');
+        }
+    </script>
+
+<footer>
+    <div class="container">
+        <div class="d-flex flex-wrap gap-6">
+            <div class="flex-fill flex-grow-3">
+                <h2>EV.G | Escola Virtual.Gov</h2>
+            </div>
+            <dl class="flex-fill">
+                <dt>Para alunos</dt>
+                <dd><a href="/aprendizagil">Aprendizágil</a></dd>
+                <dd><a href="/catalogo">Cursos</a></dd>
+                <dd><a href="/programas">Programas</a></dd>
+                <dd><a href="/conheca-a-escola">Institucional</a></dd>
+                <dd><a href="/perguntas-frequentes">Ajuda</a></dd>
+            </dl>
+            <dl class="flex-fill">
+                <dt>Para parceiros</dt>
+                <dd><a href="/adesao">Adesão</a></dd>
+                <dd><a href="/instituicoes-participantes">Instituições participantes</a></dd>
+                <dd><a href="https://emnumeros.escolavirtual.gov.br/">EV.G em Números</a></dd>
+                <dd><a href="/documentos/validacao">Validação de Documentos</a></dd>                
+                <dd><a href="https://www.enap.gov.br/acesso-a-informacao/termo-de-uso-e-aviso-de-privacidade-enap/" target="_blank">Termo de Uso e Aviso de Privacidade</a></dd>
+            </dl>
+            <dl class="flex-fill">
+                <dt>Nas redes</dt>
+                <dd>
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/enapgovbr" class="social-instagram" target="_blank"><span class="visually-hidden">Instagram</span></a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</footer>
+
+<div class="subfooter">
+    <div class="container text-center">
+        <button id="go-to-top"><span class="material-symbols-rounded">expand_less</span><span class="visually-hidden">Ir para topo da página</span></button>
+    </div>
+</div>
+
+<div
+    class="bel-chat"
+    id="bel-chat-widget"
+    data-bel-endpoint="/api/chat/stream"
+    data-bel-nps-endpoint="/api/nps"
+    data-bel-fcr-endpoint="/api/fcr"
+    data-bel-token="CuTlxWCPlLrrfi2G45iL6DZipU5AnCVsv8Iap9Lx"
+        data-bel-resource-type="curso"
+    data-bel-resource-id="1347"
+    >
+    <button type="button" class="bel-chat__launcher" data-bel-open aria-label="Abrir conversa com a Bel">
+        <span class="bel-chat__launcher-avatar" aria-hidden="true">
+            <img class="bel-chat__avatar-bg" src="https://www.escolavirtual.gov.br/img/Ellipse%208.svg" alt="">
+            <img class="bel-chat__avatar-border" src="https://www.escolavirtual.gov.br/img/Ellipse%207.svg" alt="">
+            <img class="bel-chat__avatar-img" src="https://www.escolavirtual.gov.br/img/new_chat_bel.svg" alt="">
+            <span class="bel-chat__beta">Beta</span>
+        </span>
+        <span class="bel-chat__launcher-text">Fale com<br>a Bel</span>
+    </button>
+
+    <section class="bel-chat__panel" aria-labelledby="bel-chat-title" aria-hidden="true">
+        <div class="bel-chat__header">
+            <h2 id="bel-chat-title" class="sr-only">Conversa com a Bel</h2>
+            <button type="button" class="bel-chat__icon-button" data-bel-close aria-label="Fechar conversa com a Bel">
+                <span class="fas fa-times" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <div class="bel-chat__body">
+            <div class="bel-chat__intro">
+                <span class="bel-chat__intro-avatar">
+                    <img src="https://www.escolavirtual.gov.br/img/new-img-bel-chat.png" alt="" aria-hidden="true">
+                    <span class="bel-chat__beta">Beta</span>
+                </span>
+                <div class="bel-chat__intro-bubble">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="225" height="63" viewBox="0 0 225 63" fill="none">
+                      <g filter="url(#filter0_d_596_1002)">
+                        <path d="M33.1076 23.4392C33.1076 34.1751 42.085 42.8784 53.1593 42.8784L200.948 43C212.023 43 221 34.2968 221 23.5608C221 12.8249 212.023 4.12164 200.948 4.12164L53.1593 4H20L33.1076 23.4392Z" fill="url(#paint0_linear_596_1002)"/>
+                      </g>
+                      <!-- Texto centralizado na área útil do balão (x: 33→221, y: 4→43) -->
+                      <text x="127" y="23.5" dominant-baseline="central" text-anchor="middle"
+                            fill="#007D7A" font-family="Georama, Nunito Sans, Nunito, Arial, sans-serif"
+                            font-size="24" font-weight="700" font-style="normal">Olá, sou a Bel.</text>
+                      <defs>
+                        <filter id="filter0_d_596_1002" x="0" y="0" width="225" height="63" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                          <feOffset dx="-8" dy="8"/>
+                          <feGaussianBlur stdDeviation="6"/>
+                          <feComposite in2="hardAlpha" operator="out"/>
+                          <feColorMatrix type="matrix" values="0 0 0 0 0.00784314 0 0 0 0 0.321569 0 0 0 0 0.341176 0 0 0 0.2 0"/>
+                          <feBlend mode="multiply" in2="BackgroundImageFix" result="effect1_dropShadow_596_1002"/>
+                          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_596_1002" result="shape"/>
+                        </filter>
+                        <linearGradient id="paint0_linear_596_1002" x1="20.7946" y1="3.31808" x2="153.975" y2="21.4418" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#E4FBFC"/>
+                          <stop offset="1" stop-color="#C4F7F8"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="bel-chat__messages" aria-live="polite">
+                <div class="bel-chat__message bel-chat__message--assistant">
+                    <div class="bel-chat__bubble">
+                        Estou aqui para ajudar a encontrar cursos, tirar dúvidas sobre a EV.G e orientar seus próximos passos.
+                    </div>
+                </div>
+                <div class="bel-chat__message bel-chat__message--assistant">
+                    <div class="bel-chat__bubble">
+                        Para começar, escolha uma sugestão ou digite sua pergunta.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bel-chat__suggestions-container">
+                <p class="bel-chat__suggestions-title">Sugestões</p>
+                <div class="bel-chat__suggestions" aria-label="Sugestões de conversa">
+                    <button type="button" data-bel-suggestion="Quero encontrar um curso para desenvolver minhas competências.">Encontrar um curso</button>
+                    <button type="button" data-bel-suggestion="Quero conhecer o Aprendizágil e entender como ele pode me ajudar.">Conhecer Aprendizágil</button>
+                    <button type="button" data-bel-suggestion="Tenho dúvida sobre certificado na EV.G.">Dúvida sobre certificado</button>
+                    <button type="button" data-bel-suggestion="Preciso de ajuda com login ou acesso.">Login e acesso</button>
+                </div>
+            </div>
+        </div>
+
+        <form class="bel-chat__form" data-bel-form>
+            <p class="bel-chat__disclaimer" role="note">Solução experimental de IA. As informações podem conter imprecisões.</p>
+            <div class="bel-chat__form-inner">
+                <label class="sr-only" for="bel-chat-input">Mensagem para a Bel</label>
+                <input id="bel-chat-input" type="text" name="message" maxlength="800" autocomplete="off" placeholder="Pergunte à Bel...">
+                <button id="bel-chat-submit" type="submit" aria-label="Enviar mensagem">
+                    <span class="fas fa-arrow-up" aria-hidden="true"></span>
+                </button>
+            </div>
+        </form>
+
+    </section>
+</div>
+
+<style>
+    .bel-chat-nav-trigger {
+        cursor: pointer;
+    }
+
+    .bel-chat {
+        --bel-primary: #007D7A;
+        --bel-primary-dark: #025257;
+        --bel-text: #1f2937;
+        --bel-muted: #667085;
+        --bel-line: #d9e3e3;
+        --bel-soft: #f3fbfb;
+        font-family: "Nunito Sans", "Nunito", Arial, sans-serif;
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 1080;
+        color: var(--bel-text);
+    }
+
+    .bel-chat * {
+        box-sizing: border-box;
+    }
+
+    .bel-chat button,
+    .bel-chat input,
+    .bel-chat textarea {
+        font-family: inherit;
+    }
+
+    .bel-chat__launcher {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        box-shadow: none;
+        color: var(--bel-text);
+        cursor: pointer;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .bel-chat__launcher:hover,
+    .bel-chat__launcher:focus {
+        transform: scale(1.05) translateY(-4px);
+        outline: none;
+    }
+
+    .bel-chat__launcher-avatar {
+        display: grid;
+        place-items: center;
+        width: 80px;
+        height: 80px;
+        z-index: 1;
+        position: relative;
+        overflow: visible;
+    }
+
+    .bel-chat__beta {
+        position: absolute;
+        top: 0;
+        right: -6px;
+        z-index: 4;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        padding: 0 8px;
+        border-radius: 16px;
+        background: #047c30;
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1;
+        white-space: nowrap;
+        pointer-events: none;
+    }
+
+    .bel-chat__avatar-bg {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        z-index: 1;
+    }
+
+    .bel-chat__avatar-border {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        z-index: 2;
+    }
+
+    .bel-chat__avatar-img {
+        position: absolute;
+        width: 66px;
+        height: 66px;
+        z-index: 3;
+    }
+
+    .bel-chat__launcher-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 78px;
+        height: 42px;
+        background: #025257;
+        border: 2px solid #007D7A;
+        border-radius: 0 20px 20px 20px;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.15;
+        box-shadow: 1px 3px 8px rgba(51, 56, 64, 0.30);
+        z-index: 2;
+        margin-top: -14px;
+    }
+
+    .bel-chat__panel {
+        display: none;
+        width: min(416px, calc(100vw - 32px));
+        height: min(683px, calc(100vh - 40px));
+        max-height: min(683px, calc(100vh - 40px));
+        margin-bottom: 12px;
+        border: none;
+        border-radius: 20px;
+        background: #ffffff;
+        box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.25);
+        overflow: hidden;
+        position: relative;
+    }
+
+    .bel-chat--open .bel-chat__panel {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bel-chat--open .bel-chat__launcher {
+        display: none;
+    }
+
+    .bel-chat__header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0;
+        position: absolute;
+        right: 18px;
+        top: 18px;
+        z-index: 2;
+    }
+
+    .bel-chat__icon-button {
+        display: grid;
+        place-items: center;
+        width: 33px;
+        height: 33px;
+        border: 0;
+        border-radius: 16.5px;
+        background: #ffffff;
+        box-shadow: 0px 4px 6px rgba(37,29,47,0.25);
+        color: #58606e;
+        font-size: 16px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .bel-chat__icon-button:hover,
+    .bel-chat__icon-button:focus {
+        color: #1f2a37;
+    }
+
+    .bel-chat__body {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        gap: 14px;
+        min-height: 0;
+        padding: 18px 18px 12px;
+        overflow-y: auto;
+    }
+
+    .bel-chat__intro {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        position: relative;
+    }
+
+    .bel-chat__intro-avatar {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
+        overflow: visible;
+        background: linear-gradient(150deg, #00CDDB 20.08%, #AD63FF 81.89%);
+        flex-shrink: 0;
+        z-index: 2;
+    }
+
+    .bel-chat__intro-avatar img {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .bel-chat__intro-bubble {
+        position: relative;
+        margin-left: -20px;
+        z-index: 1;
+        line-height: 0; /* collapsa whitespace around inline SVG */
+    }
+
+    .bel-chat__intro-bubble svg {
+        display: block;
+    }
+
+    .bel-chat--started .bel-chat__body {
+        overflow: hidden;
+    }
+
+    .bel-chat__messages {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 auto;
+        gap: 8px;
+        min-height: 0;
+        max-height: none;
+        overflow-y: auto;
+        padding-right: 2px;
+        padding-bottom: 24px;
+        scroll-padding-bottom: 16px;
+    }
+
+    .bel-chat--started .bel-chat__messages {
+        flex: 1 1 auto;
+        min-height: 160px;
+    }
+
+    .bel-chat__message {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .bel-chat__bubble {
+        max-width: 92%;
+        margin: 0;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .bel-chat__bubble p {
+        margin: 0 0 8px 0;
+    }
+
+    .bel-chat__bubble p:last-child {
+        margin-bottom: 0;
+    }
+
+    .bel-chat__bubble ul, .bel-chat__bubble ol {
+        margin: 8px 0;
+        padding-left: 20px;
+    }
+
+    /* Títulos em markdown viram h1-h6 e herdariam o tamanho do portal */
+    .bel-chat__bubble h1, .bel-chat__bubble h2, .bel-chat__bubble h3,
+    .bel-chat__bubble h4, .bel-chat__bubble h5, .bel-chat__bubble h6 {
+        margin: 12px 0 4px 0;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.4;
+        color: inherit;
+    }
+
+    .bel-chat__bubble h1:first-child, .bel-chat__bubble h2:first-child, .bel-chat__bubble h3:first-child,
+    .bel-chat__bubble h4:first-child, .bel-chat__bubble h5:first-child, .bel-chat__bubble h6:first-child {
+        margin-top: 0;
+    }
+
+    .bel-chat__bubble a {
+        color: inherit;
+        text-decoration: underline;
+        font-weight: 700;
+    }
+
+    .bel-chat__message--assistant .bel-chat__bubble {
+        background: #E4FBFC;
+        color: #1f2a37;
+        border-radius: 0 20px 20px 20px;
+    }
+
+    .bel-chat__message--user {
+        justify-content: flex-end;
+    }
+
+    .bel-chat__message--user .bel-chat__bubble {
+        background: var(--bel-primary);
+        color: #ffffff;
+        border-radius: 20px 20px 0 20px;
+    }
+
+    .bel-chat__message--pending .bel-chat__bubble--typing {
+        color: var(--bel-muted);
+    }
+
+    .bel-chat__bubble--typing {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 56px;
+        min-height: 40px;
+        padding: 14px 16px 10px;
+        overflow: visible;
+    }
+
+    .bel-chat__typing {
+        display: inline-flex;
+        align-items: flex-end;
+        gap: 4px;
+        height: 12px;
+        overflow: visible;
+    }
+
+    .bel-chat__typing-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #58606e;
+        animation: bel-chat-typing 1.2s infinite ease-in-out;
+    }
+
+    .bel-chat__typing-dot:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .bel-chat__typing-dot:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    @keyframes  bel-chat-typing {
+        0%, 60%, 100% {
+            transform: translateY(0);
+            opacity: 0.35;
+        }
+
+        30% {
+            transform: translateY(-4px);
+            opacity: 1;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .bel-chat__typing-dot {
+            animation: none;
+            opacity: 0.7;
+        }
+    }
+
+    .bel-chat__message--nps {
+        width: 100%;
+    }
+
+    .bel-chat__message--fcr {
+        width: 100%;
+    }
+
+    .bel-chat__suggestions-title {
+        color: #58606e;
+        font-size: 14px;
+        margin: 16px 0 8px;
+    }
+
+    .bel-chat__suggestions-container {
+        width: 100%;
+    }
+
+    .bel-chat--started .bel-chat__suggestions-container {
+        display: none;
+    }
+
+    .bel-chat__suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .bel-chat__suggestions button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        min-height: 32px;
+        padding: 8px 16px;
+        border: 1px solid #58606e;
+        border-radius: 1000px;
+        background: #ffffff;
+        color: #58606e;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+        line-height: 1.15;
+        cursor: pointer;
+    }
+
+    .bel-chat__suggestions button:hover,
+    .bel-chat__suggestions button:focus {
+        border-color: #007d7a;
+        color: #007d7a;
+        background: var(--bel-soft);
+        outline: none;
+    }
+
+    .bel-chat__form {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: stretch;
+        flex-shrink: 0;
+        background: #f5f7fa;
+        padding: 8px 16px 12px;
+        min-height: 72px;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .bel-chat__disclaimer {
+        margin: 0 0 8px;
+        color: #58606e;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .bel-chat__form-inner {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        width: 100%;
+        height: 48px;
+        border: 2px solid #007d7a;
+        border-radius: 1000px;
+        background: #ffffff;
+        padding: 6px 6px 6px 16px;
+    }
+
+    .bel-chat__form input {
+        flex: 1 1 auto;
+        min-width: 0;
+        height: 100%;
+        border: none;
+        background: transparent;
+        padding: 0;
+        color: var(--bel-text);
+        font-size: 14px;
+        outline: none;
+    }
+    
+    .bel-chat__form input::placeholder {
+        color: #58606e;
+    }
+
+    .bel-chat__form button {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        border: 0;
+        border-radius: 18px;
+        background: var(--bel-primary);
+        color: #ffffff;
+        font-size: 14px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+    }
+
+    .bel-chat__form button:disabled,
+    .bel-chat__suggestions button:disabled {
+        background: #dee3ed;
+        cursor: not-allowed;
+        opacity: 1;
+    }
+
+    .bel-chat__nps {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 12px;
+        padding: 14px 12px;
+        border-radius: 0 20px 20px 20px;
+        background: #E4FBFC;
+        border: 1px solid #c4ecef;
+    }
+
+    .bel-chat__nps-question {
+        margin: 0 0 12px;
+        color: var(--bel-text);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.45;
+    }
+
+    .bel-chat__nps-labels {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 6px;
+        color: var(--bel-muted);
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+
+    .bel-chat__nps-scale {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 3px;
+        width: 100%;
+    }
+
+    .bel-chat__nps-btn {
+        flex: 1 1 0;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 28px;
+        padding: 0;
+        border: 1px solid #b8dce0;
+        border-radius: 1000px;
+        background: #ffffff;
+        color: #58606e;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .bel-chat__nps-btn:hover:not(.bel-chat__nps-btn--selected):not(.bel-chat__nps-btn--disabled),
+    .bel-chat__nps-btn:focus:not(.bel-chat__nps-btn--selected):not(.bel-chat__nps-btn--disabled) {
+        border-color: var(--bel-primary);
+        color: var(--bel-primary);
+        background: var(--bel-soft);
+        outline: none;
+    }
+
+    .bel-chat__nps-btn--selected {
+        background: var(--bel-primary);
+        border-color: var(--bel-primary);
+        color: #ffffff;
+    }
+
+    .bel-chat__nps-btn--disabled {
+        pointer-events: none;
+        opacity: 0.55;
+    }
+
+    .bel-chat__nps-thanks {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        color: var(--bel-primary-dark);
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .bel-chat__nps-thanks .fas {
+        color: var(--bel-primary);
+    }
+
+    .bel-chat__nps-error {
+        margin: 8px 0 0;
+        color: #b42318;
+        font-size: 13px;
+    }
+
+    .bel-chat__fcr {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 12px;
+    }
+
+    .bel-chat__fcr-card {
+        padding: 12px;
+        border-radius: 0 20px 20px 20px;
+        background: #E4FBFC;
+    }
+
+    .bel-chat__fcr-question {
+        margin: 0 0 12px;
+        color: #1f2b37;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .bel-chat__fcr-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+        align-items: center;
+    }
+
+    .bel-chat__fcr-radio-option {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        cursor: pointer;
+        color: #434a54;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .bel-chat__fcr-radio-option--block {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .bel-chat__fcr-radio-option--disabled {
+        pointer-events: none;
+        opacity: 0.55;
+    }
+
+    .bel-chat__fcr-radio-input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        margin: 0;
+    }
+
+    .bel-chat__fcr-radio-control {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #c8d1e0;
+        border-radius: 16px;
+        background: #ffffff;
+        position: relative;
+    }
+
+    .bel-chat__fcr-radio-input:checked + .bel-chat__fcr-radio-control {
+        border-color: #007d7a;
+        background: #007d7a;
+    }
+
+    .bel-chat__fcr-radio-input:checked + .bel-chat__fcr-radio-control::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ffffff;
+        transform: translate(-50%, -50%);
+    }
+
+    .bel-chat__fcr-radio-label {
+        display: inline-block;
+    }
+
+    .bel-chat__fcr-radio-label--multiline {
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.2;
+        min-width: 42px;
+    }
+
+    .bel-chat__fcr-ces-scale {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        margin-top: 4px;
+    }
+
+    .bel-chat__fcr-ces-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        flex: 1 1 0;
+        min-width: 0;
+        cursor: pointer;
+    }
+
+    .bel-chat__fcr-ces-option--disabled {
+        pointer-events: none;
+        opacity: 0.55;
+    }
+
+    .bel-chat__fcr-reason-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .bel-chat__fcr-reason-other {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .bel-chat__fcr-other-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding-left: 32px;
+    }
+
+    .bel-chat__fcr-other-fields[hidden] {
+        display: none;
+    }
+
+    .bel-chat__fcr-textarea {
+        width: 100%;
+        min-height: 72px;
+        padding: 10px 12px;
+        border: 1px solid #c8d1e0;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #1f2b37;
+        font-size: 14px;
+        line-height: 1.4;
+        resize: none;
+        overflow-y: auto;
+    }
+
+    .bel-chat__fcr-textarea::placeholder {
+        color: #98a2b3;
+        font-style: italic;
+    }
+
+    .bel-chat__fcr-textarea:focus {
+        outline: none;
+        border-color: #007d7a;
+    }
+
+    .bel-chat__fcr-textarea:disabled {
+        opacity: 0.55;
+    }
+
+    .bel-chat__fcr-submit-wrap {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .bel-chat__fcr-thanks-card {
+        padding: 12px;
+        border-radius: 0 20px 20px 20px;
+        background: #E4FBFC;
+        color: #1f2b37;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .bel-chat__fcr-ticket-actions {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .bel-chat__fcr-ticket-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 94px;
+        height: 40px;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s, border-color 0.15s, color 0.15s, opacity 0.15s;
+    }
+
+    .bel-chat__fcr-ticket-btn--primary {
+        border: 1px solid #025257;
+        background: #025257;
+        color: #ffffff;
+    }
+
+    .bel-chat__fcr-ticket-btn--primary:hover:not(:disabled),
+    .bel-chat__fcr-ticket-btn--primary:focus:not(:disabled) {
+        background: #014447;
+        border-color: #014447;
+        outline: none;
+    }
+
+    .bel-chat__fcr-ticket-btn--secondary {
+        border: 1px solid #025257;
+        background: #ffffff;
+        color: #025257;
+    }
+
+    .bel-chat__fcr-ticket-btn--secondary:hover:not(:disabled),
+    .bel-chat__fcr-ticket-btn--secondary:focus:not(:disabled) {
+        background: #f3fbfb;
+        outline: none;
+    }
+
+    .bel-chat__fcr-ticket-btn:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+
+    .bel-chat__fcr-ticket-offer {
+        margin-top: 4px;
+        padding: 12px;
+        border-radius: 0 20px 20px 20px;
+        background: #E4FBFC;
+    }
+
+    .bel-chat__fcr-ticket-question {
+        margin: 0 0 12px;
+        color: #1f2b37;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .bel-chat__message--attachment {
+        width: 100%;
+    }
+
+    .bel-chat__attachment {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 12px;
+        padding: 14px 12px;
+        border-radius: 0 20px 20px 20px;
+        background: #E4FBFC;
+        border: 1px solid #c4ecef;
+    }
+
+    .bel-chat__attachment-dropzone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 72px;
+        padding: 12px;
+        border: 2px dashed #b8dce0;
+        border-radius: 12px;
+        background: #ffffff;
+        color: #58606e;
+        font-size: 13px;
+        line-height: 1.45;
+        text-align: center;
+        cursor: pointer;
+        transition: border-color 0.15s, background 0.15s;
+    }
+
+    .bel-chat__attachment-dropzone--dragover {
+        border-color: var(--bel-primary);
+        background: var(--bel-soft);
+        color: var(--bel-primary-dark);
+    }
+
+    .bel-chat__attachment-dropzone--disabled {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    .bel-chat__attachment-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 12px;
+    }
+
+    .bel-chat__attachment-list:not(:empty) {
+        border: 1px solid #c4dce0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .bel-chat__attachment-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 8px 10px;
+        border-bottom: 1px solid #d8e8eb;
+    }
+
+    .bel-chat__attachment-item:last-child {
+        border-bottom: none;
+    }
+
+    .bel-chat__attachment-name {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #1f2b37;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.4;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    .bel-chat__attachment-remove {
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        border: 0;
+        border-radius: 50%;
+        background: transparent;
+        color: #58606e;
+        font-size: 16px;
+        line-height: 1;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s;
+    }
+
+    .bel-chat__attachment-remove:hover,
+    .bel-chat__attachment-remove:focus {
+        color: #b42318;
+        background: rgba(180, 35, 24, 0.08);
+        outline: none;
+    }
+
+    .bel-chat__attachment-actions {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 8px;
+        margin-top: 12px;
+        width: 100%;
+    }
+
+    .bel-chat__attachment-btn {
+        flex: 1 1 0;
+        min-width: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding: 0 10px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #b8dce0;
+        background: #ffffff;
+        color: #58606e;
+        transition: background 0.15s, border-color 0.15s, color 0.15s, opacity 0.15s;
+    }
+
+    .bel-chat__attachment-btn:hover:not(:disabled),
+    .bel-chat__attachment-btn:focus:not(:disabled) {
+        border-color: var(--bel-primary);
+        color: var(--bel-primary);
+        background: var(--bel-soft);
+        outline: none;
+    }
+
+    .bel-chat__attachment-btn--primary {
+        border-color: var(--bel-primary-dark);
+        background: var(--bel-primary-dark);
+        color: #ffffff;
+    }
+
+    .bel-chat__attachment-btn--primary:hover:not(:disabled),
+    .bel-chat__attachment-btn--primary:focus:not(:disabled) {
+        background: #014447;
+        border-color: #014447;
+        color: #ffffff;
+    }
+
+    .bel-chat__attachment-btn:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+
+    .bel-chat__attachment-btn--secondary {
+        border: 1px solid #025257;
+        background: #ffffff;
+        color: #025257;
+    }
+
+    .bel-chat__attachment-btn--secondary:hover:not(:disabled),
+    .bel-chat__attachment-btn--secondary:focus:not(:disabled) {
+        background: #f3fbfb;
+        outline: none;
+    }
+
+    .bel-chat__attachment-error {
+        margin: 8px 0 0;
+        color: #b42318;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .bel-chat__attachment-hint {
+        margin: 0 0 8px;
+        color: #58606e;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .bel-chat__attachment-hint--formats {
+        margin: 8px 0 0;
+    }
+
+    .bel-chat__message--consent {
+        max-width: 100%;
+        align-self: stretch;
+    }
+
+    .bel-chat__consent {
+        display: grid;
+        gap: 10px;
+        width: 100%;
+        padding: 12px;
+        border-radius: 0 20px 20px 20px;
+        background: var(--bel-soft);
+    }
+
+    .bel-chat__consent-title {
+        margin: 0;
+        color: var(--bel-text);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    .bel-chat__consent-notice {
+        margin: 0;
+        color: var(--bel-muted);
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .bel-chat__consent-checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        cursor: pointer;
+        color: var(--bel-text);
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    .bel-chat__consent-checkbox:has(input:disabled) {
+        cursor: not-allowed;
+    }
+
+    .bel-chat__consent-checkbox input {
+        appearance: none;
+        -webkit-appearance: none;
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        margin: 2px 0 0;
+        border: 1px solid #8b93a7;
+        border-radius: 4px;
+        background: #ffffff;
+        cursor: inherit;
+    }
+
+    .bel-chat__consent-checkbox input:checked {
+        border-color: #007d7a;
+        background-color: #007d7a;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8.2l3 3.1 6-6.4'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12px;
+    }
+
+    .bel-chat__consent-checkbox input:focus-visible {
+        outline: 2px solid var(--bel-primary);
+        outline-offset: 2px;
+    }
+
+    .bel-chat__consent-checkbox input:disabled {
+        opacity: 0.55;
+    }
+
+    .bel-chat__form input:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+
+    @media (max-width: 575px) {
+        .bel-chat {
+            right: 12px;
+            bottom: 12px;
+            left: 12px;
+        }
+
+        .bel-chat__panel {
+            width: 100%;
+            height: calc(100vh - 24px);
+            max-height: calc(100vh - 24px);
+        }
+
+        .bel-chat__launcher {
+            margin-left: auto;
+        }
+
+        .bel-chat__disclaimer {
+            white-space: normal;
+            letter-spacing: 0;
+        }
+
+        .bel-chat__nps-btn {
+            height: 26px;
+            font-size: 11px;
+        }
+
+        .bel-chat__fcr-ces-scale {
+            gap: 4px;
+        }
+
+        .bel-chat__fcr-radio-label--multiline {
+            min-width: 34px;
+            font-size: 11px;
+        }
+    }
+
+    @media (max-width: 340px) {
+        .bel-chat__nps-scale {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .bel-chat__nps-btn {
+            flex: 0 0 calc((100% - 20px) / 6);
+            max-width: 40px;
+            height: 28px;
+            font-size: 12px;
+        }
+    }
+</style>
+
+<script>
+    (function () {
+        if (window.__belChatLoaded) {
+            return;
+        }
+
+        window.__belChatLoaded = true;
+
+        function onReady(callback) {
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', callback);
+                return;
+            }
+
+            callback();
+        }
+
+        onReady(function () {
+            var widget = document.getElementById('bel-chat-widget');
+            if (!widget) {
+                return;
+            }
+
+            var panel = widget.querySelector('.bel-chat__panel');
+            var messages = widget.querySelector('.bel-chat__messages');
+            var form = widget.querySelector('[data-bel-form]');
+            var input = widget.querySelector('#bel-chat-input');
+            var submit = widget.querySelector('#bel-chat-submit');
+            var suggestionsWrap = widget.querySelector('.bel-chat__suggestions-container');
+            var suggestions = widget.querySelectorAll('[data-bel-suggestion]');
+            var endpoint = widget.getAttribute('data-bel-endpoint');
+            var npsEndpoint = widget.getAttribute('data-bel-nps-endpoint');
+            var fcrEndpoint = widget.getAttribute('data-bel-fcr-endpoint');
+            var token = widget.getAttribute('data-bel-token');
+            var fcrActionLabels = {
+                request_ticket_opening: 'Sim',
+                dismiss: 'Não'
+            };
+            var fcrTemplateLabels = {
+                ticket_opening_offer: 'Parece que sua dúvida ainda não foi atendida. Deseja abrir um chamado?'
+            };
+            var fcrCopy = {
+                resolutionQuestion: 'A Bel conseguiu resolver sua dúvida ou ajudar você a encontrar o que precisava agora?',
+                cesQuestion: 'O quanto foi fácil interagir com a Bel para resolver sua solicitação?',
+                reasonQuestion: 'O que faltou para a Bel resolver sua solicitação?',
+                thanks: 'Muito obrigado! Suas respostas vão ajudar a deixar a Bel cada vez melhor para você.',
+                ticketManualReminder: 'Se preferir, você pode abrir o chamado manualmente acessando este link:',
+                ticketManualUrl: 'https://minha.enap.gov.br/evg',
+                ticketConsentTitle: 'Antes de informar seus dados',
+                ticketConsentNotice: 'Os dados pessoais coletados neste formulário têm a finalidade de registro de chamado. O tratamento desses dados decorre da competência legal da Enap (conforme as Leis nº 6.871, de 1980; nº 8.140, de 1990; e o Decreto nº 10.369, de 2020), o que dispensa a necessidade de um termo de consentimento (conforme o inciso II do art. 7º e alínea "a" do inciso II do art. 11 da Lei nº 13.709, de 2018, a Lei Geral de Proteção de Dados Pessoais – LGPD).',
+                ticketConsentLabel: 'Ao marcar esta caixa, manifesto que estou ciente de que meus dados pessoais serão coletados e tratados.',
+                ticketConsentContinue: 'Continuar'
+            };
+            var fcrCesOptions = [
+                { score: 1, line1: 'Muito', line2: 'Difícil' },
+                { score: 2, line1: 'Difícil', line2: '' },
+                { score: 3, line1: 'Regular', line2: '' },
+                { score: 4, line1: 'Fácil', line2: '' },
+                { score: 5, line1: 'Muito', line2: 'Fácil' }
+            ];
+            var fcrReasonOptions = [
+                { code: 'did_not_understand', label: 'A Bel não entendeu minha pergunta.' },
+                { code: 'resource_not_found', label: 'Não encontrei o curso/programa que procurava.' },
+                { code: 'technical_issue', label: 'Tive um problema técnico no portal (login, erro no curso).' },
+                { code: 'other', label: 'Outro motivo' }
+            ];
+            var fcrSubmitting = false;
+            var lastFcrDetail = '';
+            var busy = false;
+            var started = false;
+            sessionStorage.removeItem('bel_session_id');
+            var sessionId = null;
+            var npsContainer = null;
+            var npsPromptVisible = false;
+            var fcrContainer = null;
+            var fcrPromptVisible = false;
+            var pendingFcrOnUnresolved = null;
+            var attachmentPromptVisible = false;
+            var ticketConsentAcknowledged = false;
+            var consentPromptVisible = false;
+            var consentMessageItem = null;
+            var consentCheckbox = null;
+            var consentContinueBtn = null;
+            var consentCancelBtn = null;
+            var attachmentContainer = null;
+            var attachmentMessageItem = null;
+            var attachmentFileInput = null;
+            var attachmentDropzone = null;
+            var attachmentListEl = null;
+            var attachmentErrorEl = null;
+            var attachmentConfirmBtn = null;
+            var attachmentCancelBtn = null;
+            var BEL_FORCE_ATTACHMENT_PROMPT_FOR_TEST = false;
+            var attachmentLimits = {
+                maxFiles: 5,
+                maxFileBytes: 5 * 1024 * 1024,
+                maxTotalBytes: 15 * 1024 * 1024,
+                allowedContentTypes: [
+                    'image/png',
+                    'image/jpeg',
+                    'image/webp',
+                    'image/gif',
+                    'application/pdf',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                    'application/vnd.oasis.opendocument.text',
+                    'text/plain',
+                    'text/csv'
+                ]
+            };
+            var attachmentAllowedExtensions = ['png', 'jpg', 'jpeg', 'webp', 'gif', 'pdf', 'docx', 'odt', 'txt', 'csv'];
+            var attachmentExtensionMime = {
+                png: 'image/png',
+                jpg: 'image/jpeg',
+                jpeg: 'image/jpeg',
+                webp: 'image/webp',
+                gif: 'image/gif',
+                pdf: 'application/pdf',
+                docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                odt: 'application/vnd.oasis.opendocument.text',
+                txt: 'text/plain',
+                csv: 'text/csv'
+            };
+            var pendingAttachments = [];
+            var attachmentIdCounter = 0;
+            var attachmentReadingCount = 0;
+
+            function scrollMessagesToBottom(target) {
+                function doScroll() {
+                    var scrollTarget = target;
+
+                    if (!scrollTarget && messages.lastElementChild) {
+                        scrollTarget = messages.lastElementChild;
+                    }
+
+                    messages.scrollTop = messages.scrollHeight;
+
+                    if (scrollTarget && typeof scrollTarget.scrollIntoView === 'function') {
+                        scrollTarget.scrollIntoView({ block: 'end', inline: 'nearest' });
+                    }
+                }
+
+                doScroll();
+
+                if (typeof window.requestAnimationFrame === 'function') {
+                    window.requestAnimationFrame(function () {
+                        doScroll();
+                        window.requestAnimationFrame(doScroll);
+                    });
+                }
+            }
+
+            function removeNpsPrompt() {
+                if (npsContainer && npsContainer.parentNode) {
+                    npsContainer.parentNode.removeChild(npsContainer);
+                }
+                npsContainer = null;
+                npsPromptVisible = false;
+            }
+
+            function showNpsThanks() {
+                if (!npsContainer) {
+                    return;
+                }
+
+                npsContainer.innerHTML = '';
+                var thanks = document.createElement('p');
+                thanks.className = 'bel-chat__nps-thanks';
+                thanks.innerHTML = '<span class="fas fa-check" aria-hidden="true"></span> Obrigada pela sua avaliação!';
+                npsContainer.appendChild(thanks);
+            }
+
+            function showNpsError(message) {
+                if (!npsContainer) {
+                    return;
+                }
+
+                var existing = npsContainer.querySelector('.bel-chat__nps-error');
+                if (existing) {
+                    existing.textContent = message;
+                    return;
+                }
+
+                var error = document.createElement('p');
+                error.className = 'bel-chat__nps-error';
+                error.textContent = message;
+                npsContainer.appendChild(error);
+            }
+
+            function submitNpsScore(score, buttons) {
+                if (!sessionId || !npsEndpoint) {
+                    showNpsError('Não foi possível enviar a avaliação. Tente novamente.');
+                    return;
+                }
+
+                for (var b = 0; b < buttons.length; b++) {
+                    buttons[b].classList.add('bel-chat__nps-btn--disabled');
+                }
+
+                window.fetch(npsEndpoint, {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': token
+                    },
+                    body: JSON.stringify({
+                        session_id: sessionId,
+                        score: score
+                    })
+                })
+                    .then(function (response) {
+                        return response.json().then(function (data) {
+                            if (!response.ok) {
+                                throw new Error(data.error || 'bel-nps-request-failed');
+                            }
+                            return data;
+                        });
+                    })
+                    .then(function () {
+                        showNpsThanks();
+                    })
+                    .catch(function () {
+                        for (var c = 0; c < buttons.length; c++) {
+                            buttons[c].classList.remove('bel-chat__nps-btn--disabled', 'bel-chat__nps-btn--selected');
+                        }
+                        showNpsError('Não consegui registrar sua avaliação. Tente novamente.');
+                    });
+            }
+
+            function showNpsPrompt(scale) {
+                if (npsPromptVisible) {
+                    return;
+                }
+
+                removeNpsPrompt();
+
+                var min = scale && typeof scale.min === 'number' ? scale.min : 0;
+                var max = scale && typeof scale.max === 'number' ? scale.max : 10;
+
+                var item = document.createElement('div');
+                item.className = 'bel-chat__message bel-chat__message--assistant bel-chat__message--nps';
+
+                npsContainer = document.createElement('div');
+                npsContainer.className = 'bel-chat__nps';
+                npsContainer.setAttribute('role', 'group');
+                npsContainer.setAttribute('aria-label', 'Avaliação de satisfação');
+
+                var question = document.createElement('p');
+                question.className = 'bel-chat__nps-question';
+                question.textContent = 'Em uma escala de 0 a 10, qual é a probabilidade de você recomendar a Bel a um amigo ou parente?';
+                npsContainer.appendChild(question);
+
+                var labels = document.createElement('div');
+                labels.className = 'bel-chat__nps-labels';
+                labels.innerHTML = '<span>Nada provável</span><span>Muito provável</span>';
+                npsContainer.appendChild(labels);
+
+                var scaleWrap = document.createElement('div');
+                scaleWrap.className = 'bel-chat__nps-scale';
+
+                var buttons = [];
+
+                for (var score = min; score <= max; score++) {
+                    (function (currentScore) {
+                        var btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'bel-chat__nps-btn';
+                        btn.textContent = String(currentScore);
+                        btn.setAttribute('aria-label', 'Nota ' + currentScore);
+                        btn.addEventListener('click', function () {
+                            for (var s = 0; s < buttons.length; s++) {
+                                buttons[s].classList.remove('bel-chat__nps-btn--selected');
+                            }
+                            btn.classList.add('bel-chat__nps-btn--selected');
+                            submitNpsScore(currentScore, buttons);
+                        });
+                        buttons.push(btn);
+                        scaleWrap.appendChild(btn);
+                    })(score);
+                }
+
+                npsContainer.appendChild(scaleWrap);
+
+                item.appendChild(npsContainer);
+                messages.appendChild(item);
+                scrollMessagesToBottom(item);
+                npsPromptVisible = true;
+            }
+
+            function removeFcrPrompt() {
+                if (fcrContainer && fcrContainer.parentNode) {
+                    fcrContainer.parentNode.removeChild(fcrContainer);
+                }
+                fcrContainer = null;
+                fcrPromptVisible = false;
+                pendingFcrOnUnresolved = null;
+                fcrSubmitting = false;
+                lastFcrDetail = '';
+            }
+
+            function scrollFcrIntoView(target) {
+                scrollMessagesToBottom(target);
+            }
+
+            function createFcrCard() {
+                var card = document.createElement('div');
+                card.className = 'bel-chat__fcr-card';
+                return card;
+            }
+
+            function disableFcrCard(card) {
+                if (!card) {
+                    return;
+                }
+
+                var options = card.querySelectorAll('.bel-chat__fcr-radio-option, .bel-chat__fcr-ces-option');
+                for (var i = 0; i < options.length; i++) {
+                    options[i].classList.add('bel-chat__fcr-radio-option--disabled');
+                    options[i].classList.add('bel-chat__fcr-ces-option--disabled');
+                }
+
+                var textarea = card.querySelector('.bel-chat__fcr-textarea');
+                if (textarea) {
+                    textarea.disabled = true;
+                }
+
+                var submitButton = card.querySelector('.bel-chat__fcr-submit');
+                if (submitButton) {
+                    submitButton.disabled = true;
+                }
+            }
+
+            function appendFcrThanksCard() {
+                if (!fcrContainer || fcrContainer.querySelector('.bel-chat__fcr-thanks-card')) {
+                    return;
+                }
+
+                var card = createFcrCard();
+                card.className = 'bel-chat__fcr-thanks-card';
+                card.textContent = fcrCopy.thanks;
+                fcrContainer.appendChild(card);
+                scrollFcrIntoView();
+            }
+
+            function completeFcrFlow(resolved) {
+                if (resolved) {
+                    appendFcrThanksCard();
+                } else if (pendingFcrOnUnresolved && pendingFcrOnUnresolved.ticket_offer) {
+                    showFcrTicketOffer(pendingFcrOnUnresolved.ticket_offer);
+                }
+            }
+
+            function showFcrTicketManualReminder() {
+                if (messages.querySelector('.bel-chat__message--fcr-reminder')) {
+                    return;
+                }
+
+                var item = document.createElement('div');
+                item.className = 'bel-chat__message bel-chat__message--assistant bel-chat__message--fcr-reminder';
+
+                var bubble = document.createElement('div');
+                bubble.className = 'bel-chat__bubble';
+
+                var text = document.createElement('p');
+                text.textContent = fcrCopy.ticketManualReminder;
+
+                var link = document.createElement('a');
+                link.href = fcrCopy.ticketManualUrl;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = fcrCopy.ticketManualUrl;
+
+                bubble.appendChild(text);
+                bubble.appendChild(link);
+                item.appendChild(bubble);
+                messages.appendChild(item);
+                scrollMessagesToBottom(item);
+            }
+
+            function showFcrTicketOffer(ticketOffer) {
+                if (!fcrContainer || !ticketOffer || ticketOffer.template !== 'ticket_opening_offer') {
+                    return;
+                }
+
+                if (fcrContainer.querySelector('.bel-chat__fcr-ticket-offer')) {
+                    return;
+                }
+
+                var primary = ticketOffer.primary;
+                if (!primary || primary.action !== 'request_ticket_opening') {
+                    return;
+                }
+
+                var offerWrap = document.createElement('div');
+                offerWrap.className = 'bel-chat__fcr-ticket-offer';
+                offerWrap.setAttribute('role', 'group');
+                offerWrap.setAttribute('aria-label', fcrTemplateLabels.ticket_opening_offer || '');
+
+                var question = document.createElement('p');
+                question.className = 'bel-chat__fcr-ticket-question';
+                question.textContent = fcrTemplateLabels.ticket_opening_offer || '';
+                offerWrap.appendChild(question);
+
+                var actionsWrap = document.createElement('div');
+                actionsWrap.className = 'bel-chat__fcr-ticket-actions';
+
+                var openBtn = document.createElement('button');
+                openBtn.type = 'button';
+                openBtn.className = 'bel-chat__fcr-ticket-btn bel-chat__fcr-ticket-btn--primary';
+                openBtn.textContent = fcrActionLabels.request_ticket_opening || 'Sim';
+                openBtn.setAttribute('aria-label', openBtn.textContent);
+
+                var dismissBtn = null;
+                var secondary = ticketOffer.secondary;
+                if (secondary && secondary.action === 'dismiss') {
+                    dismissBtn = document.createElement('button');
+                    dismissBtn.type = 'button';
+                    dismissBtn.className = 'bel-chat__fcr-ticket-btn bel-chat__fcr-ticket-btn--secondary';
+                    dismissBtn.textContent = fcrActionLabels.dismiss || 'Não';
+                    dismissBtn.setAttribute('aria-label', dismissBtn.textContent);
+                    dismissBtn.addEventListener('click', function () {
+                        if (offerWrap.parentNode) {
+                            offerWrap.parentNode.removeChild(offerWrap);
+                        }
+                        showFcrTicketManualReminder();
+                    });
+                }
+
+                openBtn.addEventListener('click', function () {
+                    openBtn.disabled = true;
+                    if (dismissBtn) {
+                        dismissBtn.disabled = true;
+                    }
+                    sendInteraction('request_ticket_opening', {
+                        data: { detail: lastFcrDetail }
+                    });
+                });
+                actionsWrap.appendChild(openBtn);
+                if (dismissBtn) {
+                    actionsWrap.appendChild(dismissBtn);
+                }
+
+                offerWrap.appendChild(actionsWrap);
+                fcrContainer.appendChild(offerWrap);
+                scrollFcrIntoView();
+            }
+
+            function submitFcrResponse(payload) {
+                if (fcrSubmitting) {
+                    return;
+                }
+
+                fcrSubmitting = true;
+
+                if (payload.resolved) {
+                    lastFcrDetail = '';
+                } else {
+                    lastFcrDetail = payload.detail || '';
+                }
+
+                if (!sessionId || !fcrEndpoint) {
+                    completeFcrFlow(payload.resolved);
+                    return;
+                }
+
+                var body = {
+                    session_id: sessionId,
+                    resolved: payload.resolved
+                };
+
+                if (payload.resolved) {
+                    body.ease_score = payload.ease_score;
+                } else {
+                    body.unresolved_reason = payload.unresolved_reason;
+                    if (payload.unresolved_reason === 'other' && payload.comment) {
+                        body.comment = payload.comment;
+                    }
+                }
+
+                window.fetch(fcrEndpoint, {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': token
+                    },
+                    body: JSON.stringify(body)
+                })
+                    .then(function (response) {
+                        return response.json().then(function (data) {
+                            if (!response.ok) {
+                                throw new Error(data.error || 'bel-fcr-request-failed');
+                            }
+                            return data;
+                        });
+                    })
+                    .then(function () {
+                        completeFcrFlow(payload.resolved);
+                    })
+                    .catch(function () {
+                        fcrSubmitting = false;
+                        completeFcrFlow(payload.resolved);
+                    });
+            }
+
+            function showFcrCesCard(resolutionCard) {
+                if (!fcrContainer || fcrContainer.querySelector('[data-bel-fcr-ces]')) {
+                    return;
+                }
+
+                disableFcrCard(resolutionCard);
+
+                var card = createFcrCard();
+                card.setAttribute('data-bel-fcr-ces', 'true');
+
+                var question = document.createElement('p');
+                question.className = 'bel-chat__fcr-question';
+                question.textContent = fcrCopy.cesQuestion;
+                card.appendChild(question);
+
+                var scale = document.createElement('div');
+                scale.className = 'bel-chat__fcr-ces-scale';
+                scale.setAttribute('role', 'radiogroup');
+                scale.setAttribute('aria-label', fcrCopy.cesQuestion);
+
+                for (var i = 0; i < fcrCesOptions.length; i++) {
+                    (function (option) {
+                        var optionWrap = document.createElement('label');
+                        optionWrap.className = 'bel-chat__fcr-ces-option';
+
+                        var input = document.createElement('input');
+                        input.type = 'radio';
+                        input.name = 'bel-fcr-ces';
+                        input.value = String(option.score);
+                        input.className = 'bel-chat__fcr-radio-input';
+
+                        var control = document.createElement('span');
+                        control.className = 'bel-chat__fcr-radio-control';
+
+                        var label = document.createElement('span');
+                        label.className = 'bel-chat__fcr-radio-label bel-chat__fcr-radio-label--multiline';
+                        if (option.line2) {
+                            label.innerHTML = option.line1 + '<br>' + option.line2;
+                        } else {
+                            label.textContent = option.line1;
+                        }
+
+                        optionWrap.appendChild(input);
+                        optionWrap.appendChild(control);
+                        optionWrap.appendChild(label);
+
+                        input.addEventListener('change', function () {
+                            disableFcrCard(card);
+                            submitFcrResponse({
+                                resolved: true,
+                                ease_score: option.score
+                            });
+                        });
+
+                        scale.appendChild(optionWrap);
+                    })(fcrCesOptions[i]);
+                }
+
+                card.appendChild(scale);
+                fcrContainer.appendChild(card);
+                scrollFcrIntoView();
+            }
+
+            function showFcrReasonCard(resolutionCard) {
+                if (!fcrContainer || fcrContainer.querySelector('[data-bel-fcr-reason]')) {
+                    return;
+                }
+
+                disableFcrCard(resolutionCard);
+
+                var card = createFcrCard();
+                card.setAttribute('data-bel-fcr-reason', 'true');
+
+                var question = document.createElement('p');
+                question.className = 'bel-chat__fcr-question';
+                question.textContent = fcrCopy.reasonQuestion;
+                card.appendChild(question);
+
+                var list = document.createElement('div');
+                list.className = 'bel-chat__fcr-reason-list';
+                list.setAttribute('role', 'radiogroup');
+                list.setAttribute('aria-label', fcrCopy.reasonQuestion);
+
+                var otherFields = null;
+                var otherTextarea = null;
+                var otherSubmit = null;
+
+                function setOtherFieldsVisible(visible) {
+                    if (!otherFields) {
+                        return;
+                    }
+                    otherFields.hidden = !visible;
+                    if (!visible && otherTextarea) {
+                        otherTextarea.value = '';
+                        if (otherSubmit) {
+                            otherSubmit.disabled = true;
+                        }
+                    }
+                }
+
+                function submitReason(reason, comment) {
+                    disableFcrCard(card);
+                    var payload = {
+                        resolved: false,
+                        unresolved_reason: reason.code,
+                        detail: comment || reason.label
+                    };
+                    if (reason.code === 'other' && comment) {
+                        payload.comment = comment;
+                    }
+                    submitFcrResponse(payload);
+                }
+
+                function createReasonOption(reason) {
+                    var option = document.createElement('label');
+                    option.className = 'bel-chat__fcr-radio-option bel-chat__fcr-radio-option--block';
+
+                    var input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = 'bel-fcr-reason';
+                    input.value = reason.code;
+                    input.className = 'bel-chat__fcr-radio-input';
+
+                    var control = document.createElement('span');
+                    control.className = 'bel-chat__fcr-radio-control';
+
+                    var label = document.createElement('span');
+                    label.className = 'bel-chat__fcr-radio-label';
+                    label.textContent = reason.label;
+
+                    option.appendChild(input);
+                    option.appendChild(control);
+                    option.appendChild(label);
+
+                    return { option: option, input: input };
+                }
+
+                for (var r = 0; r < fcrReasonOptions.length; r++) {
+                    (function (reason) {
+                        var created = createReasonOption(reason);
+
+                        if (reason.code === 'other') {
+                            var wrap = document.createElement('div');
+                            wrap.className = 'bel-chat__fcr-reason-other';
+                            wrap.appendChild(created.option);
+
+                            otherFields = document.createElement('div');
+                            otherFields.className = 'bel-chat__fcr-other-fields';
+                            otherFields.hidden = true;
+
+                            otherTextarea = document.createElement('textarea');
+                            otherTextarea.className = 'bel-chat__fcr-textarea';
+                            otherTextarea.placeholder = 'Descreva o motivo';
+                            otherTextarea.maxLength = 2000;
+                            otherTextarea.rows = 3;
+                            otherTextarea.setAttribute('aria-label', 'Descreva o motivo');
+
+                            otherSubmit = document.createElement('button');
+                            otherSubmit.type = 'button';
+                            otherSubmit.className = 'bel-chat__fcr-submit bel-chat__fcr-ticket-btn bel-chat__fcr-ticket-btn--primary';
+                            otherSubmit.textContent = 'Enviar';
+                            otherSubmit.disabled = true;
+
+                            var submitWrap = document.createElement('div');
+                            submitWrap.className = 'bel-chat__fcr-submit-wrap';
+                            submitWrap.appendChild(otherSubmit);
+
+                            otherFields.appendChild(otherTextarea);
+                            otherFields.appendChild(submitWrap);
+                            wrap.appendChild(otherFields);
+                            list.appendChild(wrap);
+
+                            created.input.addEventListener('change', function () {
+                                setOtherFieldsVisible(true);
+                                otherTextarea.focus();
+                                scrollFcrIntoView();
+                            });
+
+                            otherTextarea.addEventListener('input', function () {
+                                otherSubmit.disabled = otherTextarea.value.trim() === '';
+                            });
+
+                            otherSubmit.addEventListener('click', function () {
+                                var comment = otherTextarea.value.trim();
+                                if (!comment) {
+                                    return;
+                                }
+                                submitReason(reason, comment);
+                            });
+                            return;
+                        }
+
+                        list.appendChild(created.option);
+                        created.input.addEventListener('change', function () {
+                            setOtherFieldsVisible(false);
+                            submitReason(reason);
+                        });
+                    })(fcrReasonOptions[r]);
+                }
+
+                card.appendChild(list);
+                fcrContainer.appendChild(card);
+                scrollFcrIntoView();
+            }
+
+            function showFcrPrompt(onUnresolved) {
+                if (fcrPromptVisible) {
+                    return;
+                }
+
+                removeFcrPrompt();
+                pendingFcrOnUnresolved = onUnresolved;
+
+                var item = document.createElement('div');
+                item.className = 'bel-chat__message bel-chat__message--assistant bel-chat__message--fcr';
+
+                fcrContainer = document.createElement('div');
+                fcrContainer.className = 'bel-chat__fcr';
+                fcrContainer.setAttribute('role', 'group');
+                fcrContainer.setAttribute('aria-label', 'Avaliação de resolução');
+
+                var resolutionCard = createFcrCard();
+                resolutionCard.setAttribute('data-bel-fcr-resolution', 'true');
+
+                var question = document.createElement('p');
+                question.className = 'bel-chat__fcr-question';
+                question.textContent = fcrCopy.resolutionQuestion;
+                resolutionCard.appendChild(question);
+
+                var optionsWrap = document.createElement('div');
+                optionsWrap.className = 'bel-chat__fcr-options';
+                optionsWrap.setAttribute('role', 'radiogroup');
+                optionsWrap.setAttribute('aria-label', fcrCopy.resolutionQuestion);
+
+                function addResolutionOption(value, label, resolved) {
+                    var option = document.createElement('label');
+                    option.className = 'bel-chat__fcr-radio-option';
+
+                    var input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = 'bel-fcr-resolved';
+                    input.value = value;
+                    input.className = 'bel-chat__fcr-radio-input';
+
+                    var control = document.createElement('span');
+                    control.className = 'bel-chat__fcr-radio-control';
+
+                    var text = document.createElement('span');
+                    text.className = 'bel-chat__fcr-radio-label';
+                    text.textContent = label;
+
+                    option.appendChild(input);
+                    option.appendChild(control);
+                    option.appendChild(text);
+
+                    input.addEventListener('change', function () {
+                        if (resolved) {
+                            showFcrCesCard(resolutionCard);
+                        } else {
+                            showFcrReasonCard(resolutionCard);
+                        }
+                    });
+
+                    optionsWrap.appendChild(option);
+                }
+
+                addResolutionOption('yes', 'Sim', true);
+                addResolutionOption('no', 'Não', false);
+                resolutionCard.appendChild(optionsWrap);
+                fcrContainer.appendChild(resolutionCard);
+
+                item.appendChild(fcrContainer);
+                messages.appendChild(item);
+                scrollFcrIntoView(item);
+                fcrPromptVisible = true;
+            }
+
+            function handleUiActions(actions) {
+                if (!actions || !actions.length) {
+                    return;
+                }
+
+                for (var i = 0; i < actions.length; i++) {
+                    var action = actions[i];
+                    if (!action || !action.type) {
+                        continue;
+                    }
+
+                    if (action.type === 'fcr_prompt') {
+                        showFcrPrompt(action.on_unresolved || null);
+                    } else if (action.type === 'nps_prompt') {
+                        showNpsPrompt(action.scale);
+                    } else if (action.type === 'ticket_consent_prompt') {
+                        if (!ticketConsentAcknowledged) {
+                            showTicketConsentPrompt();
+                        }
+                    } else if (action.type === 'attachment_prompt') {
+                        hideTicketConsentPrompt();
+                        showAttachmentPrompt(action);
+                    }
+                }
+            }
+
+            function hideTicketConsentPrompt() {
+                if (consentMessageItem && consentMessageItem.parentNode) {
+                    consentMessageItem.parentNode.removeChild(consentMessageItem);
+                }
+                consentMessageItem = null;
+                consentCheckbox = null;
+                consentContinueBtn = null;
+                consentCancelBtn = null;
+                consentPromptVisible = false;
+                updateComposerLock();
+            }
+
+            function updateConsentControls() {
+                if (consentCheckbox) {
+                    consentCheckbox.disabled = busy;
+                }
+                if (consentCancelBtn) {
+                    consentCancelBtn.disabled = busy;
+                }
+                if (consentContinueBtn) {
+                    consentContinueBtn.disabled = busy || !consentCheckbox || !consentCheckbox.checked;
+                }
+            }
+
+            function showTicketConsentPrompt() {
+                if (consentPromptVisible || ticketConsentAcknowledged) {
+                    return;
+                }
+
+                consentMessageItem = document.createElement('div');
+                consentMessageItem.className = 'bel-chat__message bel-chat__message--assistant bel-chat__message--consent';
+
+                var consentCard = document.createElement('section');
+                consentCard.className = 'bel-chat__consent';
+                consentCard.setAttribute('aria-labelledby', 'bel-ticket-consent-title');
+
+                var title = document.createElement('p');
+                title.id = 'bel-ticket-consent-title';
+                title.className = 'bel-chat__consent-title';
+                title.textContent = fcrCopy.ticketConsentTitle;
+
+                var notice = document.createElement('p');
+                notice.id = 'bel-ticket-consent-notice';
+                notice.className = 'bel-chat__consent-notice';
+                notice.textContent = fcrCopy.ticketConsentNotice;
+
+                var checkboxLabel = document.createElement('label');
+                checkboxLabel.className = 'bel-chat__consent-checkbox';
+
+                consentCheckbox = document.createElement('input');
+                consentCheckbox.type = 'checkbox';
+                consentCheckbox.setAttribute('aria-describedby', 'bel-ticket-consent-notice');
+                consentCheckbox.addEventListener('change', updateConsentControls);
+
+                var checkboxText = document.createElement('span');
+                checkboxText.textContent = fcrCopy.ticketConsentLabel;
+
+                checkboxLabel.appendChild(consentCheckbox);
+                checkboxLabel.appendChild(checkboxText);
+
+                var actions = document.createElement('div');
+                actions.className = 'bel-chat__attachment-actions';
+
+                consentCancelBtn = document.createElement('button');
+                consentCancelBtn.type = 'button';
+                consentCancelBtn.className = 'bel-chat__attachment-btn';
+                consentCancelBtn.textContent = 'Cancelar';
+                consentCancelBtn.addEventListener('click', dismissTicketConsent);
+
+                consentContinueBtn = document.createElement('button');
+                consentContinueBtn.type = 'button';
+                consentContinueBtn.className = 'bel-chat__attachment-btn bel-chat__attachment-btn--primary';
+                consentContinueBtn.textContent = fcrCopy.ticketConsentContinue;
+                consentContinueBtn.addEventListener('click', acknowledgeTicketConsent);
+
+                actions.appendChild(consentCancelBtn);
+                actions.appendChild(consentContinueBtn);
+
+                consentCard.appendChild(title);
+                consentCard.appendChild(notice);
+                consentCard.appendChild(checkboxLabel);
+                consentCard.appendChild(actions);
+
+                consentMessageItem.appendChild(consentCard);
+                messages.appendChild(consentMessageItem);
+                scrollMessagesToBottom(consentMessageItem);
+                consentPromptVisible = true;
+                updateComposerLock();
+            }
+
+            function acknowledgeTicketConsent() {
+                if (busy || !consentCheckbox || !consentCheckbox.checked) {
+                    return;
+                }
+                ticketConsentAcknowledged = true;
+                sendInteraction('acknowledge_ticket_data_processing', {
+                    data: { consent: true }
+                }).then(function (ok) {
+                    if (ok) {
+                        hideTicketConsentPrompt();
+                    }
+                });
+            }
+
+            function dismissTicketConsent() {
+                if (busy) {
+                    return;
+                }
+                ticketConsentAcknowledged = false;
+                sendInteraction('dismiss_ticket_data_processing').then(function (ok) {
+                    if (ok) {
+                        hideTicketConsentPrompt();
+                    }
+                });
+            }
+
+            function removeAttachmentPrompt() {
+                if (attachmentMessageItem && attachmentMessageItem.parentNode) {
+                    attachmentMessageItem.parentNode.removeChild(attachmentMessageItem);
+                }
+                attachmentMessageItem = null;
+                attachmentContainer = null;
+                attachmentFileInput = null;
+                attachmentDropzone = null;
+                attachmentListEl = null;
+                attachmentErrorEl = null;
+                attachmentConfirmBtn = null;
+                attachmentCancelBtn = null;
+                attachmentPromptVisible = false;
+            }
+
+            function hideAttachmentPrompt() {
+                removeAttachmentPrompt();
+                clearPendingAttachments();
+            }
+
+            function clearPendingAttachments() {
+                pendingAttachments = [];
+                attachmentReadingCount = 0;
+            }
+
+            function setAttachmentError(message) {
+                if (!attachmentErrorEl) {
+                    return;
+                }
+                attachmentErrorEl.textContent = message || '';
+            }
+
+            function getAttachmentTotalBytes() {
+                var total = 0;
+                for (var i = 0; i < pendingAttachments.length; i++) {
+                    if (pendingAttachments[i].content_base64) {
+                        total += pendingAttachments[i].sizeBytes || 0;
+                    }
+                }
+                return total;
+            }
+
+            function updateAttachmentControls() {
+                var atLimit = pendingAttachments.length >= attachmentLimits.maxFiles;
+                var isReading = attachmentReadingCount > 0;
+
+                if (attachmentCancelBtn) {
+                    attachmentCancelBtn.disabled = busy || isReading;
+                }
+                if (attachmentConfirmBtn) {
+                    attachmentConfirmBtn.disabled = busy || isReading;
+                }
+                if (attachmentDropzone) {
+                    attachmentDropzone.classList.toggle(
+                        'bel-chat__attachment-dropzone--disabled',
+                        busy || atLimit || isReading
+                    );
+                }
+            }
+
+            function renderAttachmentList() {
+                if (!attachmentListEl) {
+                    return;
+                }
+
+                attachmentListEl.innerHTML = '';
+
+                for (var i = 0; i < pendingAttachments.length; i++) {
+                    (function (item) {
+                        var row = document.createElement('div');
+                        row.className = 'bel-chat__attachment-item';
+
+                        var name = document.createElement('span');
+                        name.className = 'bel-chat__attachment-name';
+                        name.textContent = item.filename;
+                        name.title = item.filename;
+
+                        var removeBtn = document.createElement('button');
+                        removeBtn.type = 'button';
+                        removeBtn.className = 'bel-chat__attachment-remove';
+                        removeBtn.setAttribute('aria-label', 'Remover ' + item.filename);
+                        removeBtn.textContent = '\u00d7';
+                        removeBtn.addEventListener('click', function () {
+                            removeAttachmentItem(item.id);
+                        });
+
+                        row.appendChild(name);
+                        row.appendChild(removeBtn);
+                        attachmentListEl.appendChild(row);
+                    })(pendingAttachments[i]);
+                }
+
+                updateAttachmentControls();
+            }
+
+            function removeAttachmentItem(id) {
+                pendingAttachments = pendingAttachments.filter(function (item) {
+                    return item.id !== id;
+                });
+                setAttachmentError('');
+                renderAttachmentList();
+            }
+
+            function readFileAsBase64(file) {
+                return new Promise(function (resolve, reject) {
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        var result = reader.result;
+                        if (typeof result !== 'string') {
+                            reject(new Error('bel-chat-attachment-read-failed'));
+                            return;
+                        }
+                        var commaIndex = result.indexOf(',');
+                        resolve(commaIndex >= 0 ? result.slice(commaIndex + 1) : result);
+                    };
+                    reader.onerror = function () {
+                        reject(reader.error || new Error('bel-chat-attachment-read-failed'));
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            function getAttachmentExtension(filename) {
+                var match = /\.([a-z0-9]+)$/i.exec(filename || '');
+                return match ? match[1].toLowerCase() : '';
+            }
+
+            function getAttachmentExtensionsLabel() {
+                return attachmentAllowedExtensions.map(function (ext) {
+                    return ext.toUpperCase();
+                }).join(', ');
+            }
+
+            function getAttachmentAcceptValue() {
+                var extensions = attachmentAllowedExtensions.map(function (ext) {
+                    return '.' + ext;
+                });
+                return extensions.concat(attachmentLimits.allowedContentTypes).join(',');
+            }
+
+            function formatAttachmentSize(bytes) {
+                var megabytes = bytes / (1024 * 1024);
+                return (megabytes % 1 === 0 ? String(megabytes) : megabytes.toFixed(1)) + ' MB';
+            }
+
+            function resolveAttachmentContentType(file) {
+                if (file && file.type && attachmentLimits.allowedContentTypes.indexOf(file.type) !== -1) {
+                    return file.type;
+                }
+                var extension = getAttachmentExtension(file && file.name);
+                return attachmentExtensionMime[extension] || '';
+            }
+
+            function validateAttachmentFile(file) {
+                if (!file) {
+                    return 'Arquivo inválido.';
+                }
+                var contentType = resolveAttachmentContentType(file);
+                if (!contentType) {
+                    return 'Tipo de arquivo não permitido. Use: ' + getAttachmentExtensionsLabel() + '.';
+                }
+                if (file.size > attachmentLimits.maxFileBytes) {
+                    return 'Arquivo muito grande (máx. ' + formatAttachmentSize(attachmentLimits.maxFileBytes) + '): ' + file.name;
+                }
+                if (pendingAttachments.length >= attachmentLimits.maxFiles) {
+                    return 'Você pode anexar no máximo ' + attachmentLimits.maxFiles + ' arquivos.';
+                }
+                if (getAttachmentTotalBytes() + file.size > attachmentLimits.maxTotalBytes) {
+                    return 'O total de anexos não pode passar de ' + formatAttachmentSize(attachmentLimits.maxTotalBytes) + '.';
+                }
+                for (var i = 0; i < pendingAttachments.length; i++) {
+                    if (pendingAttachments[i].filename === file.name) {
+                        return 'Este arquivo já foi adicionado: ' + file.name;
+                    }
+                }
+                return '';
+            }
+
+            function processSelectedFiles(fileList) {
+                if (!fileList || !fileList.length) {
+                    return;
+                }
+
+                var files = Array.prototype.slice.call(fileList);
+                setAttachmentError('');
+
+                function addNext(index) {
+                    if (index >= files.length) {
+                        updateAttachmentControls();
+                        return;
+                    }
+
+                    var file = files[index];
+                    var validationError = validateAttachmentFile(file);
+                    if (validationError) {
+                        setAttachmentError(validationError);
+                        addNext(index + 1);
+                        return;
+                    }
+
+                    var item = {
+                        id: 'att-' + (++attachmentIdCounter),
+                        filename: file.name,
+                        content_type: resolveAttachmentContentType(file),
+                        content_base64: '',
+                        sizeBytes: file.size
+                    };
+                    pendingAttachments.push(item);
+                    renderAttachmentList();
+
+                    attachmentReadingCount += 1;
+                    updateAttachmentControls();
+
+                    readFileAsBase64(file)
+                        .then(function (base64) {
+                            item.content_base64 = base64;
+                        })
+                        .catch(function () {
+                            removeAttachmentItem(item.id);
+                            setAttachmentError('Não foi possível ler o arquivo: ' + file.name);
+                        })
+                        .then(function () {
+                            attachmentReadingCount = Math.max(0, attachmentReadingCount - 1);
+                            updateAttachmentControls();
+                            addNext(index + 1);
+                        });
+                }
+
+                addNext(0);
+            }
+
+            function showAttachmentPrompt(action) {
+                if (attachmentPromptVisible) {
+                    return;
+                }
+
+                if (action) {
+                    if (typeof action.max_files === 'number') {
+                        attachmentLimits.maxFiles = action.max_files;
+                    }
+                    if (typeof action.max_file_bytes === 'number') {
+                        attachmentLimits.maxFileBytes = action.max_file_bytes;
+                    }
+                    if (typeof action.max_total_bytes === 'number') {
+                        attachmentLimits.maxTotalBytes = action.max_total_bytes;
+                    }
+                    if (action.allowed_content_types && action.allowed_content_types.length) {
+                        attachmentLimits.allowedContentTypes = action.allowed_content_types.slice();
+                    }
+                }
+
+                clearPendingAttachments();
+
+                attachmentMessageItem = document.createElement('div');
+                attachmentMessageItem.className = 'bel-chat__message bel-chat__message--assistant bel-chat__message--attachment';
+
+                attachmentContainer = document.createElement('div');
+                attachmentContainer.className = 'bel-chat__attachment';
+                attachmentContainer.setAttribute('role', 'group');
+                attachmentContainer.setAttribute('aria-label', 'Anexar arquivos ao chamado');
+
+                var hint = document.createElement('p');
+                hint.className = 'bel-chat__attachment-hint';
+                hint.textContent = 'Opcionalmente, você pode anexar documentos ao chamado.';
+                attachmentContainer.appendChild(hint);
+
+                attachmentDropzone = document.createElement('div');
+                attachmentDropzone.className = 'bel-chat__attachment-dropzone';
+                attachmentDropzone.setAttribute('aria-dropeffect', 'copy');
+                attachmentDropzone.textContent = 'Arraste arquivos aqui ou clique para selecionar';
+
+                attachmentFileInput = document.createElement('input');
+                attachmentFileInput.type = 'file';
+                attachmentFileInput.multiple = true;
+                attachmentFileInput.hidden = true;
+                attachmentFileInput.setAttribute(
+                    'accept',
+                    getAttachmentAcceptValue()
+                );
+
+                attachmentDropzone.addEventListener('click', function () {
+                    if (!busy && pendingAttachments.length < attachmentLimits.maxFiles) {
+                        attachmentFileInput.click();
+                    }
+                });
+
+                attachmentFileInput.addEventListener('change', function () {
+                    processSelectedFiles(attachmentFileInput.files);
+                    attachmentFileInput.value = '';
+                });
+
+                ['dragenter', 'dragover'].forEach(function (eventName) {
+                    attachmentDropzone.addEventListener(eventName, function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        attachmentDropzone.classList.add('bel-chat__attachment-dropzone--dragover');
+                    });
+                });
+
+                ['dragleave', 'drop'].forEach(function (eventName) {
+                    attachmentDropzone.addEventListener(eventName, function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        attachmentDropzone.classList.remove('bel-chat__attachment-dropzone--dragover');
+                        if (eventName === 'drop' && event.dataTransfer && event.dataTransfer.files) {
+                            processSelectedFiles(event.dataTransfer.files);
+                        }
+                    });
+                });
+
+                attachmentContainer.appendChild(attachmentDropzone);
+                attachmentContainer.appendChild(attachmentFileInput);
+
+                var formatsHint = document.createElement('p');
+                formatsHint.className = 'bel-chat__attachment-hint bel-chat__attachment-hint--formats';
+                formatsHint.textContent = 'Formatos aceitos: ' + getAttachmentExtensionsLabel() + '.';
+                attachmentContainer.appendChild(formatsHint);
+
+                attachmentListEl = document.createElement('div');
+                attachmentListEl.className = 'bel-chat__attachment-list';
+                attachmentContainer.appendChild(attachmentListEl);
+
+                attachmentErrorEl = document.createElement('p');
+                attachmentErrorEl.className = 'bel-chat__attachment-error';
+                attachmentErrorEl.setAttribute('aria-live', 'polite');
+                attachmentContainer.appendChild(attachmentErrorEl);
+
+                var actions = document.createElement('div');
+                actions.className = 'bel-chat__attachment-actions';
+
+                attachmentCancelBtn = document.createElement('button');
+                attachmentCancelBtn.type = 'button';
+                attachmentCancelBtn.className = 'bel-chat__attachment-btn bel-chat__attachment-btn--secondary';
+                attachmentCancelBtn.textContent = 'Cancelar';
+                attachmentCancelBtn.addEventListener('click', function () {
+                    cancelTicketOpening();
+                });
+
+                attachmentConfirmBtn = document.createElement('button');
+                attachmentConfirmBtn.type = 'button';
+                attachmentConfirmBtn.className = 'bel-chat__attachment-btn bel-chat__attachment-btn--primary';
+                attachmentConfirmBtn.textContent = 'Abrir chamado';
+                attachmentConfirmBtn.addEventListener('click', function () {
+                    confirmTicketOpening();
+                });
+
+                actions.appendChild(attachmentCancelBtn);
+                actions.appendChild(attachmentConfirmBtn);
+                attachmentContainer.appendChild(actions);
+
+                attachmentMessageItem.appendChild(attachmentContainer);
+                messages.appendChild(attachmentMessageItem);
+                scrollMessagesToBottom(attachmentMessageItem);
+                attachmentPromptVisible = true;
+                updateAttachmentControls();
+            }
+
+            function buildAttachmentsPayload() {
+                var payload = [];
+                for (var i = 0; i < pendingAttachments.length; i++) {
+                    var item = pendingAttachments[i];
+                    if (!item.content_base64) {
+                        continue;
+                    }
+                    payload.push({
+                        filename: item.filename,
+                        content_type: item.content_type,
+                        content_base64: item.content_base64
+                    });
+                }
+                return payload.length ? payload : null;
+            }
+
+            function confirmTicketOpening() {
+                if (BEL_FORCE_ATTACHMENT_PROMPT_FOR_TEST && !sessionId) {
+                    return;
+                }
+                sendInteraction('confirm_ticket_opening', {
+                    includeAttachments: true,
+                    data: { consent: ticketConsentAcknowledged }
+                });
+            }
+
+            function cancelTicketOpening() {
+                if (busy) {
+                    return;
+                }
+                hideAttachmentPrompt();
+                if (BEL_FORCE_ATTACHMENT_PROMPT_FOR_TEST && !sessionId) {
+                    return;
+                }
+                sendInteraction('cancel_ticket_opening');
+            }
+
+            function handleAttachmentCompletion(dataObj) {
+                if (!dataObj || !dataObj.attachments) {
+                    return;
+                }
+                if (dataObj.attachments.attached_to_ticket) {
+                    hideAttachmentPrompt();
+                    hideTicketConsentPrompt();
+                }
+            }
+
+            function setOpen(open) {
+                widget.classList.toggle('bel-chat--open', open);
+
+                if (open) {
+                    panel.removeAttribute('inert');
+                    panel.setAttribute('aria-hidden', 'false');
+                    if (BEL_FORCE_ATTACHMENT_PROMPT_FOR_TEST) {
+                        showAttachmentPrompt();
+                    }
+                    if (input && !isComposerLocked()) {
+                        window.setTimeout(function () {
+                            if (!isComposerLocked()) {
+                                input.focus();
+                            }
+                        }, 60);
+                    }
+                } else {
+                    panel.setAttribute('inert', '');
+                    panel.setAttribute('aria-hidden', 'true');
+
+                    if (document.activeElement && widget.contains(document.activeElement)) {
+                        document.activeElement.blur();
+                    }
+                }
+            }
+
+            function appendMessage(text, type) {
+                var item = document.createElement('div');
+                var bubble = document.createElement('div');
+
+                item.className = 'bel-chat__message bel-chat__message--' + type;
+                bubble.className = 'bel-chat__bubble';
+                bubble.textContent = text;
+
+                item.appendChild(bubble);
+                messages.appendChild(item);
+                scrollMessagesToBottom(item);
+
+                return item;
+            }
+
+            function setBubbleTyping(bubble) {
+                bubble.className = 'bel-chat__bubble bel-chat__bubble--typing';
+                bubble.setAttribute('aria-label', 'Bel está digitando');
+                bubble.innerHTML = '<span class="bel-chat__typing" aria-hidden="true"><span class="bel-chat__typing-dot"></span><span class="bel-chat__typing-dot"></span><span class="bel-chat__typing-dot"></span></span>';
+            }
+
+            function clearBubbleTyping(bubble) {
+                bubble.classList.remove('bel-chat__bubble--typing');
+                bubble.removeAttribute('aria-label');
+            }
+
+            function isComposerLocked() {
+                return busy || consentPromptVisible;
+            }
+
+            function updateComposerLock() {
+                if (input) {
+                    input.disabled = isComposerLocked();
+                }
+                if (submit) {
+                    submit.disabled = isComposerLocked() || input.value.trim() === '';
+                }
+                for (var i = 0; i < suggestions.length; i++) {
+                    suggestions[i].disabled = isComposerLocked();
+                }
+                updateConsentControls();
+            }
+
+            function setBusy(nextBusy) {
+                busy = nextBusy;
+                updateComposerLock();
+            }
+
+            function finalizeEmptyAssistant(pending) {
+                if (!pending) {
+                    return;
+                }
+                pending.className = pending.className.replace(' bel-chat__message--pending', '');
+                var bubble = pending.querySelector('.bel-chat__bubble');
+                if (!bubble || bubble.classList.contains('bel-chat__bubble--typing')) {
+                    return;
+                }
+                var text = (bubble.textContent || '').replace(/\s+/g, ' ').trim();
+                if (!text && pending.parentNode) {
+                    pending.parentNode.removeChild(pending);
+                }
+            }
+
+            function markStarted() {
+                if (started) {
+                    return;
+                }
+
+                started = true;
+                widget.classList.add('bel-chat--started');
+
+                if (suggestionsWrap) {
+                    suggestionsWrap.setAttribute('aria-hidden', 'true');
+                }
+            }
+
+            function getPageMetadata() {
+                var resourceType = widget.getAttribute('data-bel-resource-type');
+                var resourceId = widget.getAttribute('data-bel-resource-id');
+
+                if (resourceType && resourceId) {
+                    return {
+                        resource_type: resourceType,
+                        resource_id: /^\d+$/.test(resourceId) ? parseInt(resourceId, 10) : resourceId
+                    };
+                }
+
+                var path = window.location.pathname;
+                var match;
+
+                match = path.match(/\/programa\/[^\/]+\/curso\/([a-zA-Z0-9_-]+)/);
+                if (match) {
+                    return { resource_type: 'curso', resource_id: match[1] };
+                }
+
+                match = path.match(/\/programa\/(?!exclusivo|google|pdi)([^\/]+)\/([^\/]+)\/[^\/]+/);
+                if (match) {
+                    return { resource_type: 'curso', resource_id: match[2] };
+                }
+
+                match = path.match(/\/curso\/([a-zA-Z0-9_-]+)/);
+                if (match) {
+                    return { resource_type: 'curso', resource_id: match[1] };
+                }
+
+                match = path.match(/\/aprendizagil-detalhe\/([a-zA-Z0-9_-]+)/);
+                if (match) {
+                    return { resource_type: 'aprendizagil', resource_id: match[1] };
+                }
+
+                match = path.match(/\/(?:programa|certificacao)\/(?!exclusivo|google|pdi)([a-zA-Z0-9_-]+)/);
+                if (match) {
+                    return { resource_type: 'programa', resource_id: match[1] };
+                }
+
+                return null;
+            }
+
+            function requestReply(payloadObj) {
+                if (sessionId) payloadObj.session_id = sessionId;
+
+                var metadata = getPageMetadata();
+                if (metadata) {
+                    payloadObj.metadata = metadata;
+                }
+
+                var payload = JSON.stringify(payloadObj);
+
+                if (window.fetch) {
+                    return window.fetch(endpoint, {
+                        method: 'POST',
+                        credentials: 'same-origin',
+                        headers: {
+                            'Accept': 'text/event-stream',
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': token
+                        },
+                        body: payload
+                    });
+                }
+
+                return Promise.reject(new Error('bel-chat-no-client-fetch'));
+            }
+
+            function processChatStream(pending) {
+                return function (response) {
+                    if (!response.ok) {
+                        return response.text().then(function() {
+                            throw new Error('bel-chat-request-failed: ' + response.status);
+                        });
+                    }
+                    if (!response.body) {
+                        throw new Error('bel-chat-no-stream');
+                    }
+
+                    var reader = response.body.getReader();
+                    var decoder = new TextDecoder('utf-8');
+                    var partialBuffer = '';
+                    var streamHtml = '';
+                    var sseEventType = null;
+                    var sseDataBuffer = '';
+                    var streamChain = Promise.resolve();
+                    var BEL_STREAM_CHARS_PER_SECOND = 60;
+                    var paragraph = pending.querySelector('.bel-chat__bubble');
+                    clearBubbleTyping(paragraph);
+                    paragraph.textContent = '';
+
+                    function escapeHtml(value) {
+                        return String(value)
+                            .replace(/&/g, '&amp;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;')
+                            .replace(/"/g, '&quot;');
+                    }
+
+                    function proseToHtml(value) {
+                        return escapeHtml(value).replace(/\n/g, '<br>');
+                    }
+
+                    function clearPendingStyle() {
+                        pending.className = pending.className.replace(' bel-chat__message--pending', '');
+                    }
+
+                    function waitStreamFrame() {
+                        return new Promise(function (resolve) {
+                            if (typeof requestAnimationFrame === 'function') {
+                                requestAnimationFrame(function () {
+                                    resolve();
+                                });
+                                return;
+                            }
+                            window.setTimeout(resolve, 16);
+                        });
+                    }
+
+                    function revealProse(text) {
+                        if (!text) {
+                            return Promise.resolve();
+                        }
+
+                        return new Promise(function (resolve) {
+                            var remaining = text;
+                            var lastFrameAt = Date.now();
+                            var charBudget = 0;
+
+                            function tick() {
+                                if (!remaining) {
+                                    resolve();
+                                    return;
+                                }
+
+                                waitStreamFrame().then(function () {
+                                    var now = Date.now();
+                                    charBudget += ((now - lastFrameAt) / 1000) * BEL_STREAM_CHARS_PER_SECOND;
+                                    lastFrameAt = now;
+                                    var size = Math.min(remaining.length, Math.floor(charBudget));
+                                    if (size > 0) {
+                                        charBudget -= size;
+                                        streamHtml += proseToHtml(remaining.slice(0, size));
+                                        remaining = remaining.slice(size);
+                                        paragraph.innerHTML = streamHtml;
+                                        clearPendingStyle();
+                                        scrollMessagesToBottom(pending);
+                                    }
+                                    tick();
+                                });
+                            }
+
+                            tick();
+                        });
+                    }
+
+                    function enqueueStream(task) {
+                        streamChain = streamChain.then(task, task);
+                    }
+
+                    function handleSsePayload(eventType, dataObj) {
+                        if (!dataObj) {
+                            return;
+                        }
+
+                        if (dataObj.session_id) {
+                            sessionId = dataObj.session_id;
+                        }
+
+                        if (eventType === 'delta' && dataObj.content) {
+                            enqueueStream(function () {
+                                return revealProse(dataObj.content);
+                            });
+                        } else if (eventType === 'delta_block' && dataObj.html) {
+                            enqueueStream(function () {
+                                streamHtml += dataObj.html;
+                                paragraph.innerHTML = streamHtml;
+                                clearPendingStyle();
+                                scrollMessagesToBottom(pending);
+                            });
+                        } else if (eventType === 'completed') {
+                            enqueueStream(function () {
+                                if (dataObj.answer_html) {
+                                    streamHtml = dataObj.answer_html;
+                                    paragraph.innerHTML = streamHtml;
+                                    clearPendingStyle();
+                                }
+                                if (dataObj.ui_actions && dataObj.ui_actions.length) {
+                                    handleUiActions(dataObj.ui_actions);
+                                }
+                                handleAttachmentCompletion(dataObj);
+                                scrollMessagesToBottom();
+                            });
+                        } else if (eventType === 'ui_action') {
+                            enqueueStream(function () {
+                                if (dataObj.ui_actions && dataObj.ui_actions.length) {
+                                    handleUiActions(dataObj.ui_actions);
+                                }
+                                scrollMessagesToBottom();
+                            });
+                        } else if (eventType === 'error') {
+                            enqueueStream(function () {
+                                paragraph.innerHTML += '<br><em>(Falha ao processar a mensagem completa)</em>';
+                            });
+                        }
+                    }
+
+                    function dispatchSseEvent(eventType, dataStr) {
+                        if (!dataStr) {
+                            return;
+                        }
+
+                        try {
+                            handleSsePayload(eventType, JSON.parse(dataStr));
+                        } catch (e) {
+                        }
+                    }
+
+                    function processSseBuffer(flush) {
+                        var lines = partialBuffer.split('\n');
+                        partialBuffer = flush ? '' : (lines.pop() || '');
+
+                        for (var i = 0; i < lines.length; i++) {
+                            var line = lines[i].replace(/\r$/, '');
+
+                            if (line === '') {
+                                if (sseDataBuffer) {
+                                    dispatchSseEvent(sseEventType, sseDataBuffer);
+                                    sseDataBuffer = '';
+                                }
+                                sseEventType = null;
+                                continue;
+                            }
+
+                            if (line.indexOf('event:') === 0) {
+                                sseEventType = line.substring(6).trim();
+                            } else if (line.indexOf('data:') === 0) {
+                                var piece = line.substring(5).trim();
+                                sseDataBuffer = sseDataBuffer ? sseDataBuffer + '\n' + piece : piece;
+                            }
+                        }
+
+                        if (flush && sseDataBuffer) {
+                            dispatchSseEvent(sseEventType, sseDataBuffer);
+                            sseDataBuffer = '';
+                            sseEventType = null;
+                        }
+                    }
+
+                    function readChunk() {
+                        return reader.read().then(function(result) {
+                            if (result.value) {
+                                partialBuffer += decoder.decode(result.value, { stream: true });
+                                processSseBuffer(false);
+                            }
+
+                            if (result.done) {
+                                if (partialBuffer) {
+                                    partialBuffer += '\n\n';
+                                    processSseBuffer(true);
+                                } else if (sseDataBuffer) {
+                                    dispatchSseEvent(sseEventType, sseDataBuffer);
+                                    sseDataBuffer = '';
+                                }
+                                return;
+                            }
+
+                            return readChunk();
+                        });
+                    }
+                    return readChunk().then(function () {
+                        return streamChain;
+                    });
+                };
+            }
+
+            function sendInteraction(type, options) {
+                options = options || {};
+                if (busy) {
+                    return Promise.resolve(false);
+                }
+
+                var data = options.data || {};
+                var attachmentsPayload = null;
+
+                if (options.includeAttachments) {
+                    attachmentsPayload = buildAttachmentsPayload();
+                }
+
+                setOpen(true);
+                markStarted();
+                setBusy(true);
+                updateAttachmentControls();
+
+                var pending = appendMessage('', 'assistant');
+                pending.className += ' bel-chat__message--pending';
+                setBubbleTyping(pending.querySelector('.bel-chat__bubble'));
+                scrollMessagesToBottom(pending);
+
+                var payloadObj = {
+                    interaction: {
+                        type: type,
+                        data: data
+                    }
+                };
+
+                if (attachmentsPayload && attachmentsPayload.length) {
+                    payloadObj.attachments = attachmentsPayload;
+                }
+
+                return requestReply(payloadObj)
+                    .then(processChatStream(pending))
+                    .then(function () {
+                        return true;
+                    })
+                    .catch(function () {
+                        var errorBubble = pending.querySelector('.bel-chat__bubble');
+                        clearBubbleTyping(errorBubble);
+                        errorBubble.textContent = 'Não consegui me conectar. Tente novamente em instantes.';
+                        return false;
+                    })
+                    .then(function (ok) {
+                        finalizeEmptyAssistant(pending);
+                        setBusy(false);
+                        updateAttachmentControls();
+                        return ok;
+                    });
+            }
+
+            function sendMessage(text) {
+                var cleanText = (text || '').replace(/\s+/g, ' ').trim();
+
+                if (!cleanText || isComposerLocked()) {
+                    return;
+                }
+
+                setOpen(true);
+                markStarted();
+                appendMessage(cleanText, 'user');
+                setBusy(true);
+                updateAttachmentControls();
+
+                var pending = appendMessage('', 'assistant');
+                pending.className += ' bel-chat__message--pending';
+                setBubbleTyping(pending.querySelector('.bel-chat__bubble'));
+                scrollMessagesToBottom(pending);
+
+                requestReply({ message: cleanText })
+                    .then(processChatStream(pending))
+                    .catch(function () {
+                        var errorBubble = pending.querySelector('.bel-chat__bubble');
+                        clearBubbleTyping(errorBubble);
+                        errorBubble.textContent = 'Não consegui me conectar. Tente novamente em instantes.';
+                    })
+                    .then(function () {
+                        finalizeEmptyAssistant(pending);
+                        setBusy(false);
+                        updateAttachmentControls();
+                    });
+            }
+
+            var openers = document.querySelectorAll('[data-bel-open]');
+            for (var i = 0; i < openers.length; i++) {
+                openers[i].addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var message = this.getAttribute('data-bel-message');
+
+                    if (message) {
+                        sendMessage(message);
+                        return;
+                    }
+
+                    setOpen(true);
+                });
+            }
+
+            var closers = widget.querySelectorAll('[data-bel-close]');
+            for (var j = 0; j < closers.length; j++) {
+                closers[j].addEventListener('click', function () {
+                    setOpen(false);
+                });
+            }
+
+            for (var k = 0; k < suggestions.length; k++) {
+                suggestions[k].addEventListener('click', function () {
+                    if (isComposerLocked()) {
+                        return;
+                    }
+                    var text = this.getAttribute('data-bel-suggestion');
+                    sendInteraction('suggestion_selected', { data: { text: text } });
+                });
+            }
+
+            function updateSubmitState() {
+                updateComposerLock();
+            }
+
+            input.addEventListener('input', updateSubmitState);
+
+            updateSubmitState();
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (isComposerLocked()) {
+                    return;
+                }
+                sendMessage(input.value);
+                input.value = '';
+                updateSubmitState();
+            });
+        });
+    })();
+</script>
+
+
+<script>
+    var translations = {
+        error: "Erro",
+        success: "Sucesso",
+        name_social: "Utilizar o nome Social?",
+        text_social_name_social: "Aqui na EV.G nós respeitamos os direitos humanos e queremos que você se sinta feliz ao ser reconhecid@ pela identidade que escolheu. O decreto nº 8.727/16 é o que dispõe sobre o uso do nome social e o reconhecimento da identidade de gênero de pessoas travestis e transexuais no âmbito da administração pública federal direta, autárquica e fundacional.",
+        button_not_name_social: "Desejo utilizar Nome Social",
+        button_yes_name_social: "Não desejo utilizar Nome Social",
+    };
+
+    var flags = document.getElementsByClassName('flag_link');
+
+    let sessionLocale = "";
+
+    let localStorageLocale = localStorage.getItem('language');
+    if(localStorageLocale){
+        var element = $(".dropdown-menu li").filter("." + localStorageLocale).children().html();
+        $('.selected').html(element);
+        $('.dropdown-menu li.'+localStorageLocale).hide();
+    }
+
+    if (localStorageLocale && sessionLocale !== localStorageLocale) {
+        window.location.href = '/locale/' + localStorageLocale;
+    }
+
+    $.getScript( "https://barra.brasil.gov.br/barra_2.0.js" )
+        .fail(function( jqxhr, settings, exception ) {
+            $.getScript("js/barra_2.0.js");
+        }
+    );
+
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        var tooltip = new bootstrap.Tooltip(tooltipTriggerEl);
+        return tooltip;
+    })
+
+</script>
+<script src="https://www.escolavirtual.gov.br/js/catalogo.js?v=82554bb48"></script>
+<script src="https://www.escolavirtual.gov.br/js/pythia-search.js?v=82554bb48"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "pymjkdf9cp"); </script>
+
+</body>
+</html>
+
