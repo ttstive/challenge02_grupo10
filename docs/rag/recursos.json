@@ -1,0 +1,26 @@
+[
+  {
+    "id": "coraa",
+    "title": "CORAA",
+    "url": "https://raw.githubusercontent.com/nilc-nlp/CORAA/main/README.md",
+    "status": "downloaded",
+    "file": "recursos/coraa_README.md",
+    "sha256": "dfac6a3bee54a5358159698e82b3997a1d314610f9002a2816b7376599ad53da"
+  },
+  {
+    "id": "complexidade",
+    "title": "Corpus de Complexidade Textual",
+    "url": "https://raw.githubusercontent.com/gazzola/corpus_readability_nlp_portuguese/master/README.md",
+    "status": "downloaded",
+    "file": "recursos/complexidade_README.md",
+    "sha256": "db1411c57a43f0917b05642c7cea3aefce99753766e3623b2930bb96c04bf86f"
+  },
+  {
+    "id": "nilcmetrix",
+    "title": "NILC-Metrix",
+    "url": "https://raw.githubusercontent.com/nilc-nlp/nilcmetrix/main/README.md",
+    "status": "downloaded",
+    "file": "recursos/nilcmetrix_README.md",
+    "sha256": "272bc4f5fa82818a023a10e7692a9ed8ec00ddb6e8db05b442274763d789f996"
+  }
+]

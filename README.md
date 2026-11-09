@@ -1,3 +1,8 @@
+# Challenge 02 — Grupo 10
+
+[Documentação e fontes do RAG](docs/rag/README.md)
+
+[Documentos de concepção](docs/projeto/README.md)
 # Neurocognitive Speech RAG Scaffold
 
 This project creates the first structure for a retrieval-augmented generation (RAG) workflow focused on neurocognitive speech topics.
