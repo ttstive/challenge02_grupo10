@@ -1,0 +1,115 @@
+Base de Conhecimento e Protótipo RAG
+1. Artefatos da Base de Conhecimento
+Base de Conhecimento Curada
+A base foi estruturada para cobrir os quatro eixos arquitetônicos de desenvolvimento
+comunicativo, combinando teorias corporativas e exercícios práticos.
+Eixo 1: Fundamentos e Redução de Ruído
+● Guia ENAP M1-A: O Processo de Comunicação e seus Elemento
+● Guia ENAP M1-B: Identificação de Barreiras e Ruídos na Comunicaçã
+● Guia ENAP M1-C: Escuta Ativa e Empatia no Ambiente de Trabalh
+● Prática Fono A: Mapeamento e Correção de Cacofonias Comuns
+● Prática Fono B: Guia de Prevenção de Ambiguidade Estrutural
+Eixo 2: Retórica e Oratóri
+● Guia ENAP M3-A: Fundamentos da Persuasã
+● Guia ENAP M3-B: Estruturação do Raciocínio Lógico em Apresentaçõe
+● Guia ENAP M3-C: Storytelling Aplicado a Demonstrações de Softwar
+● Guia ENAP M5-A: Técnicas de Argumentação Sob Pressã
+● Guia ENAP M5-B: Tradução de Jargões Técnicos para Stakeholder
+Eixo 3: Linguagem Corporal e Fisiologi
+● Guia ENAP M4-A: Linguagem Corporal e Postura de Confianç
+● Guia ENAP M4-B: Técnicas de Relaxamento Físico Pré-Apresentaçã
+● Guia Fisiologia A: Respiração Diafragmática Básica para Ansiedade
+● Guia Fisiologia B: Modulação de Tom de Voz e Projeção Acústica
+● Guia Fisiologia C: Gestão de Pausas Absolutas e Redução de BPM
+Eixo 4: Treino Articulatório e Gramatica
+● Prática Fono C: Exercícios de Fortalecimento da Musculatura Bucal
+● Prática Fono D: Banco de Trava-Línguas para Consoantes Fricativas
+● Prática Gramática A: Correções de Solecismos de Concordância Verbal
+● Prática Gramática B: Regras e Correções de Barbarismos de Pronúncia
+● Prática Gramática C: Uso Correto de Pronomes em Situações de Fala
+Descrição da Estratégia de Chunking
+A segmentação dos textos prioriza a manutenção do contexto semântico, essencial
+para exercícios práticos e teorias de retórica.
+● Método: Segmentador Recursivo de Caracteres via framework de
+orquestração.
+● Tamanho do Chunk: 800 caracteres.
+● Sobreposição: 150 caracteres para garantir que instruções passo a passo não
+sejam cortadas ao meio.
+● Enriquecimento de Metadados: Cada chunk recebe tags cruciais antes da
+vetorização indicando eixo teórico, tipo de documento e gatilho de erro.
+Descrição da Estratégia de Embeddings
+Para garantir a compreensão profunda do idioma e das nuances gramaticais:
+● Modelo de Embedding: Modelos vetoriais de alta dimensão otimizados para
+semântica multilíngue.
+● Dimensão: 768 a 1024 dimensões.
+● Métrica de Distância: Similaridade de Cosseno.
+● Estratégia: Captura da semântica fina necessária para associar diagnósticos
+acústicos aos vetores de exercícios correspondentes.
+Implementação do Banco Vetorial
+O banco vetorial escolhido opera in-memory durante o desenvolvimento e persiste
+localmente, atendendo ao requisito de processamento híbrido/on-device do
+ecossistema mobile. A coleção é inicializada com a métrica de cosseno, e os
+documentos são inseridos associados aos seus metadados estruturais e IDs únicos de
+rastreabilidade na camada de dados.
+2. Documentação
+Pipeline de Ingestão de Dados
+1. Extração: Leitura bruta dos documentos e manuais armazenados.
+2. Limpeza e Formatação: Remoção de cabeçalhos irrelevantes utilizando
+expressões regulares.
+3. Segmentação: Divisão dos documentos limpos em fragmentos (chunks)
+menores.
+4. Atribuição de Metadados: Mapeamento inserindo as tags de eixo e gatilho em
+cada fragmento.
+5. Vetorização e Indexação: Envio dos fragmentos ao modelo de embeddings e
+persistência local.
+Fluxo de Recuperação Lógico (Arquitetura
+Etapa Fase do Processo Descrição da Operação
+Passo 1 Entrada Captação de Áudio pelo
+Usuário
+Passo 2 Processamento Tratamento e Filtro Acústico
+via Modelo STT
+Passo 3 Análise Diagnóstico de Comunicação e
+Extração de Entidades (Ex
+BPM, Erro Gramatical)
+Passo 4 Busca Construção da Query e Busca
+Semântica no Banco Vetorial
+Passo 5 Resgate Recuperação dos Documentos
+Mais Relevantes
+Fundamentados na Query
+Passo 6 Síntese Geração Aumentada (LL
+baseada no Diagnóstico e no
+Conteúdo Recuperado
+Passo 7 Saída Resposta Fundamentada ao
+Usuário e Gravação Privada no
+Diário de Bordo
+3. Demonstração
+Consulta Submetida ao Sistema
+● Transcrição Base: Aí eu falei pra ele que falta três dias pra mim entregar a
+documentação, mas não sei se vai dar tempo.
+● Diagnóstico Extraído (Input do RAG): Solecismo de concordância (falta t
+dias), Erro de pronome (pra mim entregar) e BPM Acelerado.
+Recuperação dos Fragmentos (Busca Vetorial
+O banco retorna os seguintes documentos-fonte fundamentados nos metadados
+detectados:
+● Fragmento Recuperado 1 (Doc 18 - Prática Gramática A): Solecismos
+concordância verbal ocorrem quando o verbo não concorda com o sujeito. O
+correto é: Faltam três dias.
+● Fragmento Recuperado 2 (Doc 20 - Prática Gramática C): Uso de prono
+antes de verbos no infinitivo. Nunca utilize mim antes de um verbo indicando
+ação. O correto é utilizar: para eu entregar.
+● Fragmento Recuperado 3 (Doc 13 - Guia Fisiologia A): Velocidades de f
+altas demonstram ansiedade. Utilize a respiração diafragmática profunda antes
+de iniciar a fala.
+Resposta Fundamentada (Gerada) e Evidência das Font
+Notei que sua fala estava bastante acelerada. Um ritmo alto geralmente indica
+ansiedade. Para retomar o controle, recomendo aplicar a técnica de respiração
+diafragmática profunda antes de iniciar sua argumentação [Fonte: Guia Fisiologia A
+Respiração Diafragmática Básica].
+Durante a sua fala, identifiquei oportunidades para aprimorar a clareza e evitar desvios
+gramaticais:
+1. Concordância Verbal: Na frase "falta três dias", o correto é faltam três dias. O
+verbo faltar precisa concordar no plural com o sujeito [Fonte: Prática Gramátic
+A - Regras e Correções de Solecismos].
+2. Uso de Pronomes: Na construção "pra mim entregar", lembre-se da regra
+prática de que o pronome mim não executa ação. A forma ideal e assertiva é
+para eu entregar [Fonte: Prática Gramática C - Uso Correto de Pronomes

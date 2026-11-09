@@ -1,0 +1,3 @@
+docs/rag/paginas/*.html -whitespace
+docs/rag/recursos/* -whitespace
+*.pdf binary
